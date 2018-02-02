@@ -1,0 +1,49 @@
+.bootstrap-datetimepicker-widget {
+
+  .datepicker {
+
+    td {
+      border-radius: 0;
+    }
+
+    td.disabled {
+      color: $gray-100;
+      background: none;
+
+      &:hover {
+        color: $white;
+        background-color: rgba($gray-100, 0.8);
+      }
+    }
+  }
+}
+
+.date-separator {
+  line-height: $input-height-base;
+  margin: 0 -3px;
+}
+
+.ui-widget-header {
+  background: $gray-300;
+  border-color: $gray-300;
+}
+
+.ui-datepicker {
+  z-index: 9999 !important;
+
+  th {
+    color: $gray-300;
+  }
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+  background: $gray-100;
+  border: $gray-500;
+  color: $gray-500;
+}
+
+.ui-datepicker-today .ui-state-default {
+  background: theme-color('primary');
+  color: $white;
+}

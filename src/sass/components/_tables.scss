@@ -1,0 +1,18 @@
+.table {
+  .success,
+  .info,
+  .warning,
+  .danger {
+    color: $white;
+  }
+
+  .active {
+    background-color: $dropdown-bg;
+  }
+}
+
+th {
+  color: $gray-600;
+  font-style: normal;
+  font-weight: 600;
+}

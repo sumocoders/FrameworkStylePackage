@@ -1,0 +1,74 @@
+.header-title .progress-bar {
+  float: none;
+  width: auto;
+}
+
+.header-title-bar {
+  border-bottom: 1px $gray-500 solid;
+  border-top: 1px $gray-500 solid;
+  overflow: hidden;
+  padding: 20px 19px;
+
+  h2 {
+    color: $gray-500;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+  }
+}
+
+.actions {
+  background-color: $dropdown-bg;
+  border-bottom: 1px $gray-500 solid;
+  display: block;
+  padding: 14px 15px 10px 20px;
+
+  .btn-info {
+    background-color: theme-color('info');
+    border-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      background-color: darken(theme-color('info'), 15%);
+    }
+  }
+
+  .btn {
+    padding: 5px 10px 7px;
+  }
+}
+
+.main-content {
+  padding: 40px 20px;
+}
+
+.back-to-top {
+  margin: 15px;
+}
+
+.btn[disabled] {
+  pointer-events: all;
+}
+
+
+@include media-breakpoint-up(sm) {
+  .header-title {
+    padding-top: 55px;
+  }
+
+  .header-title-bar {
+    border-top-width: 0;
+    padding: 16px 18px;
+  }
+
+  .actions {
+    padding: 14px 15px 14px 20px;
+  }
+
+  .action-buttons {
+    float: right;
+  }
+}

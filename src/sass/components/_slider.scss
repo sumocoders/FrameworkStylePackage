@@ -1,0 +1,16 @@
+.slider {
+  border-color: $gray-300;
+
+  .ui-state-default,
+  .ui-widget-content .ui-state-default {
+    background: $gray-500;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .ui-slider-handle {
+    cursor: pointer;
+  }
+}

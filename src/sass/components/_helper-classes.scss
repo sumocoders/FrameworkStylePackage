@@ -1,0 +1,23 @@
+.bg-primary,
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger {
+  color: $white;
+}
+
+.text-success {
+  color: theme-color('success');
+}
+
+.text-warning {
+  color: theme-color('warning');
+}
+
+.text-danger {
+  color: theme-color('danger');
+}
+
+.helper-classes-bg p {
+  padding: 15px;
+}

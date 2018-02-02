@@ -1,0 +1,118 @@
+body,
+table.body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+td {
+  color: $body-color;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: $line-height-base;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: normal;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 21px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+h4 {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+body,
+table.body,
+p,
+td {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+p.lead,
+p.lede,
+p.leed {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+small {
+  font-size: 10px;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $link-hover-color !important;
+}
+
+a:active {
+  color: $link-color !important;
+}
+
+a:visited {
+  color: $link-color !important;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: $link-color;
+}
+
+h1 a:active,
+h2 a:active,
+h3 a:active,
+h4 a:active,
+h5 a:active,
+h6 a:active {
+  color: $link-color !important;
+}
+
+h1 a:visited,
+h2 a:visited,
+h3 a:visited,
+h4 a:visited,
+h5 a:visited,
+h6 a:visited {
+  color: $link-color !important;
+}

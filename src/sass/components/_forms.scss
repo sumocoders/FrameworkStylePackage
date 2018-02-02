@@ -1,0 +1,157 @@
+.help-block {
+  color: $gray-300;
+  font-size: $font-size-sm;
+}
+
+.has-error {
+  .form-control {
+    background: $white;
+    border-color: theme-color('danger');
+    box-shadow: none;
+
+    &:focus {
+      border-color: theme-color('danger');
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba(theme-color('danger'), .6);
+    }
+  }
+
+  .form-control-feedback {
+    color: theme-color('danger');
+  }
+
+  .checkbox,
+  .control-label {
+    color: theme-color('danger');
+  }
+}
+
+.has-warning {
+
+  .form-control {
+    border-color: theme-color('warning');
+    box-shadow: none;
+
+    &:focus {
+      border-color: theme-color('warning');
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba(theme-color('warning'), .6);
+    }
+  }
+
+  .form-control-feedback {
+    color: theme-color('warning');
+  }
+
+  .checkbox,
+  .control-label {
+    color: theme-color('warning');
+  }
+}
+
+.has-success {
+
+  .form-control {
+    border-color: theme-color('success');
+
+    &:focus {
+      border-color: theme-color('success');
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba(theme-color('success'), .6);
+    }
+  }
+
+  .form-control-feedback {
+    color: theme-color('success');
+  }
+
+  .checkbox,
+  .control-label {
+    color: theme-color('success');
+  }
+
+  .input-group-addon {
+    border-color: theme-color('success');
+    color: $white;
+  }
+}
+
+.control-group abbr[title],
+.form-group abbr[title] {
+  border-bottom: 0;
+}
+
+.form-control {
+  box-shadow: none;
+
+  &:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  }
+
+  &.placeholder {
+    color: $gray-700;
+  }
+}
+
+.input-group .input-group-addon:before {
+  padding: 0 0 5px 0;
+}
+
+.form-inline {
+
+  .control-label {
+    margin-right: 5px;
+  }
+
+  .form-control {
+    margin-right: 10px;
+  }
+
+  .input-group {
+    margin-bottom: 0;
+  }
+}
+
+.select2 {
+  width: 100%;
+}
+
+.datetime-widget select[size], .time-widget select[size] {
+  height: 34px;
+}
+
+.date-widget .faked-button {
+  color: #555;
+}
+
+label abbr[title] {
+  border: 0;
+}
+
+.datetime-widget select[size], .time-widget select[size] {
+  height: 34px;
+}
+
+.date-widget .faked-button {
+  color: #555;
+}
+
+.popover {
+  max-width: none;
+  width: 250px;
+}
+
+@include media-breakpoint-up(md) {
+
+  .popover {
+    width: 300px;
+  }
+}
+
+// Feedback states
+.has-success .help-block {
+  color: theme-color('success');
+}
+.has-warning .help-block {
+  color: theme-color('warning');
+}
+.has-error .help-block {
+  color: theme-color('danger');
+}

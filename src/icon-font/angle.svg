@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>angle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="angle" sketch:type="MSArtboardGroup" fill="#7590A9">
+            <path d="M17,8.315 C17,9.182 17.38,9.951 18.141,10.618 L62.972,49.999 L18.143,89.379 C17.381,90.046 17.002,90.815 17.002,91.683 C17.002,92.552 17.381,93.32 18.143,93.988 L23.846,98.997 C24.606,99.666 25.481,100 26.469,100 C27.458,100 28.333,99.665 29.093,98.997 L82.252,52.304 C83.012,51.636 83.392,50.867 83.392,49.999 C83.392,49.131 83.012,48.363 82.252,47.696 L29.093,1 C28.333,0.332 27.458,0 26.469,0 C25.481,0 24.606,0.332 23.844,1 L18.141,6.009 C17.38,6.677 17,7.446 17,8.315 Z" id="Imported-Layers" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+// Base
+@import 'base/fonts';
+@import 'font-awesome/scss/font-awesome';
+
+// Bootstrap
+@import 'bootstrap4/scss/functions';
+@import 'bootstrap4/scss/variables';
+@import 'bootstrap-variables';
+@import 'bootstrap-imports';
+
+@import 'mixins/reset-filter';
+
+// Icons @todo: can this be removed??
+@import 'base/icons';
+
+// Custom icon font generated with gulp-webfont
+@import 'icons';
+
+// Plugins
+@import 'select2-bootstrap-css/lib/select2-bootstrap';
+@import 'plugins/bootstrap-tagsinput';
+@import 'plugins/jquery-ui';
+@import 'plugins/select2';
+@import 'plugins/collections';
+
+// Components
+@import 'components/alerts';
+@import 'components/autocomplete';
+@import 'components/breadcrumb';
+@import 'components/carousel';
+@import 'components/datagrids';
+@import 'components/datepicker';
+@import 'components/dropdowns';
+@import 'components/forms';
+@import 'components/helper-classes';
+@import 'components/input-group';
+@import 'components/logo';
+@import 'components/modal';
+@import 'components/navbar';
+@import 'components/navs';
+@import 'components/page-header';
+@import 'components/pagination';
+@import 'components/panels';
+@import 'components/progress-bars';
+@import 'components/slider';
+@import 'components/sortable';
+@import 'components/tables';
+@import 'components/tagbox';
+@import 'components/type';
+@import 'components/wells';
+
+// Layouts
+@import 'layouts/framework';
+@import 'layouts/user';
+@import 'layouts/search';
+@import 'layouts/header';
+@import 'layouts/actions';

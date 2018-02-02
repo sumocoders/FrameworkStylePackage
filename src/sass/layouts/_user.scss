@@ -1,0 +1,106 @@
+// Users
+#users {
+
+  &.login,
+  &.forgot_password,
+  &.reset_password {
+
+    .logo {
+      background-size: auto 100%;
+      height: 150px;
+      margin: 10% auto;
+      
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    abbr {
+      font-weight: 300;
+    }
+
+    .control-group {
+      margin-bottom: 27px;
+
+      .controls {
+        width: 100%;
+      }
+    }
+
+    .control-label {
+      color: $gray-500;
+      font-size: 1.29 * $font-size-base;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .input-group {
+      display: block;
+
+      .input-group-addon,
+      .btn,
+      .form-control {
+        color: $gray-500;
+        display: inline-block;
+        float: none;
+        vertical-align: middle;
+      }
+
+      .input-group-addon {
+        background-color: $white;
+        background-position: center center;
+
+        &.icon-user,
+        &.icon-lock {
+          border: 1px solid $input-border;
+          border-right: 0;
+          color: $gray-300;
+          font-size: 24px;
+          line-height: 44px;
+        }
+      }
+
+      .input-group-addon,
+      .btn {
+        border: 0;
+        height: 46px;
+        padding: 0 5px;
+        width: 13.75%;
+      }
+
+      .form-control {
+        margin-left: -4px;
+      }
+    }
+
+    .form-control {
+      -webkit-appearance: none;
+      border-radius: 0 4px 4px 0;
+      padding: 10px;
+      width: 86.25%;
+    }
+
+    .btn {
+      padding-left: 21px;
+      padding-right: 21px;
+      text-align: left;
+    }
+
+    .alert {
+      border-radius: 4px;
+    }
+
+    .forgotPassword {
+      margin-top: 10px;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  #users.login,
+  #users.forgot_password,
+  #users.reset_password {
+    width: 400px;
+    margin: 0 auto 40px;
+  }
+}

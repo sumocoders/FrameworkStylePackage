@@ -1,0 +1,18 @@
+.alert {
+  .alert-link {
+    color: $white;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: .3s;
+
+    &:hover,
+    &:focus {
+      color: $gray-900;
+    }
+  }
+}
+
+.alert a {
+  color: $white;
+  text-decoration: underline;
+}
