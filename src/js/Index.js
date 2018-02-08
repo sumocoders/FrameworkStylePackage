@@ -1,5 +1,5 @@
 // Boostrap import
-import 'bootstrap4/dist/js/bootstrap'
+import 'bootstrap/dist/js/bootstrap'
 
 import {Ajax} from './Framework/Ajax'
 import {Form} from './Framework/Form'
@@ -17,7 +17,7 @@ import {Table} from './Framework/Table'
 import {Tabs} from './Framework/Tabs'
 import {Tooltip} from './Framework/Tooltip'
 
-export class Index {
+export class Framework {
   constructor () {
     this.ajax = new Ajax()
     this.form = new Form()
@@ -67,5 +67,3 @@ export class Index {
     })
   }
 }
-
-window.index = new Index()
