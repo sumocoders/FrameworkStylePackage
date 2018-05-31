@@ -1,7 +1,3 @@
-// Base
-@import 'base/fonts';
-@import '~font-awesome/scss/font-awesome';
-
 // Bootstrap
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
@@ -11,7 +7,7 @@
 @import 'mixins/reset-filter';
 
 // Plugins
-@import '~select2-bootstrap-css/lib/select2-bootstrap';
+@import '~select2-theme-bootstrap4/src/select2-bootstrap';
 @import 'plugins/bootstrap-tagsinput';
 @import 'plugins/jquery-ui';
 @import 'plugins/select2';
