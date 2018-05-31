@@ -1,4 +1,4 @@
-import {Locale} from 'Framework/Locale'
+import {Locale} from './Locale'
 
 const locale = new Locale()
 

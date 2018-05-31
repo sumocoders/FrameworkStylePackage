@@ -1,4 +1,4 @@
-import {Data} from 'Framework/Data'
+import {Data} from './Data'
 
 const dataData = new Data()
 

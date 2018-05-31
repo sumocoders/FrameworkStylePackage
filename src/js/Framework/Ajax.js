@@ -1,5 +1,5 @@
-import {Locale} from 'Framework/Locale'
-import {Flash} from 'Framework/Flash'
+import {Locale} from './Locale'
+import {Flash} from './Flash'
 const locale = new Locale()
 
 export class Ajax {

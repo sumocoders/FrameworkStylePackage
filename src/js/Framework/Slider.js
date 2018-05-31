@@ -1,4 +1,4 @@
-import {PluginNotFound} from 'Exception/PluginNotFound'
+import {PluginNotFound} from '../Exception/PluginNotFound'
 
 export class Slider {
   constructor (element, min = 0, max = 50, values = [10, 40], range = true) {

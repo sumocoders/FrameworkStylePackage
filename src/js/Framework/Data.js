@@ -6,11 +6,13 @@ export class Data {
   }
 
   initialize () {
-    if (jsData === undefined || jsData === null) {
-      throw Error('jsData is not available')
+    if (typeof jsData === 'undefined' || jsData === null) {
+      // jsData is not defined so we fallback to English
+      this.data = {"request": {"locale": "en"}}
+    } else {
+      this.data = jsData
     }
 
-    this.data = jsData
     this.isInitialized = true
   }
 
