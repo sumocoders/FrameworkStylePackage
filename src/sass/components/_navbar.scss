@@ -56,6 +56,14 @@
 
 .main-menu {
 
+  .navbar {
+    align-items: stretch;
+
+    .navbar-header {
+      padding: 5px 10px;
+    }
+  }
+
   .navbar-default {
 
     .navbar-brand {
@@ -126,8 +134,8 @@
       }
     }
 
-    .icon-angle {
-      margin-top: -11px;
+    .fa-chevron-right {
+      margin-top: -8px;
       position: absolute;
       right: 15px;
       top: 50%;
@@ -170,7 +178,7 @@
         }
       }
 
-      .icon-angle {
+      .fa-chevron-right {
         transform: rotate(90deg);
         transition: 300ms;
       }
