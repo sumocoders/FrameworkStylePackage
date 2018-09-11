@@ -27,8 +27,9 @@ export class Tabs {
   loadTab () {
     let anchor = document.location.hash
     if (anchor !== '') {
-      if ($('.nav-tabs a[href=' + anchor + ']').length > 0) {
-        $('.nav-tabs a[href=' + anchor + ']').tab('show')
+      let $tab = $('.nav-tabs a[href="' + anchor + '"]')
+      if ($tab.length > 0) {
+        $tab.tab('show')
       }
     }
   }
