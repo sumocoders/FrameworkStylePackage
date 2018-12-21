@@ -35,9 +35,11 @@ export class Locale {
       this.initialize()
     }
 
-    if (this.data[key] !== null) {
+    if (this.data[key] !== null && this.data[key] !== undefined) {
       return this.data[key]
     }
+
+    return key
   }
 
   act (key) {
