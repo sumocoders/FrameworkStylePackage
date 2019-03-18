@@ -9,17 +9,17 @@
 //
 
 // stylelint-disable
-$white:  #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #f1f7f9;
-$gray-400: #bbcdde;
-$gray-500: #adb5bd;
-$gray-600: #8fa0b1;
-$gray-700: #5d7489;
-$gray-800: #38556e;
-$gray-900: #2f4050;
-$black:  #000;
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #f1f7f9 !default;
+$gray-400: #bbcdde !default;
+$gray-500: #adb5bd !default;
+$gray-600: #8fa0b1 !default;
+$gray-700: #5d7489 !default;
+$gray-800: #38556e !default;
+$gray-900: #2f4050 !default;
+$black:  #000 !default;
 
 $grays: () !default;
 $grays: map-merge((
@@ -34,16 +34,16 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    #1fd2c5;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #d83f1e;
-$orange:  #fd7e14;
-$yellow:  #eec733;
-$green:   #20c664;
-$teal:    #20c997;
-$cyan:    #6ac1e0;
+$blue:    #1fd2c5 !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #d83f1e !default;
+$orange:  #fd7e14 !default;
+$yellow:  #eec733 !default;
+$green:   #20c664 !default;
+$teal:    #20c997 !default;
+$cyan:    #6ac1e0 !default;
 
 $colors: () !default;
 $colors: map-merge((
