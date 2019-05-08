@@ -23,7 +23,7 @@ export default class FormCollection {
         if (tooltips !== null) {
           tooltips.remove();
         }
-        new Framework().initializeTooltips();
+        Framework.initializeTooltips();
       };
 
       item.collection({
