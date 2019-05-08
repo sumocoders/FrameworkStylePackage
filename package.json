@@ -13,6 +13,7 @@
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
     "popper.js": "^1.12.9",
-    "select2-theme-bootstrap4": "^0.2.0-beta.2"
+    "select2-theme-bootstrap4": "^0.2.0-beta.2",
+    "symfony-collection": "github:ninsuo/symfony-collection"
   }
 }

@@ -16,11 +16,13 @@ import {Sortable} from './Framework/Sortable'
 import {Table} from './Framework/Table'
 import {Tabs} from './Framework/Tabs'
 import {Tooltip} from './Framework/Tooltip'
+import FormCollection from 'frameworkstylepackage/src/js/Framework/FormCollection';
 
 export class Framework {
   constructor () {
     this.ajax = new Ajax()
     this.form = new Form()
+    this.formCollection = new FormCollection()
     this.link = new Link()
     this.loadingBar = new LoadingBar()
     this.navbar = new Navbar()
