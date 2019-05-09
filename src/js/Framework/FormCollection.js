@@ -1,43 +1,54 @@
-import { Framework } from '../Index';
-import 'symfony-collection/jquery.collection';
-
 export default class FormCollection {
-  constructor () {
+  constructor (element) {
+    this._element = $(element);
+
+    this.addButton = this._element.find('[data-role="collection-add-button"]');
+
+    this.bindEvents();
     this.init();
   }
 
+  bindEvents () {
+    this.addButton.on('click', $.proxy(this.addItem, this));
+    $(document).on('click', '[data-role="collection-remove-button"]', $.proxy(this.removeItem, this));
+  }
+
   init () {
-    let collection = $('[data-role="collection"]');
+    if (this._element.find('[data-role="collection-item"]').length > 0) {
+      this._element.find('[data-role="collection-add-button"]').removeAttr('hidden');
+    }
+  }
 
-    collection.each((index, item) => {
-      item = $(item);
-      const buttonsContainer = $('[data-role="collection-template-button-container"][data-target="' + item.attr('id') + '"]');
+  addItem (event) {
+    event.preventDefault();
 
-      if (buttonsContainer.length === 0) {
-        console.log('Not buttons found for collection')
-        return;
+    // Get the data-prototype explained earlier
+    const prototype = this._element.data('prototype');
+    // get the new index
+    let index = this._element.data('index');
+    // Replace '__name__' in the prototype's HTML to
+    // instead be a number based on how many items we have
+    const newForm = prototype.replace(/__name__/g, index);
+    // increase the index with one for the next item
+    this._element.data('index', index + 1);
+    // Display the form in the page before the "new" link
+    this._element.find('[data-role="collection-item-container"]').append(newForm);
+
+    // Show add button
+    this._element.find('[data-role="collection-add-button"]:last').removeAttr('hidden');
       }
 
-      const resetTooltips = () => {
-        const tooltips = document.querySelector('.tooltip');
-        if (tooltips !== null) {
-          tooltips.remove();
-        }
-        Framework.initializeTooltips();
-      };
+  removeItem (event) {
+    event.preventDefault();
 
-      item.collection({
-        add: buttonsContainer.find('[data-role="collection-template-button"][data-action="add"]')[0].outerHTML,
-        remove: buttonsContainer.find('[data-role="collection-template-button"][data-action="remove"]')[0].outerHTML,
-        up: buttonsContainer.find('[data-role="collection-template-button"][data-action="up"]')[0].outerHTML,
-        down: buttonsContainer.find('[data-role="collection-template-button"][data-action="down"]')[0].outerHTML,
-        after_up: resetTooltips,
-        after_down: resetTooltips,
-        after_add: resetTooltips,
-        after_remove: resetTooltips,
-      });
+    $(event.currentTarget)
+      .closest('[data-role="collection-item"]')
+      .fadeOut(600)
+      .remove();
 
-      buttonsContainer.remove();
-    });
+    // Hide last add button if there aren't any collection items
+    if (this._element.find('[data-role="collection-item"]').length === 0) {
+      this._element.find('[data-role="collection-add-button"]:last').attr('hidden', true);
+    }
   }
 }

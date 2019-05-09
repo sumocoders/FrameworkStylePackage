@@ -22,7 +22,6 @@ export class Framework {
   constructor () {
     this.ajax = new Ajax()
     this.form = new Form()
-    this.formCollection = new FormCollection()
     this.link = new Link()
     this.loadingBar = new LoadingBar()
     this.navbar = new Navbar()
@@ -37,6 +36,7 @@ export class Framework {
     Framework.initializePopovers()
     Framework.initializeTooltips()
     Framework.initializeSelects()
+    Framework.initializeCollections()
   }
 
   static initializeSliders () {
@@ -66,6 +66,12 @@ export class Framework {
   static initializeSelects () {
     $('.select2').each((index, element) => {
       element.select2 = new Select($(element))
+    })
+  }
+
+  static initializeCollections () {
+    $('[data-role="collection"]').each((index, element) => {
+      new FormCollection(element)
     })
   }
 }
