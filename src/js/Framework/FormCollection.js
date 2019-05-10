@@ -32,7 +32,6 @@ export default class FormCollection {
   addItem (event) {
     event.preventDefault();
 
-    // Get the data-prototype explained earlier
     const prototype = this._element.data('prototype');
     // get the new index
     let index = this._element.data('index');
@@ -46,7 +45,7 @@ export default class FormCollection {
 
     // Show add button
     this._element.find('[data-role="collection-add-button"]:last').removeAttr('hidden');
-      }
+  }
 
   removeItem (event) {
     event.preventDefault();
