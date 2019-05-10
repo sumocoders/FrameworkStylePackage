@@ -1,3 +1,5 @@
+import Sortable from 'sortablejs/Sortable';
+
 export default class FormCollection {
   constructor (element) {
     this._element = $(element);
@@ -17,6 +19,14 @@ export default class FormCollection {
     if (this._element.find('[data-role="collection-item"]').length > 0) {
       this._element.find('[data-role="collection-add-button"]').removeAttr('hidden');
     }
+
+    Sortable.create(this._element.find('ul')[0], {
+      handler: '[data-role="collection-item-change-order"]',
+      animation: 150,
+      ghostClass: 'collection-item-selected',
+      chosenClass: 'collection-item-selected',
+      dragClass: 'collection-item-selected'
+    })
   }
 
   addItem (event) {
