@@ -82,19 +82,19 @@ export class Framework {
   }
 
   static initializeDateTimePickers () {
-    $('[data-toggle="date-time-picker"]').each((index, element) => {
+    $('[data-role="date-time-picker"]').each((index, element) => {
       new DateTimePicker(element)
     });
   }
 
   static initializeDatePickers () {
-    $('[data-toggle="date-picker"]').each((index, element) => {
+    $('[data-role="date-picker"]').each((index, element) => {
       new DatePicker(element)
     });
   }
 
   static initializeTimePickers () {
-    $('[data-toggle="time-picker"]').each((index, element) => {
+    $('[data-role="time-picker"]').each((index, element) => {
       new TimePicker(element)
     });
   }
