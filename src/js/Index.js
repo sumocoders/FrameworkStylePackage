@@ -16,6 +16,7 @@ import {Sortable} from './Framework/Sortable'
 import {Table} from './Framework/Table'
 import {Tabs} from './Framework/Tabs'
 import {Tooltip} from './Framework/Tooltip'
+import FormCollection from './Framework/FormCollection';
 
 export class Framework {
   constructor () {
@@ -30,40 +31,47 @@ export class Framework {
     this.table = new Table()
     this.tabs = new Tabs()
 
-    this.initializeSliders()
-    this.initializeSortables()
-    this.initializePopovers()
-    this.initializeTooltips()
-    this.initializeSelects()
+    Framework.initializeSliders()
+    Framework.initializeSortables()
+    Framework.initializePopovers()
+    Framework.initializeTooltips()
+    Framework.initializeSelects()
+    Framework.initializeCollections()
   }
 
-  initializeSliders () {
+  static initializeSliders () {
     $('.slider').each((index, element) => {
       element.slider = new Slider($(element))
     })
   }
 
-  initializeSortables () {
+  static initializeSortables () {
     $('.sortable').each((index, element) => {
       element.sortable = new Sortable($(element))
     })
   }
 
-  initializePopovers () {
+  static initializePopovers () {
     $('[data-toggle="popover"]').each((index, element) => {
       element.popover = new Popover($(element))
     })
   }
 
-  initializeTooltips () {
+  static initializeTooltips () {
     $('[data-toggle="tooltip"]').each((index, element) => {
       element.tooltip = new Tooltip($(element))
     })
   }
 
-  initializeSelects () {
+  static initializeSelects () {
     $('.select2').each((index, element) => {
       element.select2 = new Select($(element))
+    })
+  }
+
+  static initializeCollections () {
+    $('[data-role="collection"]').each((index, element) => {
+      new FormCollection(element)
     })
   }
 }

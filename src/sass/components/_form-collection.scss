@@ -1,0 +1,17 @@
+.collection-item {
+  position: relative;
+
+  .collection-item-drag-and-drop {
+    background-color: $gray-400;
+    border-radius: 50%;
+    cursor: move;
+    left: -20px;
+    padding: 11px 12px;
+    position: absolute;
+    top: 48%;
+  }
+}
+
+.collection-item-selected {
+  background-color: lighten($primary, 40%);
+}
