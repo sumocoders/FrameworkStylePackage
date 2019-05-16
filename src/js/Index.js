@@ -16,7 +16,7 @@ import {Sortable} from './Framework/Sortable'
 import {Table} from './Framework/Table'
 import {Tabs} from './Framework/Tabs'
 import {Tooltip} from './Framework/Tooltip'
-import FormCollection from 'frameworkstylepackage/src/js/Framework/FormCollection';
+import FormCollection from './Framework/FormCollection';
 
 export class Framework {
   constructor () {
