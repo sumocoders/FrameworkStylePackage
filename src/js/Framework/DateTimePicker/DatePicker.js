@@ -7,18 +7,8 @@ export default class DatePicker {
   constructor (element) {
     this._element = $(element);
 
-    let locale = 'nl-be';
-    if (window.jsData !== undefined &&
-      window.jsData.request !== undefined &&
-      window.jsData.request.locale !== undefined &&
-      window.jsData.request.locale !== 'nl' &&
-      window.jsData.request.locale !== null) {
-      locale = jsData.request.locale;
-    }
-
     this.options = {
       format: 'L',
-      locale: locale,
       icons: {
         time: 'fas fa-clock',
         date: 'fas fa-calendar',
@@ -34,6 +24,29 @@ export default class DatePicker {
   }
 
   init () {
+    let locale = 'nl-be';
+    if (window.jsData !== undefined &&
+      window.jsData.request !== undefined &&
+      window.jsData.request.locale !== undefined &&
+      window.jsData.request.locale !== 'nl' &&
+      window.jsData.request.locale !== null) {
+      locale = jsData.request.locale;
+    }
+    this.options.locale = locale;
+
+    const input = this._element.find('input');
+    if (input.attr('data-format')) {
+      this.options.format = input.attr('data-format')
+    }
+
+    if (input.attr('data-max-date')) {
+      this.options.maxDate = moment(input.attr('data-max-date'), this.options.format);
+    }
+
+    if (input.attr('data-min-date')) {
+      this.options.minDate = moment(input.attr('data-min-date'), this.options.format);
+    }
+
     this._element.datetimepicker(
       this.options
     );
