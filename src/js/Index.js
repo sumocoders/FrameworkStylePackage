@@ -83,19 +83,19 @@ export class Framework {
 
   static initializeDateTimePickers () {
     $('[data-role="date-time-picker"]').each((index, element) => {
-      new DateTimePicker(element)
+      new DateTimePicker(element).init()
     });
   }
 
   static initializeDatePickers () {
     $('[data-role="date-picker"]').each((index, element) => {
-      new DatePicker(element)
+      new DatePicker(element).init()
     });
   }
 
   static initializeTimePickers () {
     $('[data-role="time-picker"]').each((index, element) => {
-      new TimePicker(element)
+      new TimePicker(element).init()
     });
   }
 }
