@@ -40,9 +40,7 @@ export class Framework {
     Framework.initializeTooltips()
     Framework.initializeSelects()
     Framework.initializeCollections()
-    Framework.initializeDatePickers();
     Framework.initializeDateTimePickers();
-    Framework.initializeTimePickers();
   }
 
   static initializeSliders () {
@@ -85,15 +83,11 @@ export class Framework {
     $('[data-role="date-time-picker"]').each((index, element) => {
       new DateTimePicker(element).init()
     });
-  }
 
-  static initializeDatePickers () {
     $('[data-role="date-picker"]').each((index, element) => {
       new DatePicker(element).init()
     });
-  }
 
-  static initializeTimePickers () {
     $('[data-role="time-picker"]').each((index, element) => {
       new TimePicker(element).init()
     });
