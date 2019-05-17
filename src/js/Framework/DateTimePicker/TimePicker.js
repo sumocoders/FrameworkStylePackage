@@ -5,5 +5,6 @@ export default class TimePicker extends DatePicker {
     super(element);
 
     this.options.format = 'LT';
+    delete this.options.date;
   }
 }

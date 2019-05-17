@@ -21,6 +21,9 @@ export default class DatePicker {
         close: 'fas fa-times'
       }
     };
+
+    const input = this._element.find('input');
+    this.options.date = input.val();
   }
 
   init () {
