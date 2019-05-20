@@ -1,22 +1,25 @@
 // Boostrap import
 import 'bootstrap/dist/js/bootstrap'
 
-import {Ajax} from './Framework/Ajax'
-import {Form} from './Framework/Form'
-import {Link} from './Framework/Link'
-import {LoadingBar} from './Framework/LoadingBar'
-import {Navbar} from './Framework/Navbar'
-import {Popover} from './Framework/Popover'
-import {Scrolling} from './Framework/Scrolling'
-import {SetHeight} from './Framework/SetHeight'
-import {Searchbar} from './Framework/Searchbar'
-import {Select} from './Framework/Select'
-import {Slider} from './Framework/Slider'
-import {Sortable} from './Framework/Sortable'
-import {Table} from './Framework/Table'
-import {Tabs} from './Framework/Tabs'
-import {Tooltip} from './Framework/Tooltip'
-import FormCollection from './Framework/FormCollection';
+import { Ajax } from './Framework/Ajax'
+import { Form } from './Framework/Form'
+import { Link } from './Framework/Link'
+import { LoadingBar } from './Framework/LoadingBar'
+import { Navbar } from './Framework/Navbar'
+import { Popover } from './Framework/Popover'
+import { Scrolling } from './Framework/Scrolling'
+import { SetHeight } from './Framework/SetHeight'
+import { Searchbar } from './Framework/Searchbar'
+import { Select } from './Framework/Select'
+import { Slider } from './Framework/Slider'
+import { Sortable } from './Framework/Sortable'
+import { Table } from './Framework/Table'
+import { Tabs } from './Framework/Tabs'
+import { Tooltip } from './Framework/Tooltip'
+import FormCollection from './Framework/FormCollection'
+import DatePicker from './Framework/DateTimePicker/DatePicker'
+import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
+import TimePicker from './Framework/DateTimePicker/TimePicker'
 
 export class Framework {
   constructor () {
@@ -37,6 +40,7 @@ export class Framework {
     Framework.initializeTooltips()
     Framework.initializeSelects()
     Framework.initializeCollections()
+    Framework.initializeDateTimePickers();
   }
 
   static initializeSliders () {
@@ -73,5 +77,19 @@ export class Framework {
     $('[data-role="collection"]').each((index, element) => {
       new FormCollection(element)
     })
+  }
+
+  static initializeDateTimePickers () {
+    $('[data-role="date-time-picker"]').each((index, element) => {
+      new DateTimePicker(element).init()
+    });
+
+    $('[data-role="date-picker"]').each((index, element) => {
+      new DatePicker(element).init()
+    });
+
+    $('[data-role="time-picker"]').each((index, element) => {
+      new TimePicker(element).init()
+    });
   }
 }
