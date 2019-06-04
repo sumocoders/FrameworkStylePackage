@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap'
 
 import { Ajax } from './Framework/Ajax'
 import { Form } from './Framework/Form'
+import { ImagePreview } from './Framework/ImagePreview'
 import { Link } from './Framework/Link'
 import { LoadingBar } from './Framework/LoadingBar'
 import { Navbar } from './Framework/Navbar'
@@ -33,6 +34,7 @@ export class Framework {
     this.searchBar = new Searchbar()
     this.table = new Table()
     this.tabs = new Tabs()
+    this.imagePreview = new ImagePreview()
 
     Framework.initializeSliders()
     Framework.initializeSortables()
