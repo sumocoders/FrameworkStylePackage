@@ -23,6 +23,7 @@ export default class DatePicker {
     };
 
     const input = this._element.find('input');
+    this.options.date = input.attr('value');
   }
 
   init () {
