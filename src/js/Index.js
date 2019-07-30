@@ -20,6 +20,7 @@ import FormCollection from './Framework/FormCollection'
 import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
+import Clipboard from './Framework/Clipboard'
 
 export class Framework {
   constructor () {
@@ -40,7 +41,8 @@ export class Framework {
     Framework.initializeTooltips()
     Framework.initializeSelects()
     Framework.initializeCollections()
-    Framework.initializeDateTimePickers();
+    Framework.initializeDateTimePickers()
+    Framework.initializeClipboard()
   }
 
   static initializeSliders () {
@@ -90,6 +92,12 @@ export class Framework {
 
     $('[data-role="time-picker"]').each((index, element) => {
       new TimePicker(element).init()
+    });
+  }
+
+  static initializeClipboard () {
+    $('[data-role="clipboard"]').each((index, element) => {
+      new Clipboard(element)
     });
   }
 }
