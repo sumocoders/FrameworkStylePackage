@@ -150,3 +150,7 @@ label abbr[title] {
 .has-error .help-block {
   color: theme-color('danger');
 }
+
+.invalid-feedback {
+  display: block;
+}
