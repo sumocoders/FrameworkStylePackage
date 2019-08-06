@@ -167,6 +167,6 @@ select.is-invalid + .select2 .select2-selection {
 
 // Make sure input-group-texts in an append have a radius, even if an (in)valid-feedback element comes after it
 .input-group-append .input-group-text {
-  border-top-right-radius: 0.25rem !important;
-  border-bottom-right-radius: 0.25rem !important;
+  border-top-right-radius: $border-radius !important;
+  border-bottom-right-radius: $border-radius !important;
 }
