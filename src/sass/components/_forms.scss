@@ -151,6 +151,21 @@ label abbr[title] {
   color: theme-color('danger');
 }
 
-.invalid-feedback {
-  display: block;
+.alert .error-list-item {
+  @extend .my-1;
+
+  a {
+    color: theme-color-level(danger, $alert-color-level);
+  }
+}
+
+// Display an invalid select2 as invalid
+select.is-invalid + .select2 .select2-selection {
+  @extend .form-control.is-invalid
+}
+
+// Make sure input-group-texts in an append have a radius, even if an (in)valid-feedback element comes after it
+.input-group-append .input-group-text {
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
 }
