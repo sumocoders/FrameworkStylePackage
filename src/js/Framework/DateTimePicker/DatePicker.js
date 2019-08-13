@@ -22,8 +22,7 @@ export default class DatePicker {
       }
     };
 
-    const input = this._element.find('input');
-    this.options.date = input.attr('value');
+    this.input = this._element.find('input');
   }
 
   init () {
@@ -38,18 +37,19 @@ export default class DatePicker {
       }
       this.options.locale = locale;
 
-      const input = this._element.find('input');
-      if (input.attr('data-format')) {
-        this.options.format = input.attr('data-format')
+      if (this.input.attr('data-format')) {
+        this.options.format = this.input.attr('data-format')
       }
 
-      if (input.attr('data-max-date')) {
-        this.options.maxDate = moment(input.attr('data-max-date'), this.options.format);
+      if (this.input.attr('data-max-date')) {
+        this.options.maxDate = moment(this.input.attr('data-max-date'), this.options.format);
       }
 
-      if (input.attr('data-min-date')) {
-        this.options.minDate = moment(input.attr('data-min-date'), this.options.format);
+      if (this.input.attr('data-min-date')) {
+        this.options.minDate = moment(this.input.attr('data-min-date'), this.options.format);
       }
+
+      this.options.date = moment(this.input.attr('value'), this.options.format, this.options.locale);
 
       this._element.datetimepicker(
         this.options
