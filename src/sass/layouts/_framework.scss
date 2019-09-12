@@ -1,6 +1,10 @@
-.header-title .progress-bar {
-  float: none;
-  width: auto;
+.header-title {
+  padding: 15px;
+
+  .progress-bar {
+    float: none;
+    width: auto;
+  }
 }
 
 .header-title-bar {
@@ -55,8 +59,9 @@
 
 
 @include media-breakpoint-up(sm) {
-  .header-title {
-    padding-top: 55px;
+
+  #main {
+    padding-top: 75px;
   }
 
   .header-title-bar {
