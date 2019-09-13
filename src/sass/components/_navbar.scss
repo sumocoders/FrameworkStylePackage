@@ -10,13 +10,15 @@
   background: url('/assets/images/logo-application.svg') no-repeat;
 }
 
-.wrapper-brand {
-  background-color: theme-color('primary');
-  padding: 20px;
+.navbar-brand {
+  background-color: $white;
+  margin-right: 0;
+  padding: 0;
+  margin-left: 15px;
 
-  .logo img {
-    margin: 0 auto;
-    max-width: 100%;
+  img {
+    max-height: 80px;
+    margin: 5px auto;
   }
 }
 
@@ -96,7 +98,34 @@
   }
 }
 
+#content-wrapper {
+  margin-top: 90px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(15px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(7px);
+  }
+}
+
 .main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 
   .navbar {
     align-items: stretch;
@@ -125,63 +154,110 @@
       margin-top: 0;
     }
 
-    .current .nav-link {
-      background-color: transparent;
-      border-left: 10px theme-color('primary') solid;
-      color: $gray-700;
-    }
-
-    .nav-link {
-      border-left: 10px transparent solid;
-      color: $gray-700;
-      font-style: normal;
-      font-weight: bold;
-      padding: 12px 50px 12px 10px;
+    .nav-item {
+      background-color: $primary;
+      color: $white;
       position: relative;
 
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border-left: 10px theme-color('primary') solid;
-        color: $gray-900;
+      &.current .nav-link,
+      &.dropdown.show .nav-link {
+
+        &:before {
+          transform: translateX(7px);
+        }
+
+        &:hover:before,
+        &:focus:before {
+          animation: none;
+        }
       }
 
-      &.dropdown-toggle:after {
-        display: none;
-      }
-    }
-
-    li {
-      border-top: 1px $gray-500 solid;
-    }
-
-    .dropdown-menu {
-      margin: 0;
-      padding: 0;
-      position: relative;
-      top: auto;
-      float: none;
-      border: none;
-
-      li a {
-        color: $gray-600;
+      .nav-link {
+        color: $white;
         font-style: normal;
-        font-weight: 600;
+        font-weight: bold;
         margin-left: 10px;
-        padding: 7px 20px;
+        padding: 1.7rem 1rem;
+        position: relative;
 
-        &:active {
-          color: $white;
+        &:before {
+          background-color: $white;
+          border-radius: 50%;
+          content: '';
+          height: 15px;
+          left: -25px;
+          position: absolute;
+          top: calc(50% - 7px);
+          transition: transform 0.3s;
+          width: 15px;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+
+          &:before {
+            animation: bounce 1s 1;
+            transform: translateX(7px);
+          }
+        }
+
+        &.dropdown-toggle:after {
+          display: none;
+        }
+      }
+
+      &.dropdown {
+
+        &.show {
+          .fa-chevron-down {
+            transform: rotate(180deg);
+          }
         }
       }
     }
 
-    .fa-chevron-right {
+    .dropdown-menu {
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: auto;
+
+      li a.dropdown-item {
+        color: $white;
+        padding: 1.3rem 1rem 1.3rem 2.8rem;
+        position: relative;
+
+        &:before {
+          border-radius: 50%;
+          background-color: $white;
+          content: '';
+          height: 15px;
+          left: -16px;
+          position: absolute;
+          top: calc(50% - 7px);
+          transition: transform 0.3s;
+          width: 15px;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+
+          &:before {
+            animation: bounce 1s 1;
+            transform: translateX(7px);
+          }
+        }
+      }
+    }
+
+    .fa-chevron-down {
       margin-top: -8px;
       position: absolute;
       right: 15px;
       top: 50%;
-      transform-origin: 4px 50%;
       transition: 300ms;
     }
 
@@ -201,34 +277,47 @@
       }
     }
 
-    .active {
+    .toggle-menu-visibility {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: $sidebar-width-open;
 
-      & > a,
-      & > li,
-      & > .dropdown-toggle:focus,
-      & > .dropdown-toggle:hover {
-        background-color: transparent;
-        border-left: 10px theme-color('primary') solid;
-      }
+      .nav-item {
+        background-color: $white;
+        color: $text-muted;
 
-      .menu-item {
-        color: $gray-500;
-
-        &:hover,
-        &:focus {
-          color: $gray-500;
+        .nav-link {
+          color: $text-muted;
+          cursor: pointer;
         }
       }
 
-      .fa-chevron-right {
-        transform: rotate(90deg);
-        transition: 300ms;
+      i {
+        transition: transform 0.3s;
       }
     }
   }
 }
 
 @include media-breakpoint-up(sm){
+
+  .nav-link {
+    height: 79px;
+  }
+
+  .navbar-brand img {
+    max-height: 52px;
+  }
+
+  #content-wrapper {
+    margin-top: 0;
+  }
+
+  .navbar-brand {
+    margin-left: 0;
+  }
+
   .logo {
     background-size: 80% auto;
   }
@@ -238,19 +327,18 @@
   }
 
   .main-menu {
-    background-color: $gray-300;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    background-color: $primary;
     height: 100%;
     left: 0;
     overflow-x: auto;
     position: fixed;
-    width: 235px;
+    width: $sidebar-width-open;
     z-index: 950;
     -ms-overflow-style: none;
 
     .navbar-header {
       float: left;
-      width: 235px;
+      width: $sidebar-width-open;
     }
 
     ul,
@@ -267,15 +355,35 @@
     }
 
     .navbar-collapse {
+      background-color: $primary;
       padding-left: 0;
       padding-right: 0;
+      padding-bottom: 78px;
+    }
+  }
 
-      .dropdown-menu {
+  .sidebar-collapsed {
 
-        li a {
-          padding: 7px 20px;
-        }
+    &.main-wrapper,
+    .main-header {
+      padding-left: $sidebar-width-closed;
+    }
+
+    .main-menu {
+      width: $sidebar-width-closed;
+    }
+
+    .navbar-collapse .toggle-menu-visibility  {
+      width: $sidebar-width-closed;
+
+      i {
+        transform: rotate(180deg);
       }
+    }
+
+    .nav-link-text,
+    .fa-chevron-down {
+      display: none;
     }
   }
 }

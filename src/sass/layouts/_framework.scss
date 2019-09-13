@@ -5,6 +5,10 @@
     float: none;
     width: auto;
   }
+
+  h2 {
+    margin-bottom: 0;
+  }
 }
 
 .header-title-bar {
@@ -61,7 +65,7 @@
 @include media-breakpoint-up(sm) {
 
   #main {
-    padding-top: 75px;
+    padding-top: 67px;
   }
 
   .header-title-bar {

@@ -24,8 +24,15 @@
   width: 100%;
   z-index: 1;
 
+  .user {
+    border-bottom: 2px solid $primary;
 
-  .fa-chevron-right:before {
+    .btn {
+      padding: 1.7rem 1rem;
+    }
+  }
+
+  .fa-chevron-down:before {
     font-size: $font-size-sm;
     padding: 0 0 2px 0;
     transform: rotate(0deg);
@@ -38,13 +45,12 @@
       color: $white;
     }
 
-    .fa-chevron-right:before {
+    .fa-chevron-down:before {
       transform: rotate(90deg);
     }
   }
 
   .btn-group {
-    border-right: 1px $gray-500 solid;
     z-index: 700;
 
     &.open .dropdown-toggle {
@@ -105,14 +111,14 @@
 @include media-breakpoint-up(sm) {
 
   .main-wrapper {
-    padding-left: 235px;
+    padding-left: $sidebar-width-open;
     width: 100%;
   }
 
   .main-header {
     background-color: $white;
     left: 0;
-    padding-left: 235px;
+    padding-left: $sidebar-width-open;
     position: fixed;
     width: 100%;
     z-index: 900;
@@ -130,12 +136,16 @@
     }
   }
 
-  .sub-nav {
-    border-bottom: 5px theme-color('primary') solid;
-    border-radius: 0;
-  }
-
   .user-nav {
+
+    .user {
+      border-bottom: none;
+
+      .btn {
+        padding: $btn-padding-y $btn-padding-x;
+      }
+    }
+
     .btn-group {
       border-left: 1px $gray-500 solid;
       border-right: 0;
@@ -161,7 +171,7 @@
 }
 
 @include media-breakpoint-up(md) {
-  .user-nav .btn-group .fa-chevron-right {
+  .user-nav .btn-group .fa-chevron-down {
     margin: 5px 0;
     padding: 0 0 0 10px;
   }

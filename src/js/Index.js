@@ -9,6 +9,7 @@ import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
 import { SetHeight } from './Framework/SetHeight'
+import { SidebarCollapse } from 'frameworkstylepackage/src/js/Framework/SidebarCollapse'
 import { Searchbar } from './Framework/Searchbar'
 import { Select } from './Framework/Select'
 import { Slider } from './Framework/Slider'
@@ -31,6 +32,7 @@ export class Framework {
     this.navbar = new Navbar()
     this.scrolling = new Scrolling()
     this.setHeight = new SetHeight()
+    this.sidebarCollapse = new SidebarCollapse()
     this.searchBar = new Searchbar()
     this.table = new Table()
     this.tabs = new Tabs()
