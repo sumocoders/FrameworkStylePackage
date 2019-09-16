@@ -1,6 +1,6 @@
 .breadcrumb {
   background: none;
-  font-weight: 600;
+  color: $text-muted;
   margin: 0;
   padding: 0;
   white-space: nowrap;
@@ -9,6 +9,29 @@
   .breadcrumb-item {
     float: none;
     display: inline-block;
+
+    a {
+      color: $text-muted;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.back {
+      color: $primary;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.first:before {
+      content: '|';
+    }
   }
 
   > li + li:before {

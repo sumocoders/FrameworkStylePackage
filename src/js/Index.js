@@ -22,6 +22,7 @@ import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
+import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
 
 export class Framework {
   constructor () {
@@ -36,6 +37,7 @@ export class Framework {
     this.searchBar = new Searchbar()
     this.table = new Table()
     this.tabs = new Tabs()
+    this.goBack = new GoBack()
 
     Framework.initializeSliders()
     Framework.initializeSortables()
