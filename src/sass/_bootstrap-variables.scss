@@ -4,6 +4,9 @@
 $sidebar-width-open:    235px;
 $sidebar-width-closed:  65px;
 
+// Topbar
+$topbar-height-sm:      58px;
+$topbar-height-md:      66px;
 
 // Variables
 //
@@ -290,16 +293,16 @@ $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-bolder:          900 !default;
 
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
+$h1-font-size:                $font-size-base * 1.875 !default; //30px
+$h2-font-size:                $font-size-base * 1.5 !default; //24px
+$h3-font-size:                $font-size-base * 1.25 !default; //20px
+$h4-font-size:                $font-size-base * 1.125 !default; //18px
+$h5-font-size:                $font-size-base !default; //16px
 $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;

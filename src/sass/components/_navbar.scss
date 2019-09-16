@@ -316,7 +316,7 @@
   }
 
   .navbar-brand img {
-    max-height: 52px;
+    max-height: calc(#{$topbar-height-sm} - 10px);
   }
 
   #content-wrapper {
@@ -397,10 +397,16 @@
       }
     }
 
-
     .nav-link-text,
     .navbar-collapse .fa-chevron-down {
       display: none;
     }
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  .navbar-brand img {
+    max-height: calc(#{$topbar-height-md} - 10px);
   }
 }
