@@ -119,7 +119,10 @@
 }
 
 label {
-  font-weight: $font-weight-bold;
+
+  &:not(.custom-control-label) {
+    font-weight: $font-weight-bold;
+  }
 
   abbr[title] {
     border: 0;
