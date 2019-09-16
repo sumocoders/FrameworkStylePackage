@@ -1,0 +1,78 @@
+.card {
+  margin-bottom: 30px;
+
+  &.card-dashboard {
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      box-shadow: $box-shadow;
+    }
+
+    &:focus-within {
+      box-shadow: $box-shadow;
+
+      a:focus {
+        text-decoration: none;
+      }
+    }
+
+    i {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: $font-size-base;
+    }
+
+    a {
+      color: $body-color;
+
+      &:after {
+        content:  '';
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  .card {
+
+    &.card-dashboard {
+
+      h2 {
+        font-size: $font-size-base * 1.2;
+      }
+
+      i {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .card {
+
+    &.card-dashboard .card-body {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
