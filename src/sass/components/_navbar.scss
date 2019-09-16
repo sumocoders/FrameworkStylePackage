@@ -159,6 +159,10 @@
       color: $white;
       position: relative;
 
+      &.current {
+        background-color: darken($primary, 10%);
+      }
+
       &.current .nav-link,
       &.dropdown.show .nav-link {
 
@@ -176,16 +180,16 @@
         color: $white;
         font-style: normal;
         font-weight: bold;
-        margin-left: 10px;
-        padding: 1.7rem 1rem;
+        padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
+        transition: background-color 0.25s;
 
         &:before {
           background-color: $white;
           border-radius: 50%;
           content: '';
           height: 15px;
-          left: -25px;
+          left: -16px;
           position: absolute;
           top: calc(50% - 7px);
           transition: transform 0.3s;
@@ -194,7 +198,7 @@
 
         &:hover,
         &:focus {
-          background-color: transparent;
+          background-color: darken($primary, 5%);
 
           &:before {
             animation: bounce 1s 1;
@@ -271,7 +275,7 @@
 
         .current .dropdown-item,
         li a:hover {
-          background-color: theme-color('primary');
+          background-color: $primary;
           color: $white;
         }
       }
@@ -383,7 +387,7 @@
         }
 
         .dropdown-menu li a.dropdown-item {
-          padding-left: calc(1rem + 10px);
+          padding-left: 1.6rem;
         }
       }
     }
