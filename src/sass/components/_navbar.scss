@@ -371,15 +371,23 @@
 
     .main-menu {
       width: $sidebar-width-closed;
-    }
 
-    .navbar-collapse .toggle-menu-visibility  {
-      width: $sidebar-width-closed;
+      .navbar-collapse {
 
-      i {
-        transform: rotate(180deg);
+        .toggle-menu-visibility  {
+          width: $sidebar-width-closed;
+
+          i {
+            transform: rotate(180deg);
+          }
+        }
+
+        .dropdown-menu li a.dropdown-item {
+          padding-left: calc(1rem + 10px);
+        }
       }
     }
+
 
     .nav-link-text,
     .navbar-collapse .fa-chevron-down {
