@@ -137,6 +137,7 @@
   }
 
   .user-nav {
+    min-height: $topbar-height-sm;
 
     .user {
       border-bottom: none;
@@ -171,8 +172,13 @@
 }
 
 @include media-breakpoint-up(md) {
-  .user-nav .btn-group .fa-chevron-down {
-    margin: 5px 0;
-    padding: 0 0 0 10px;
+  
+  .user-nav {
+    min-height: $topbar-height-md;
+
+    .btn-group .fa-chevron-down {
+      margin: 5px 0;
+      padding: 0 0 0 10px;
+    }
   }
 }
