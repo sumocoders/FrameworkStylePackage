@@ -294,6 +294,11 @@
         .nav-link {
           color: $text-muted;
           cursor: pointer;
+
+          &:hover,
+          &:focus {
+            background-color: $light;
+          }
         }
       }
 
