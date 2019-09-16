@@ -1,18 +1,33 @@
-.alert {
-  .alert-link {
-    color: $white;
-    font-weight: bold;
-    text-decoration: underline;
-    transition: .3s;
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    background-color: transparent;
+    border: none;
+    color: $value;
+    position: relative;
+    padding: 0 0 0 2.5rem;
 
-    &:hover,
-    &:focus {
-      color: $gray-900;
+    &:before {
+      content: "\f071";
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      height: 100%;
+      left: 0.5rem;
+      position: absolute;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: $value;
     }
   }
 }
 
-.alert a {
-  color: $white;
-  text-decoration: underline;
+.alert {
+  /* other icons for other alerts */
+}
+
+.alert .error-list-item {
+  margin-top: map-get($spacers, 1);
+  margin-bottom: map-get($spacers, 1);
 }
