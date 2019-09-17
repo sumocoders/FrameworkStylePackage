@@ -23,6 +23,7 @@ import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
 import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
+import { AlertAutoClose } from 'frameworkstylepackage/src/js/Framework/AlertAutoClose'
 
 export class Framework {
   constructor () {
@@ -38,6 +39,7 @@ export class Framework {
     this.table = new Table()
     this.tabs = new Tabs()
     this.goBack = new GoBack()
+    this.alertAutoClose = new AlertAutoClose()
 
     Framework.initializeSliders()
     Framework.initializeSortables()

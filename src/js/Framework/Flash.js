@@ -6,7 +6,7 @@ export class Flash {
     let alertId = Date.now()
 
     $('.main-header').append(
-      `<div class="alert alert-${type} alert-dismissible notification" role="status" data-alert-id="${alertId}">
+      `<div class="alert alert-${type} alert-dismissible notification fade show" role="status" data-alert-id="${alertId}">
         <a class="close" data-dismiss="alert" title="${locale.lbl('core.interface.close')}">
           <i class="fa fa-close"></i>
           <span class="hide">${locale.lbl('core.interface.close')}</span>
