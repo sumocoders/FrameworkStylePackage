@@ -120,7 +120,7 @@
 
 label {
 
-  &:not(.custom-control-label) {
+  &:not(.custom-control-label):not(.form-check-label) {
     font-weight: $font-weight-bold;
   }
 
