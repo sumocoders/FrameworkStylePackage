@@ -1,8 +1,10 @@
-// Boostrap import
+// Bootstrap import
 import 'bootstrap/dist/js/bootstrap'
 
 import { Ajax } from './Framework/Ajax'
+import { AlertAutoClose } from 'frameworkstylepackage/src/js/Framework/AlertAutoClose'
 import { Form } from './Framework/Form'
+import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
 import { Link } from './Framework/Link'
 import { LoadingBar } from './Framework/LoadingBar'
 import { Navbar } from './Framework/Navbar'
@@ -22,8 +24,6 @@ import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
-import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
-import { AlertAutoClose } from 'frameworkstylepackage/src/js/Framework/AlertAutoClose'
 
 export class Framework {
   constructor () {
