@@ -146,6 +146,23 @@
       .btn {
         padding: $btn-padding-y $btn-padding-x;
       }
+
+      .dropdown-menu {
+        margin-top: 20px;
+
+        &:before {
+          border-color: transparent transparent $gray-700 transparent;
+          border-style: solid;
+          border-width: 10px;
+          content: '';
+          height: 0;
+          left: 50%;
+          position: absolute;
+          top: -20px;
+          transform: translateX(-50%);
+          width: 0;
+        }
+      }
     }
 
     .btn-group {
