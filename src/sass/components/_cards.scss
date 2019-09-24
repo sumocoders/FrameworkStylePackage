@@ -1,6 +1,27 @@
 .card {
   margin-bottom: 30px;
 
+  .card-header {
+    padding: $card-spacer-x;
+    background-color: $primary;
+    @if (lightness($primary) < 50) {
+      color: $white; // Darker background, return light color
+    }
+
+    .card-title {
+      margin-bottom: 0;
+
+      h1:last-child,
+      h2:last-child,
+      h3:last-child,
+      h4:last-child,
+      h5:last-child,
+      h6:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   &.card-dashboard {
     cursor: pointer;
     position: relative;
