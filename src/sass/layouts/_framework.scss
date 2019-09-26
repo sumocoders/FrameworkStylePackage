@@ -93,7 +93,7 @@
 @include media-breakpoint-up(md) {
 
   #main {
-    padding-top: $topbar-height-sm;
+    padding-top: $topbar-height-md;
   }
 
   .header-title-bar {
@@ -107,9 +107,5 @@
 
   .action-buttons {
     float: right;
-  }/*
-
-  #main {
-    padding-top: $topbar-height-md;
-  }*/
+  }
 }
