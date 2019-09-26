@@ -20,6 +20,10 @@
     }
   }
 
+  .card-footer {
+    background-color: $gray-200;
+  }
+
   &.card-dashboard {
     cursor: pointer;
     position: relative;
