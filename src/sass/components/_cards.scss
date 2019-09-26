@@ -4,9 +4,7 @@
   .card-header {
     padding: $card-spacer-x;
     background-color: $primary;
-    @if (lightness($primary) < 50) {
-      color: $white; // Darker background, return light color
-    }
+    color: color-yiq($primary);
 
     .card-title {
       margin-bottom: 0;

@@ -20,11 +20,12 @@
     }
 
     &.back {
-      color: $primary;
+      color: $link-color;
       cursor: pointer;
       text-decoration: underline;
 
       &:hover {
+        color: $link-hover-color;
         text-decoration: none;
       }
     }

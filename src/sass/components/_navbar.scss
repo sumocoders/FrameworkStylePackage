@@ -182,7 +182,7 @@
       }
 
       .nav-link {
-        color: $white;
+        color: color-yiq($primary);
         font-style: normal;
         font-weight: bold;
         padding: 1.7rem 1rem 1.7rem 1.6rem;
@@ -190,7 +190,7 @@
         transition: background-color 0.25s;
 
         &:before {
-          background-color: $white;
+          background-color: color-yiq($primary);
           border-radius: 50%;
           content: '';
           height: 15px;
