@@ -314,7 +314,7 @@
   }
 }
 
-@include media-breakpoint-up(sm){
+@include media-breakpoint-up(md){
 
   .nav-link {
     height: 79px;
@@ -409,7 +409,7 @@
   }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
 
   .navbar-brand img {
     max-height: calc(#{$topbar-height-md} - 10px);
