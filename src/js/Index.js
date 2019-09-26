@@ -24,6 +24,7 @@ import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
+import { ToTop } from 'frameworkstylepackage/src/js/Framework/ToTop'
 
 export class Framework {
   constructor () {
@@ -40,6 +41,7 @@ export class Framework {
     this.tabs = new Tabs()
     this.goBack = new GoBack()
     this.alertAutoClose = new AlertAutoClose()
+    this.toTop = new ToTop()
 
     Framework.initializeSliders()
     Framework.initializeSortables()
