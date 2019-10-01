@@ -29,7 +29,9 @@ export default class FormCollection {
     })
   }
 
-  addItem () {
+  addItem (event) {
+    event.preventDefault();
+
     $(document).trigger('add.collection.item');
 
     const prototype = this._element.data('prototype');
@@ -50,6 +52,8 @@ export default class FormCollection {
   }
 
   removeItem (event) {
+    event.preventDefault();
+
     $(document).trigger('remove.collection.item');
 
     $(event.currentTarget)
