@@ -32,6 +32,8 @@ export default class FormCollection {
   addItem (event) {
     event.preventDefault();
 
+    $(document).trigger('add.collection.item');
+
     const prototype = this._element.data('prototype');
     // get the new index
     let index = this._element.data('index');
@@ -45,10 +47,14 @@ export default class FormCollection {
 
     // Show add button
     this._element.find('[data-role="collection-add-button"]:last').removeAttr('hidden');
+
+    $(document).trigger('added.collection.item');
   }
 
   removeItem (event) {
     event.preventDefault();
+
+    $(document).trigger('remove.collection.item');
 
     $(event.currentTarget)
       .closest('[data-role="collection-item"]')
@@ -59,5 +65,7 @@ export default class FormCollection {
     if (this._element.find('[data-role="collection-item"]').length === 0) {
       this._element.find('[data-role="collection-add-button"]:last').attr('hidden', true);
     }
+
+    $(document).trigger('removed.collection.item');
   }
 }
