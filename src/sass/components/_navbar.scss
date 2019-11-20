@@ -276,9 +276,9 @@
     }
 
     .toggle-menu-visibility {
-      position: fixed;
       bottom: 0;
       left: 0;
+      position: fixed;
       width: $sidebar-width-open;
 
       .nav-item {
@@ -359,9 +359,9 @@
 
     .navbar-collapse {
       background-color: $primary;
+      padding-bottom: 78px;
       padding-left: 0;
       padding-right: 0;
-      padding-bottom: 78px;
     }
   }
 
