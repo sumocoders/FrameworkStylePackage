@@ -20,6 +20,12 @@ export default class FormCollection {
       this._element.find('[data-role="collection-add-button"]').removeAttr('hidden');
     }
 
+    // set index if not defined
+    let index = this._element.data('index');
+    if (index === undefined || index === null) {
+      this._element.data('index', this._element.find('[data-role="collection-item"]').length)
+    }
+
     Sortable.create(this._element.find('ul')[0], {
       handler: '[data-role="collection-item-change-order"]',
       animation: 150,
