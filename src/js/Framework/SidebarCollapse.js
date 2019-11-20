@@ -4,6 +4,11 @@ const cookies = new Cookies()
 export class SidebarCollapse {
   constructor () {
     this.sidebarCookie()
+    this.initSidebarCollapse()
+    /*$(document).on('click', '[data-sidebar="toggler"]', $.proxy(this.sidebarCollapse, this))*/
+  }
+
+  initSidebarCollapse () {
     $(document).on('click', '[data-sidebar="toggler"]', $.proxy(this.sidebarCollapse, this))
   }
 
