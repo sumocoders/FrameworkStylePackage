@@ -197,8 +197,7 @@
           width: 15px;
         }
 
-        &:hover,
-        &:focus {
+        @include hover-focus {
           background-color: darken($primary, 5%);
 
           &:before {
@@ -246,8 +245,7 @@
           width: 15px;
         }
 
-        &:hover,
-        &:focus {
+        @include hover-focus {
           background-color: transparent;
 
           &:before {
@@ -296,8 +294,7 @@
           color: $text-muted;
           cursor: pointer;
 
-          &:hover,
-          &:focus {
+          @include hover-focus {
             background-color: $light;
           }
         }
