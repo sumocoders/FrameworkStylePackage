@@ -12,13 +12,13 @@
 
 .navbar-brand {
   background-color: $white;
+  margin-left: 15px;
   margin-right: 0;
   padding: 0;
-  margin-left: 15px;
 
   img {
-    max-height: 80px;
     margin: 5px auto;
+    max-height: 80px;
   }
 }
 
@@ -64,11 +64,11 @@
       background-color: $dark;
       content: '';
       height: 3px;
+      left: 0;
       position: absolute;
       transition-property: transform, top, bottom;
       transition-duration: 0.2s;
       width: 20px;
-      left: 0;
     }
 
     &:before {
@@ -86,13 +86,13 @@
       background-color: transparent;
 
       &:before {
-        transform: rotate(45deg);
         top: 0;
+        transform: rotate(45deg);
       }
 
       &:after {
-        transform: rotate(-45deg);
         bottom: 0;
+        transform: rotate(-45deg);
       }
     }
   }
@@ -121,9 +121,9 @@
 }
 
 .main-menu {
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   z-index: 9999;
 
