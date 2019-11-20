@@ -70,14 +70,3 @@
 .alert-dismissible .close {
   color: $gray-400;
 }
-
-.close {
-  color: $gray-400;
-  font-size: $font-size-base;
-  opacity: 1;
-  text-shadow: none;
-
-  &:hover {
-    color: $gray-600;
-  }
-}
