@@ -95,6 +95,10 @@
 
 @include media-breakpoint-up(md) {
 
+  #content-wrapper {
+    margin-top: 0;
+  }
+
   #main {
     padding-top: $topbar-height-md;
   }
