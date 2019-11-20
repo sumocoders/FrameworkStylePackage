@@ -5,7 +5,6 @@ export class SidebarCollapse {
   constructor () {
     this.sidebarCookie()
     this.initSidebarCollapse()
-    /*$(document).on('click', '[data-sidebar="toggler"]', $.proxy(this.sidebarCollapse, this))*/
   }
 
   initSidebarCollapse () {
@@ -22,7 +21,6 @@ export class SidebarCollapse {
   }
 
   sidebarCookie () {
-
     if ($(window).width() > 576) {
       // read cookie
       if (cookies.readCookie('sidebar_is_open') === 'true') {
