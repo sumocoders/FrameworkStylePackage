@@ -17,16 +17,16 @@
       &:hover {
         text-decoration: none;
       }
-    }
 
-    &.back {
-      color: $link-color;
-      cursor: pointer;
-      text-decoration: underline;
+      &.breadcrumb-item-back {
+        color: $link-color;
+        cursor: pointer;
+        text-decoration: underline;
 
-      &:hover {
-        color: $link-hover-color;
-        text-decoration: none;
+        &:hover {
+          color: $link-hover-color;
+          text-decoration: none;
+        }
       }
     }
 

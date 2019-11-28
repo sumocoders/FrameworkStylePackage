@@ -4,10 +4,11 @@ export class GoBack {
   }
 
   initGoBack () {
-    $('[data-button="back"]').on('click', this.goBack)
+    $('[data-button-previous="back"]').on('click', this.goBack)
   }
 
-  goBack () {
-    window.history.back();
+  goBack (e) {
+    e.preventDefault()
+    window.history.back()
   }
 }
