@@ -46,24 +46,6 @@
   z-index: 9999999;
 }
 
-.navbar-default {
-
-  .navbar-brand {
-    background-color: $gray-300;
-    font-style: normal;
-    font-weight: normal;
-
-    &:hover {
-      background-color: $gray-300;
-      color: $gray-700;
-    }
-  }
-
-  .navbar-header {
-    background-color: $gray-300;
-  }
-}
-
 .navbar-toggler {
   background-color: transparent;
   border: none;
@@ -131,18 +113,6 @@
     }
   }
 
-  .navbar-default {
-
-    .navbar-brand {
-      background-color: transparent;
-      color: $gray-300;
-    }
-
-    .navbar-header {
-      background-color: $white;
-    }
-  }
-
   .navbar-collapse {
 
     &.show {
@@ -179,7 +149,6 @@
 
       .nav-link {
         color: color-yiq($primary);
-        font-style: normal;
         font-weight: bold;
         padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
