@@ -1,4 +1,4 @@
-export class AlertAutoClose {
+export class Alert {
   constructor () {
     this.closeAlert()
   }

@@ -1,7 +1,7 @@
 import {Cookies} from './Cookies'
 const cookies = new Cookies()
 
-export class SidebarCollapse {
+export class Sidebar {
   constructor () {
     this.sidebarCookie()
     this.initSidebarCollapse()

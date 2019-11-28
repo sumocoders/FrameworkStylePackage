@@ -2,7 +2,7 @@
 import 'bootstrap/dist/js/bootstrap'
 
 import { Ajax } from './Framework/Ajax'
-import { AlertAutoClose } from 'frameworkstylepackage/src/js/Framework/AlertAutoClose'
+import { Alert } from 'frameworkstylepackage/src/js/Framework/Alert'
 import { Form } from './Framework/Form'
 import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
 import { Link } from './Framework/Link'
@@ -11,7 +11,7 @@ import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
 import { SetHeight } from './Framework/SetHeight'
-import { SidebarCollapse } from 'frameworkstylepackage/src/js/Framework/SidebarCollapse'
+import { Sidebar } from 'frameworkstylepackage/src/js/Framework/Sidebar'
 import { Searchbar } from './Framework/Searchbar'
 import { Select } from './Framework/Select'
 import { Slider } from './Framework/Slider'
@@ -35,12 +35,12 @@ export class Framework {
     this.navbar = new Navbar()
     this.scrolling = new Scrolling()
     this.setHeight = new SetHeight()
-    this.sidebarCollapse = new SidebarCollapse()
+    this.sidebar = new Sidebar()
     this.searchBar = new Searchbar()
     this.table = new Table()
     this.tabs = new Tabs()
     this.goBack = new GoBack()
-    this.alertAutoClose = new AlertAutoClose()
+    this.alert = new Alert()
     this.scrollEvent = new ScrollEvent()
 
     Framework.initializeSliders()
