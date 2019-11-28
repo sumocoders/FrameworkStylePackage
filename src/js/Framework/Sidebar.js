@@ -8,12 +8,12 @@ export class Sidebar {
   }
 
   initSidebarCollapse () {
-    $(document).on('click', '[data-sidebar="toggler"]', $.proxy(this.sidebarCollapse, this))
+    $(document).on('click', '[data-sidebar-toggler]', $.proxy(this.sidebarCollapse, this))
   }
 
   sidebarCollapse () {
-    $('[data-sidebar="wrapper"]').toggleClass('sidebar-collapsed')
-    if ($('[data-sidebar="wrapper"]').hasClass('sidebar-collapsed')) {
+    $('[data-sidebar-wrapper]').toggleClass('sidebar-collapsed')
+    if ($('[data-sidebar-wrapper]').hasClass('sidebar-collapsed')) {
       cookies.setCookie('sidebar_is_open', 'false')
     } else {
       cookies.setCookie('sidebar_is_open', 'true')
@@ -24,9 +24,9 @@ export class Sidebar {
     if ($(window).width() > 576) {
       // read cookie
       if (cookies.readCookie('sidebar_is_open') === 'true') {
-        $('[data-sidebar="wrapper"]').removeClass("sidebar-collapsed")
+        $('[data-sidebar-wrapper]').removeClass("sidebar-collapsed")
       } else {
-        $('[data-sidebar="wrapper"]').addClass("sidebar-collapsed")
+        $('[data-sidebar-wrapper]').addClass("sidebar-collapsed")
       }
     }
   }
