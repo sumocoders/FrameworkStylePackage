@@ -1,9 +1,9 @@
 export class GoBack {
   constructor () {
-    this.initGoBack()
+    this.initEventListeners()
   }
 
-  initGoBack () {
+  initEventListeners () {
     $('[data-button-previous="back"]').on('click', this.goBack)
   }
 
