@@ -13,6 +13,7 @@ export class Sidebar {
 
   sidebarCollapse () {
     $('[data-sidebar-wrapper]').toggleClass('sidebar-collapsed')
+    // set cookie
     if ($('[data-sidebar-wrapper]').hasClass('sidebar-collapsed')) {
       cookies.setCookie('sidebar_is_open', 'false')
     } else {
