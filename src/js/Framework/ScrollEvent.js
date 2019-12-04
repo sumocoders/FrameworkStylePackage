@@ -1,14 +1,14 @@
 import requestAnimationFrame from 'requestanimationframe'
-import {ToTop} from './ToTop'
+import {Scrolling} from './Scrolling'
 
 export class ScrollEvent {
   constructor () {
     this.ticking = false
 
-    const toTop = new ToTop()
+    const scrolling = new Scrolling()
 
     this.calculate = () => {
-      toTop.scrollToTop()
+      scrolling.scrollToTop()
 
       this.ticking = false
     }
