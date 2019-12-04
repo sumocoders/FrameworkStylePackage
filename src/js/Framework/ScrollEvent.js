@@ -5,7 +5,7 @@ export class ScrollEvent {
   constructor () {
     this.ticking = false
 
-    let toTop = new ToTop()
+    const toTop = new ToTop()
 
     this.calculate = () => {
       toTop.scrollToTop()
