@@ -1,5 +1,5 @@
 import requestAnimationFrame from 'requestanimationframe'
-import { ToTop } from './ToTop'
+import {ToTop} from './ToTop'
 
 export class ScrollEvent {
   constructor () {
