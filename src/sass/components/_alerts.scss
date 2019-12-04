@@ -20,7 +20,7 @@
   background-color: transparent;
   border: none;
   position: relative;
-  padding: 0 0 0 2.5rem;
+  padding-left: $spacer * 2.5;
 
   &:before {
     content: '\f071';
