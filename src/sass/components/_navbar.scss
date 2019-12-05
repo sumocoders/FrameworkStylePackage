@@ -283,6 +283,8 @@
 
     img {
       max-height: calc(#{$topbar-height-md} - 10px);
+      max-width: 100%;
+      padding: 0 5px;
     }
   }
 
