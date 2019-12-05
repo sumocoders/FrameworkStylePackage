@@ -1,16 +1,13 @@
-import {Locale} from './Locale'
-const locale = new Locale()
-
 export class Flash {
   add (message, type, time) {
     let alertId = Date.now()
 
-    $('.main-header').append(
+    $('.notifications-wrapper').prepend(
       `<div class="alert alert-${type} alert-dismissible notification fade show" role="status" data-alert-id="${alertId}">
-        <a class="close" data-dismiss="alert" title="${locale.lbl('core.interface.close')}">
-          <i class="fa fa-close"></i>
-          <span class="hide">${locale.lbl('core.interface.close')}</span>
-        </a> ${message}
+         ${message}
+         <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>`
     )
 
@@ -23,6 +20,6 @@ export class Flash {
   }
 
   remove (alertId) {
-    $('[data-alert-id=' + alertId + ']').remove()
+    $('[data-alert-id=' + alertId + ']').alert('close')
   }
 }

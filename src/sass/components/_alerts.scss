@@ -51,15 +51,18 @@
     color: $body-color;
     max-width: 450px;
     padding: 20px 60px;
-    position: fixed;
-    right: $grid-gutter-width;
-    top: $grid-gutter-width;
-    z-index: 999;
 
     &:before {
       left: 1.5rem;
     }
   }
+}
+
+.notifications-wrapper {
+  position: fixed;
+  right: $grid-gutter-width;
+  top: $grid-gutter-width;
+  z-index: 999;
 }
 
 .alert .error-list-item {
