@@ -152,6 +152,10 @@ select {
   -webkit-appearance: none;
 }
 
+.select2 .select2-selection {
+  padding-left: $input-padding-x;
+}
+
 @include media-breakpoint-up(md) {
 
   .popover {
