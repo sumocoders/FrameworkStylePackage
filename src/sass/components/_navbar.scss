@@ -186,7 +186,7 @@
     }
 
     .dropdown-menu {
-      background-color: transparent;
+      background-color: darken($primary, 8%);
       margin: 0;
       padding: 0;
       position: relative;
@@ -212,7 +212,7 @@
           }
 
           @include hover-focus {
-            background-color: transparent;
+            background-color: darken($primary, 10%);
 
             &:before {
               animation: bounce 1s 1;
