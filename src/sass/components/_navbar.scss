@@ -254,8 +254,8 @@
 
         .current .dropdown-item,
         li a:hover {
-          background-color: $primary;
-          color: color-yiq($primary);;
+          background-color: darken($primary, 10%);
+          color: color-yiq($primary);
         }
       }
     }
