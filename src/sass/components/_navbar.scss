@@ -192,29 +192,45 @@
       position: relative;
       top: auto;
 
-      li a.dropdown-item {
-        color: $white;
-        padding: 1.3rem 1rem 1.3rem 2.8rem;
-        position: relative;
+      li {
 
-        &:before {
-          border-radius: 50%;
-          background-color: $white;
-          content: '';
-          height: 15px;
-          left: -16px;
-          position: absolute;
-          top: calc(50% - 7px);
-          transition: transform 0.3s;
-          width: 15px;
-        }
-
-        @include hover-focus {
-          background-color: transparent;
+        a.dropdown-item {
+          color: color-yiq($primary);
+          padding: 1.3rem 1rem 1.3rem 2.8rem;
+          position: relative;
 
           &:before {
-            animation: bounce 1s 1;
+            border-radius: 50%;
+            background-color: color-yiq($primary);
+            content: '';
+            height: 15px;
+            left: -16px;
+            position: absolute;
+            top: calc(50% - 7px);
+            transition: transform 0.3s;
+            width: 15px;
+          }
+
+          @include hover-focus {
+            background-color: transparent;
+
+            &:before {
+              animation: bounce 1s 1;
+              transform: translateX(7px);
+            }
+          }
+        }
+
+        &.current a.dropdown-item {
+          background-color: darken($primary, 10%);
+
+          &:before {
             transform: translateX(7px);
+          }
+
+          &:hover:before,
+          &:focus:before {
+            animation: none;
           }
         }
       }
@@ -239,7 +255,7 @@
         .current .dropdown-item,
         li a:hover {
           background-color: $primary;
-          color: $white;
+          color: color-yiq($primary);;
         }
       }
     }
@@ -249,6 +265,7 @@
       left: 0;
       position: fixed;
       width: $sidebar-width-open;
+      z-index: 1003;
 
       .nav-item {
         background-color: $white;
