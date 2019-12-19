@@ -180,7 +180,7 @@
         }
       }
 
-      &.dropdown.show .fa-chevron-down {
+      &.dropdown.show:not(.open) .fa-chevron-down {
         transform: rotate(180deg);
       }
     }
