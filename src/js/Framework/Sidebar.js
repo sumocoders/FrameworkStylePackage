@@ -24,10 +24,10 @@ export class Sidebar {
   sidebarCookie () {
     if ($(window).width() > 576) {
       // read cookie
-      if (cookies.readCookie('sidebar_is_open') === 'true') {
-        $('[data-sidebar-wrapper]').removeClass("sidebar-collapsed")
-      } else {
+      if (cookies.readCookie('sidebar_is_open') === 'false') {
         $('[data-sidebar-wrapper]').addClass("sidebar-collapsed")
+      } else {
+        $('[data-sidebar-wrapper]').removeClass("sidebar-collapsed")
       }
     }
   }
