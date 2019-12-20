@@ -30,9 +30,9 @@
 
 .navbar-brand {
   background-color: $white;
-  margin-left: 15px;
   margin-right: 0;
   padding: 0;
+  width: 50%;
 
   img {
     margin: 5px auto;
@@ -298,6 +298,7 @@
   .navbar-brand {
     height: $topbar-height-md;
     margin-left: 0;
+    width: 100%;
 
     img {
       max-height: calc(#{$topbar-height-md} - 10px);
