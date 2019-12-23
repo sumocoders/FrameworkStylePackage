@@ -103,10 +103,28 @@
 }
 
 .select2 {
+  display: block;
   width: 100%;
 
   &.select2-container .select2-selection--single .select2-selection__rendered {
     padding: 0;
+  }
+
+  .select2-selection,
+  .select2-selection__rendered {
+    height: $input-height;
+  }
+
+  &.select2-container--default .select2-selection--single {
+    border-radius: $input-border-radius;
+
+    .select2-selection__arrow {
+      height: $input-height;
+    }
+
+    .select2-selection__rendered {
+      line-height: $input-height;
+    }
   }
 }
 
