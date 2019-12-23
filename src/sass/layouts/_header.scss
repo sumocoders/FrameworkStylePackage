@@ -111,6 +111,10 @@
   }
 }
 
+.main-header {
+  border-bottom: 1px $gray-500 solid;
+}
+
 @include media-breakpoint-up(md) {
 
   .main-wrapper {
@@ -120,7 +124,7 @@
 
   .main-header {
     background-color: $white;
-    border-bottom: 1px solid $gray-500;
+    border-bottom: 1px $gray-500 solid;
     left: 0;
     padding-left: $sidebar-width-open;
     position: fixed;

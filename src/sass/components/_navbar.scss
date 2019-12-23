@@ -32,11 +32,10 @@
   background-color: $white;
   margin-right: 0;
   padding: 0;
-  width: 50%;
 
   img {
-    margin: 5px auto;
-    max-height: 50px;
+    margin: 5px 0 5px $spacer;
+    height: 50px;
   }
 }
 
@@ -107,6 +106,7 @@
 
   .navbar {
     align-items: stretch;
+    height: 60px;
 
     .navbar-header {
       padding: 5px 10px;
@@ -301,9 +301,12 @@
     width: 100%;
 
     img {
+      margin-left: auto;
+      margin-right: auto;
       max-height: calc(#{$topbar-height-md} - 10px);
       max-width: 100%;
       padding: 0 5px;
+      height: 56px;
     }
   }
 

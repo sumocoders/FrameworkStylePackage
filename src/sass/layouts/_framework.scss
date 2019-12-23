@@ -12,21 +12,21 @@
 }
 
 .header-title {
-  padding: 15px;
+  padding: ($spacer * 0.5) $spacer $spacer;
 
   .progress-bar {
     float: none;
     width: auto;
   }
 
-  h1 {
+  h1,
+  h2 {
     margin-bottom: 0;
   }
 }
 
 .header-title-bar {
   border-bottom: 1px $gray-500 solid;
-  border-top: 1px $gray-500 solid;
   overflow: hidden;
   padding: 20px 19px;
 
@@ -93,7 +93,20 @@
   pointer-events: all;
 }
 
+.action-buttons-mobile {
+  padding: 15px;
+}
+
+.collapse-actions-toggle {
+  color: $body-color;
+  padding: ($spacer * 0.3) $spacer;
+}
+
 @include media-breakpoint-up(md) {
+
+  .header-title {
+    padding: $spacer;
+  }
 
   #content-wrapper {
     margin-top: 0;
