@@ -178,3 +178,7 @@ select {
 select.is-invalid + .select2 .select2-selection {
   @extend .form-control.is-invalid
 }
+
+.label-optional {
+  color: $text-muted;
+}
