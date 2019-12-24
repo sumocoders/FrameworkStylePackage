@@ -6,6 +6,7 @@ export class Navbar {
   initNavbar () {
     $('#main-menu-inner .dropdown-toggle').on('click', $.proxy(this.toggleDrowdown, this))
     this.setClassesBasedOnSubNavigation()
+    $(document).on('click', $.proxy(this.closeNavbar, this))
   }
 
   toggleDrowdown (event) {
@@ -25,5 +26,13 @@ export class Navbar {
     }
 
     $('#toggleTabletNavbar, #navbar, #content, .alert').addClass('subnav')
+  }
+
+  closeNavbar (e) {
+    const navWrapper = $('[data-role="navbar-wrapper"]')
+    console.log(navWrapper)
+    if (!navWrapper.is(e.target) && navWrapper.has(e.target).length === 0) {
+      $('[data-role="navbar-collapse"]').collapse('hide')
+    }
   }
 }
