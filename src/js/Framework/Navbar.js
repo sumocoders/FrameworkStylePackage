@@ -30,7 +30,6 @@ export class Navbar {
 
   closeNavbar (e) {
     const navWrapper = $('[data-role="navbar-wrapper"]')
-    console.log(navWrapper)
     if (!navWrapper.is(e.target) && navWrapper.has(e.target).length === 0) {
       $('[data-role="navbar-collapse"]').collapse('hide')
     }
