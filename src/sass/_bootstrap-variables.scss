@@ -5,17 +5,17 @@
 
 // Color system
 
-$white:    #fff !default;
-$gray-100: #f2f2f2 !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #C3CDCE !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #545B68 !default;
-$gray-800: #343a40 !default;
-$gray-900: #000F2D !default;
-$black:    #000 !default;
+$white:     #ffffff !default;
+$gray-100:  #f7f7f7 !default;
+$gray-200:  #e6e6e6 !default;
+$gray-300:  #cdcdcd !default;
+$gray-400:  #9e9e9e !default;
+$gray-500:  #858585 !default;
+$gray-600:  #636363 !default;
+$gray-700:  #3e3e3e !default;
+$gray-800:  #333333 !default;
+$gray-900:  #191919 !default;
+$black:     #000000 !default;
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
