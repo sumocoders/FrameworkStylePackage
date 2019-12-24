@@ -33,17 +33,18 @@
     }
   }
 
-  .fa-chevron-down:before {
+  .fa-chevron-down {
     font-size: $font-size-sm;
     padding: 0 0 2px 0;
     transform: rotate(0deg);
-    transition: transform .4s;
+    transition-property: transform, padding;
+    transition-duration: 0.4s;
   }
 
   .show {
 
-    .fa-chevron-down:before {
-      transform: rotate(90deg);
+    .fa-chevron-down {
+      transform: rotate(180deg);
     }
   }
 
@@ -198,9 +199,19 @@
   .user-nav {
     min-height: $topbar-height-md;
 
-    .btn-group .fa-chevron-down {
-      margin: 5px 0;
-      padding: 0 0 0 10px;
+    .btn-group {
+
+      .fa-chevron-down {
+        margin: 5px 0;
+        padding: 0 0 0 10px;
+      }
+
+      &.show {
+
+        .fa-chevron-down {
+          padding: 0 10px 0 0;
+        }
+      }
     }
   }
 }
