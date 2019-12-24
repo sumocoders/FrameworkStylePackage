@@ -29,7 +29,7 @@
 }
 
 .navbar-brand {
-  background-color: $white;
+  background-color: $logo-bg;
   margin-right: 0;
   padding: 0;
 
@@ -40,6 +40,7 @@
 }
 
 .navbar {
+  background-color: $logo-bg;
   border: 0;
   margin-bottom: 0;
   z-index: 1050;
@@ -51,7 +52,7 @@
   color: $dark;
 
   .navbar-toggler-icon {
-    background-color: $dark;
+    background-color: $navbar-toggler-color;
     height: 3px;
     margin: 10px 0;
     position: relative;
@@ -60,7 +61,7 @@
 
     &:before,
     &:after {
-      background-color: $dark;
+      background-color: $navbar-toggler-color;
       content: '';
       height: 3px;
       left: 0;
@@ -126,13 +127,13 @@
     }
 
     .nav-item {
-      background-color: $primary;
+      background-color: $menu-bg;
       color: $white;
       overflow: hidden;
       position: relative;
 
       &.current {
-        background-color: darken($primary, 10%);
+        background-color: darken($menu-bg, 10%);
       }
 
       &.current .nav-link,
@@ -149,14 +150,14 @@
       }
 
       .nav-link {
-        color: color-yiq($primary);
+        color: color-yiq($menu-bg);
         font-weight: bold;
         padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
         transition: background-color 0.25s;
 
         &:before {
-          background-color: color-yiq($primary);
+          background-color: color-yiq($menu-bg);
           border-radius: 50%;
           content: '';
           height: 15px;
@@ -168,7 +169,7 @@
         }
 
         @include hover-focus {
-          background-color: darken($primary, 5%);
+          background-color: darken($menu-bg, 5%);
 
           &:before {
             animation: bounce 1s 1;
@@ -187,7 +188,7 @@
     }
 
     .dropdown-menu {
-      background-color: darken($primary, 8%);
+      background-color: darken($menu-bg, 8%);
       margin: 0;
       padding: 0;
       position: relative;
@@ -196,13 +197,13 @@
       li {
 
         a.dropdown-item {
-          color: color-yiq($primary);
+          color: color-yiq($menu-bg);
           padding: 1.3rem 1rem 1.3rem 2.8rem;
           position: relative;
 
           &:before {
             border-radius: 50%;
-            background-color: color-yiq($primary);
+            background-color: color-yiq($menu-bg);
             content: '';
             height: 15px;
             left: -16px;
@@ -213,7 +214,7 @@
           }
 
           @include hover-focus {
-            background-color: darken($primary, 10%);
+            background-color: darken($menu-bg, 10%);
 
             &:before {
               animation: bounce 1s 1;
@@ -223,7 +224,7 @@
         }
 
         &.current a.dropdown-item {
-          background-color: darken($primary, 10%);
+          background-color: darken($menu-bg, 10%);
 
           &:before {
             transform: translateX(7px);
@@ -255,8 +256,8 @@
 
         .current .dropdown-item,
         li a:hover {
-          background-color: darken($primary, 10%);
-          color: color-yiq($primary);
+          background-color: darken($menu-bg, 10%);
+          color: color-yiq($menu-bg);
         }
       }
     }
@@ -269,7 +270,7 @@
       z-index: 1003;
 
       .nav-item {
-        background-color: $white;
+        background-color: $top-color;
         color: $text-muted;
 
         .nav-link {
@@ -277,7 +278,7 @@
           cursor: pointer;
 
           @include hover-focus {
-            background-color: $light;
+            background-color: darken($top-color, 10%);
           }
         }
       }
@@ -319,7 +320,7 @@
   }
 
   .main-menu {
-    background-color: $primary;
+    background-color: $menu-bg;
     height: 100%;
     left: 0;
     overflow-x: auto;
@@ -351,7 +352,7 @@
     }
 
     .navbar-collapse {
-      background-color: $primary;
+      background-color: $menu-bg;
       padding-bottom: 78px;
       padding-left: 0;
       padding-right: 0;

@@ -18,7 +18,7 @@
 }
 
 .user-nav {
-  background-color: $white;
+  background-color: $user-bg;
   min-height: 50px;
   padding: 0;
   position: relative;
@@ -56,13 +56,13 @@
     }
 
     .btn-default {
-      color: $gray-700;
+      color: color-yiq($user-bg);
       overflow: hidden;
       background: none;
 
       &:hover,
       &:focus {
-        background-color: $gray-200;
+        background-color: darken($user-bg, 10%);
       }
 
       &:after {
@@ -114,7 +114,7 @@
 }
 
 .main-header {
-  border-bottom: 1px $gray-500 solid;
+  border-bottom: 1px $border-color solid;
 }
 
 @include media-breakpoint-up(md) {
@@ -125,8 +125,8 @@
   }
 
   .main-header {
-    background-color: $white;
-    border-bottom: 1px $gray-500 solid;
+    background-color: $top-color;
+    border-bottom: 1px $border-color solid;
     left: 0;
     padding-left: $sidebar-width-open;
     position: fixed;
@@ -176,7 +176,7 @@
     }
 
     .btn-group {
-      border-left: 1px $gray-500 solid;
+      border-left: 1px $border-color solid;
       border-right: 0;
 
       span {

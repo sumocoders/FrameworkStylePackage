@@ -1,13 +1,3 @@
-// CUSTOM VARIABLES
-//
-// Sidebar
-$sidebar-width-open:    235px;
-$sidebar-width-closed:  65px;
-
-// Topbar
-$topbar-height-sm:      58px;
-$topbar-height-md:      66px;
-
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -369,8 +359,8 @@ $table-active-bg:             $table-hover-bg !default;
 $table-border-width:          $border-width !default;
 $table-border-color:          $border-color !default;
 
-$table-head-bg:               $gray-200 !default;
-$table-head-color:            $gray-700 !default;
+$table-head-bg:               $white !default;
+$table-head-color:            lighten($body-color, 5%) !default;
 
 $table-dark-color:            $white !default;
 $table-dark-bg:               $gray-800 !default;
@@ -481,7 +471,7 @@ $input-bg:                              $white !default;
 $input-disabled-bg:                     $gray-200 !default;
 
 $input-color:                           $gray-700 !default;
-$input-border-color:                    $gray-400 !default;
+$input-border-color:                    $border-color !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      inset 0 1px 1px rgba($black, .075) !default;
 
@@ -1133,3 +1123,21 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
+
+
+// CUSTOM VARIABLES
+//
+// Sidebar
+$sidebar-width-open:    235px;
+$sidebar-width-closed:  65px;
+
+// Topbar
+$topbar-height-sm:      58px;
+$topbar-height-md:      66px;
+
+// Colors
+$top-color: $white !default;
+$logo-bg: $top-color !default;
+$user-bg: $white !default;
+$navbar-toggler-color: $body-color !default;
+$menu-bg: $primary !default;
