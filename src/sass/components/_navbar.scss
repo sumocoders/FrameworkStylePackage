@@ -16,6 +16,10 @@
   }
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .logo {
   background-position: center center;
   background-size: auto 50px;
