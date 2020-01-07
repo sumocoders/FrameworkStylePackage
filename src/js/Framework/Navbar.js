@@ -38,8 +38,6 @@ export class Navbar {
   }
 
   removeScrollFromBody (e) {
-    console.log('change collapse')
-    console.log($(e.currentTarget))
     if ($(e.currentTarget).hasClass('collapsed')) {
       $('body').addClass('no-scroll')
     } else {
