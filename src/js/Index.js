@@ -1,14 +1,17 @@
-// Boostrap import
+// Bootstrap import
 import 'bootstrap/dist/js/bootstrap'
 
 import { Ajax } from './Framework/Ajax'
+import { Alert } from 'frameworkstylepackage/src/js/Framework/Alert'
 import { Form } from './Framework/Form'
+import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
 import { Link } from './Framework/Link'
 import { LoadingBar } from './Framework/LoadingBar'
 import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
 import { SetHeight } from './Framework/SetHeight'
+import { Sidebar } from 'frameworkstylepackage/src/js/Framework/Sidebar'
 import { Searchbar } from './Framework/Searchbar'
 import { Select } from './Framework/Select'
 import { Slider } from './Framework/Slider'
@@ -21,6 +24,7 @@ import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
+import { ScrollEvent } from 'frameworkstylepackage/src/js/Framework/ScrollEvent'
 
 export class Framework {
   constructor () {
@@ -31,9 +35,13 @@ export class Framework {
     this.navbar = new Navbar()
     this.scrolling = new Scrolling()
     this.setHeight = new SetHeight()
+    this.sidebar = new Sidebar()
     this.searchBar = new Searchbar()
     this.table = new Table()
     this.tabs = new Tabs()
+    this.goBack = new GoBack()
+    this.alert = new Alert()
+    this.scrollEvent = new ScrollEvent()
 
     Framework.initializeSliders()
     Framework.initializeSortables()

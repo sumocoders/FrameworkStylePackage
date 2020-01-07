@@ -1,11 +1,32 @@
-.header-title .progress-bar {
-  float: none;
-  width: auto;
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#content-wrapper {
+  margin-top: 65px;
+}
+
+.header-title {
+  padding: ($spacer * 0.5) $spacer $spacer;
+
+  .progress-bar {
+    float: none;
+    width: auto;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: 0;
+  }
 }
 
 .header-title-bar {
-  border-bottom: 1px $gray-500 solid;
-  border-top: 1px $gray-500 solid;
+  border-bottom: 1px $border-color solid;
   overflow: hidden;
   padding: 20px 19px;
 
@@ -46,22 +67,58 @@
 }
 
 .back-to-top {
-  margin: 15px;
+  background-color: $white;
+  bottom: 0;
+  box-shadow: $box-shadow;
+  display: none;
+  margin: 15px 0;
+  opacity: 0;
+  position: fixed;
+  padding: 10px 30px 10px 20px;
+  right: 0;
+  transform: translateX(calc(100% - 50px));
+  transition: transform 0.25s ease-in-out;
+
+  &:hover {
+    transform: translateX(0);
+  }
+
+  &.show {
+    animation: show 0.35s 1 forwards;
+    display: block;
+  }
 }
 
 .btn[disabled] {
   pointer-events: all;
 }
 
+.action-buttons-mobile {
+  padding: 15px;
+}
 
-@include media-breakpoint-up(sm) {
+.collapse-actions-toggle {
+  color: $body-color;
+  padding: ($spacer * 0.3) $spacer;
+}
+
+@include media-breakpoint-up(md) {
+
   .header-title {
-    padding-top: 55px;
+    padding: $spacer;
+  }
+
+  #content-wrapper {
+    margin-top: 0;
+  }
+
+  #main {
+    padding-top: $topbar-height-md;
   }
 
   .header-title-bar {
     border-top-width: 0;
-    padding: 16px 18px;
+    padding: ($grid-gutter-width / 2) 18px;
   }
 
   .actions {
@@ -70,5 +127,18 @@
 
   .action-buttons {
     float: right;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .main-content {
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
+
+  .header-title-bar {
+    padding-left: calc(#{$grid-gutter-width / 2} + #{$spacer});
+    padding-right: calc(#{$grid-gutter-width / 2} + #{$spacer});
   }
 }

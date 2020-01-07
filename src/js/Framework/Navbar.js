@@ -6,6 +6,8 @@ export class Navbar {
   initNavbar () {
     $('#main-menu-inner .dropdown-toggle').on('click', $.proxy(this.toggleDrowdown, this))
     this.setClassesBasedOnSubNavigation()
+    $(document).on('click', $.proxy(this.closeNavbar, this))
+    $('#main-menu-inner .navbar-toggler').on('click', $.proxy(this.removeScrollFromBody, this))
   }
 
   toggleDrowdown (event) {
@@ -25,5 +27,21 @@ export class Navbar {
     }
 
     $('#toggleTabletNavbar, #navbar, #content, .alert').addClass('subnav')
+  }
+
+  closeNavbar (e) {
+    const navWrapper = $('[data-role="navbar-wrapper"]')
+    if (!navWrapper.is(e.target) && navWrapper.has(e.target).length === 0) {
+      $('[data-role="navbar-collapse"]').collapse('hide')
+      $('body').removeClass('no-scroll')
+    }
+  }
+
+  removeScrollFromBody (e) {
+    if ($(e.currentTarget).hasClass('collapsed')) {
+      $('body').addClass('no-scroll')
+    } else {
+      $('body').removeClass('no-scroll')
+    }
   }
 }

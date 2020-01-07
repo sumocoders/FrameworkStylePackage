@@ -1,7 +1,8 @@
 // Bootstrap
 @import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
+@import 'components/functions';
 @import 'bootstrap-variables';
+@import '~bootstrap/scss/variables';
 @import 'bootstrap-imports';
 
 @import 'mixins/reset-filter';
@@ -16,12 +17,16 @@
 @import 'components/alerts';
 @import 'components/autocomplete';
 @import 'components/breadcrumb';
+@import 'components/cards';
+@import 'components/close';
 @import 'components/datagrids';
 @import 'components/datepicker';
 @import 'components/dropdowns';
+@import 'components/empty-state';
 @import 'components/forms';
 @import 'components/form-collection';
 @import 'components/helper-classes';
+@import 'components/loading';
 @import 'components/logo';
 @import 'components/modal';
 @import 'components/navbar';
@@ -29,7 +34,7 @@
 @import 'components/page-header';
 @import 'components/pagination';
 @import 'components/panels';
-@import 'components/progress-bars';
+@import 'components/select2';
 @import 'components/slider';
 @import 'components/sortable';
 @import 'components/tables';

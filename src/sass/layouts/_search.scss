@@ -1,6 +1,4 @@
 .user-nav {
-  border-bottom: 5px theme-color('primary') solid;
-  border-top: 1px $gray-500 solid;
 
   .search-box {
     margin-left: 50px;
@@ -58,7 +56,7 @@
   }
 }
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(md) {
 
   .sub-nav .user-nav {
     border-bottom: 0;

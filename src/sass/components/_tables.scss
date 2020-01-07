@@ -11,8 +11,22 @@
   }
 }
 
-th {
-  color: $gray-600;
-  font-style: normal;
-  font-weight: 600;
+table.table {
+  border-bottom: $table-border-width solid $table-border-color;
+
+  thead {
+    background-color: $table-head-bg;
+    color: $table-head-color;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+
+    th {
+      border-bottom: none;
+      border-top: none;
+    }
+  }
+}
+
+.table-striped.table-striped-bg-white tbody tr:nth-of-type(#{$table-striped-order}) {
+  background-color: $light;
 }

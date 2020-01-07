@@ -10,12 +10,10 @@ export class LoadingBar {
   }
 
   showLoadingBar () {
-    $('.header-title').addClass('progress')
-    $('.header-title .header-title-bar').addClass('progress-bar progress-bar-striped progress-bar-animated')
+    $('[data-role="ajax-indicator"]').removeClass('d-none')
   }
 
   hideLoadingBar () {
-    $('.header-title').removeClass('progress')
-    $('.header-title .header-title-bar').removeClass('progress-bar progress-bar-striped progress-bar-animated')
+    $('[data-role="ajax-indicator"]').addClass('d-none')
   }
 }

@@ -1,11 +1,17 @@
 .pagination {
 
-  li {
+  .page-item {
 
-    a {
-      border-bottom: 0;
+    .page-link {
+      border-bottom: 2px solid transparent;
       border-top: 0;
       min-height: 34px;
+      margin: 2px;
+      transition: border-bottom, background-color 0.25s ease-in-out;
+
+      @include hover-focus {
+        border-bottom: 2px solid $primary;
+      }
     }
 
     &.next.disabled span,
@@ -18,24 +24,23 @@
     &.disabled span {
       border-bottom: 0;
       border-top: 0;
-      padding: 6px 11px;
     }
   }
 
-  li:first-child > a {
+  .page-item:first-child > .page-link {
     border-bottom-left-radius: 0;
     border-left: 0;
     border-top-left-radius: 0;
   }
 
-  li:last-child > a {
+  .page-item:last-child > .page-link {
     border-bottom-right-radius: 0;
     border-right: 0;
     border-top-right-radius: 0;
   }
 }
 
-.pager li a {
+.pager .page-item .page-link {
   color: $gray-500;
 
   &:hover {
