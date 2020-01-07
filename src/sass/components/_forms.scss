@@ -144,6 +144,10 @@ select {
   -webkit-appearance: none;
 }
 
+input[type="file"] {
+  cursor: pointer;
+}
+
 @include media-breakpoint-up(md) {
 
   .popover {
