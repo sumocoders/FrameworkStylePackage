@@ -248,7 +248,7 @@ body.no-scroll {
       position: absolute;
       right: 25px;
       top: 50%;
-      transition: 300ms;
+      transition: transform 0.3s;
     }
 
     .open {
@@ -289,7 +289,8 @@ body.no-scroll {
       }
 
       i {
-        transition: transform 0.3s;
+        transition: transform 0.3s, margin 0.3s;
+        margin-right: $spacer;
       }
     }
 
@@ -386,6 +387,7 @@ body.no-scroll {
 
           i {
             transform: rotate(180deg);
+            margin-right: 0;
           }
 
           .nav-link-text {
