@@ -118,7 +118,7 @@
 
   .header-title-bar {
     border-top-width: 0;
-    padding: 16px 18px;
+    padding: ($grid-gutter-width / 2) 18px;
   }
 
   .actions {
@@ -127,5 +127,18 @@
 
   .action-buttons {
     float: right;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .main-content {
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
+
+  .header-title-bar {
+    padding-left: calc(#{$grid-gutter-width / 2} + #{$spacer});
+    padding-right: calc(#{$grid-gutter-width / 2} + #{$spacer});
   }
 }
