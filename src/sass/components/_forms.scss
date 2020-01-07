@@ -102,32 +102,6 @@
   }
 }
 
-.select2 {
-  display: block;
-  width: 100%;
-
-  &.select2-container .select2-selection--single .select2-selection__rendered {
-    padding: 0;
-  }
-
-  .select2-selection,
-  .select2-selection__rendered {
-    height: $input-height;
-  }
-
-  &.select2-container--default .select2-selection--single {
-    border-radius: $input-border-radius;
-
-    .select2-selection__arrow {
-      height: $input-height;
-    }
-
-    .select2-selection__rendered {
-      line-height: $input-height;
-    }
-  }
-}
-
 .datetime-widget select[size], .time-widget select[size] {
   height: 34px;
 }
@@ -170,10 +144,6 @@ select {
   -webkit-appearance: none;
 }
 
-.select2 .select2-selection {
-  padding-left: $input-padding-x;
-}
-
 @include media-breakpoint-up(md) {
 
   .popover {
@@ -190,11 +160,6 @@ select {
 }
 .has-error .help-block {
   color: $danger;
-}
-
-// Display an invalid select2 as invalid
-select.is-invalid + .select2 .select2-selection {
-  @extend .form-control.is-invalid
 }
 
 .label-optional {
