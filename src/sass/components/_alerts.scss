@@ -46,8 +46,8 @@
   }
 
   &.notification {
-    background: rgba($white, 0.97);
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.17);
+    background: $toast-background-color;
+    box-shadow: $toast-box-shadow;
     color: $body-color;
     max-width: 450px;
     padding: 20px 60px;

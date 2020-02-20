@@ -1,0 +1,42 @@
+
+$dark:                $black;
+
+$body-bg:             $gray-900;
+$body-color:          $white;
+
+$link-color:          color-dark-text-yiq($primary) !default;
+$link-hover-color:    color-dark-text-hover-yiq($primary) !default;
+
+$text-muted:          $gray-300;
+$border-color:        $gray-800;
+$top-color:           $gray-700;
+
+$logo-bg:             $gray-800;
+$user-bg:             $gray-700;
+$menu-bg:             $gray-800;
+
+$table-head-bg:       $gray-800;
+$table-accent-bg:     $gray-800;
+$table-hover-bg:      $gray-700;
+$table-bg-level:      6;
+
+$input-bg:            $gray-700;
+$input-color:         $gray-200;
+$input-group-addon-bg:  $gray-800;
+$input-border-color:  $gray-600;
+$input-disabled-bg:   $gray-900;
+
+$modal-content-bg:    $body-bg;
+$modal-backdrop-bg:   $gray-300;
+
+$toast-background-color: rgba($gray-900, .85);
+$toast-box-shadow:    0 .25rem .75rem rgba($white, 0.1);
+
+$dropdown-bg:         $gray-700;
+$dropdown-link-hover-bg: $gray-800;
+$dropdown-link-active-bg: $gray-900;
+$dropdown-divider-bg: $gray-800;
+
+$loading-indicator-color: $gray-600;
+
+$card-bg:              $body-bg;

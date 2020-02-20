@@ -25,6 +25,7 @@ import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
 import TimePicker from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
 import { ScrollEvent } from 'frameworkstylepackage/src/js/Framework/ScrollEvent'
+import { Theme } from 'frameworkstylepackage/src/js/Framework/Theme'
 
 export class Framework {
   constructor () {
@@ -42,6 +43,9 @@ export class Framework {
     this.goBack = new GoBack()
     this.alert = new Alert()
     this.scrollEvent = new ScrollEvent()
+    $(window).on('load', () => {
+      this.theme = new Theme()
+    })
 
     Framework.initializeSliders()
     Framework.initializeSortables()
