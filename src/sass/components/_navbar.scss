@@ -303,10 +303,6 @@ body.no-scroll {
 
 @include media-breakpoint-up(md){
 
-  .nav-link {
-    height: 79px;
-  }
-
   .navbar-brand {
     height: $topbar-height-md;
     margin-left: 0;
@@ -339,6 +335,10 @@ body.no-scroll {
     width: $sidebar-width-open;
     z-index: 950;
     -ms-overflow-style: none;
+
+    .nav-link {
+      height: 79px;
+    }
 
     .navbar {
       height: auto;

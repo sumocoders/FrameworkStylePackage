@@ -1,10 +1,12 @@
 // Bootstrap
 @import '~bootstrap/scss/functions';
 @import 'components/functions';
+@import 'themes/dark';
 @import 'bootstrap-variables';
 @import '~bootstrap/scss/variables';
-@import 'themes/dark';
 @import 'bootstrap-imports';
 
 // Imports
 @import 'imports';
+
+@import 'dark/mark';

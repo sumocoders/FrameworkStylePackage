@@ -1,27 +1,26 @@
 .has-error {
   .form-control {
     background: $white;
-    border-color: theme-color('danger');
+    border-color: $form-feedback-invalid-color;
     box-shadow: none;
 
     &:focus {
-      border-color: theme-color('danger');
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba(theme-color('danger'), .6);
+      border-color: $form-feedback-invalid-color;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba($form-feedback-invalid-color, .6);
     }
   }
 
   .form-control-feedback {
-    color: theme-color('danger');
+    color: $form-feedback-invalid-color;
   }
 
   .checkbox,
   .control-label {
-    color: theme-color('danger');
+    color: $form-feedback-invalid-color;
   }
 }
 
 .has-warning {
-
   .form-control {
     border-color: theme-color('warning');
     box-shadow: none;
@@ -43,27 +42,26 @@
 }
 
 .has-success {
-
   .form-control {
-    border-color: theme-color('success');
+    border-color: $form-feedback-valid-color;
 
     &:focus {
-      border-color: theme-color('success');
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba(theme-color('success'), .6);
+      border-color: $form-feedback-valid-color;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px rgba($form-feedback-valid-color, .6);
     }
   }
 
   .form-control-feedback {
-    color: theme-color('success');
+    color: $form-feedback-valid-color;
   }
 
   .checkbox,
   .control-label {
-    color: theme-color('success');
+    color: $form-feedback-valid-color;
   }
 
   .input-group-addon {
-    border-color: theme-color('success');
+    border-color: $form-feedback-valid-color;
     color: $white;
   }
 }
@@ -75,20 +73,11 @@
   margin-left: 5px;
 }
 
-.form-control {
-  box-shadow: none;
-
-  &.placeholder {
-    color: $gray-700;
-  }
-}
-
 .input-group .input-group-addon:before {
   padding: 0 0 5px 0;
 }
 
 .form-inline {
-
   .control-label {
     margin-right: 5px;
   }
@@ -157,13 +146,13 @@ input[type="file"] {
 
 // Feedback states
 .has-success .help-block {
-  color: $success;
+  color: $form-feedback-valid-color;
 }
 .has-warning .help-block {
   color: $warning;
 }
 .has-error .help-block {
-  color: $danger;
+  color: $form-feedback-invalid-color;
 }
 
 .label-optional {
