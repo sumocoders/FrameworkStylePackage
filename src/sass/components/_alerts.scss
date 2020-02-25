@@ -1,24 +1,20 @@
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
-    background-color: rgba($value, 0.15);
-    color: $value;
-
     a {
-      color: $value;
+      color: theme-color-level($color, $alert-color-level);
     }
 
     &.notification {
-      border-left: 4px solid $value;
+      border-left: 4px solid theme-color-level($color, $alert-border-level);
+    }
 
-      &:before {
-        color: $value;
-      }
+    &:before {
+      color: theme-color-level($color, $alert-border-level);
     }
   }
 }
 
 .alert {
-  border: none;
   position: relative;
   padding-left: $spacer * 2.5;
 
