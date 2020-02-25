@@ -107,6 +107,7 @@ $btn-link-disabled-color:     $gray-500 !default;
 
 $input-bg:                              $gray-700 !default;
 $input-disabled-bg:                     $gray-900 !default;
+$input-disabled-color:                  $gray-400 !default;
 
 $input-color:                           $gray-100 !default;
 $input-border-color:                    $gray-600 !default;
@@ -116,7 +117,7 @@ $input-placeholder-color:               $gray-500 !default;
 $input-group-addon-bg:                  $gray-800 !default;
 
 $custom-control-indicator-bg:           $input-bg !default;
-$custom-control-indicator-border-color: $input-border-color !default;
+$custom-control-indicator-border-color: $gray-400 !default;
 
 $custom-control-label-disabled-color:           $gray-500 !default;
 

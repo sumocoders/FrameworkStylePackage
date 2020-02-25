@@ -111,6 +111,11 @@ label {
   }
 }
 
+.form-control:disabled,
+.form-control[readonly] {
+  color: $input-disabled-color;
+}
+
 .datetime-widget select[size], .time-widget select[size] {
   height: 34px;
 }
@@ -157,4 +162,8 @@ input[type="file"] {
 
 .label-optional {
   color: $text-muted;
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: color-yiq($custom-control-indicator-checked-bg);
 }
