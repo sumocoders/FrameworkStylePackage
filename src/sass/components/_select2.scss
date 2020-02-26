@@ -31,6 +31,7 @@
 .select2-dropdown {
   background-color: $custom-select-bg;
   border-color: $border-color;
+  transition: background-color $transition-duration $transition-timing-function, border-color $transition-duration $transition-timing-function;
 }
 
 .select2-container--default {

@@ -9,7 +9,8 @@
   padding: 10px 30px 10px 20px;
   right: 0;
   transform: translateX(calc(100% - 50px));
-  transition: transform 0.25s ease-in-out;
+  transition: transform $transition-duration $transition-timing-function, background-color $transition-theme-duration $transition-timing-function, color $transition-theme-duration $transition-timing-function;
+  z-index: $zindex-backtotop;
 
   &:hover {
     transform: translateX(0);

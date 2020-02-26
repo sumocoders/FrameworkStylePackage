@@ -6,8 +6,8 @@
     z-index: 666;
 
     .form-control:focus {
-      transition: all 600ms;
       box-shadow: none;
+      transition: box-shadow $transition-duration;
     }
 
     .control-label {
@@ -78,7 +78,7 @@
       .search-form {
         float: left;
         overflow: hidden;
-        transition: width 600ms;
+        transition: width $transition-duration;
         width: 0;
       }
 
@@ -91,7 +91,7 @@
         .search-form {
           display: block;
           float: left;
-          transition: width 600ms;
+          transition: width $transition-duration;
           width: 145px;
         }
 

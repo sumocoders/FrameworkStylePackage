@@ -167,3 +167,7 @@ input[type="file"] {
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   background-color: color-yiq($custom-control-indicator-checked-bg);
 }
+
+.custom-control.custom-switch {
+  padding-left: $custom-switch-width + $custom-control-gutter;
+}

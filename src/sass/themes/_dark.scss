@@ -78,10 +78,8 @@ $link-hover-color:    color-dark-text-hover-yiq($primary) !default;
 // Components
 $border-color:        $gray-800 !default;
 
-$component-active-color:        color-yiq($primary) !default;
-
 // Typography
-$text-muted:                    $gray-300 !default;
+$text-muted:                    $gray-400 !default;
 $blockquote-small-color:        $gray-400 !default;
 $hr-border-color:               rgba($white, .1) !default;
 $mark-bg:                       #420b2a !default;
@@ -254,8 +252,6 @@ $pre-color:                         $gray-200 !default;
 
 // Colors
 $top-color:                 $gray-700 !default;
-$logo-bg:                   $gray-800 !default;
-$user-bg:                   $gray-700 !default;
 $menu-bg:                   $gray-800 !default;
 $loading-indicator-color:   $gray-600 !default;
 

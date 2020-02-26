@@ -60,7 +60,7 @@ body.no-scroll {
     height: 3px;
     margin: 10px 0;
     position: relative;
-    transition: background-color 0.2s;
+    transition: background-color $transition-duration;
     width: 20px;
 
     &:before,
@@ -159,7 +159,6 @@ body.no-scroll {
         font-weight: bold;
         padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
-        transition: background-color 0.25s;
 
         &:before {
           background-color: color-yiq($menu-bg);
@@ -169,7 +168,7 @@ body.no-scroll {
           left: -16px;
           position: absolute;
           top: calc(50% - 7px);
-          transition: transform 0.3s;
+          transition: transform $transition-duration;
           width: 15px;
         }
 
@@ -192,7 +191,12 @@ body.no-scroll {
       }
     }
 
-    .dropdown-menu {
+    .dropdown-menu-user {
+      position: relative;
+      top: initial;
+    }
+
+    .dropdown-menu:not(.dropdown-menu-user) {
       background-color: darken($menu-bg, 8%);
       margin: 0;
       padding: 0;
@@ -214,7 +218,7 @@ body.no-scroll {
             left: -16px;
             position: absolute;
             top: calc(50% - 7px);
-            transition: transform 0.3s;
+            transition: transform $transition-duration;
             width: 15px;
           }
 
@@ -248,7 +252,7 @@ body.no-scroll {
       position: absolute;
       right: 25px;
       top: 50%;
-      transition: transform 0.3s;
+      transition: transform $transition-duration;
     }
 
     .open {
@@ -289,7 +293,7 @@ body.no-scroll {
       }
 
       i {
-        transition: transform 0.3s, margin 0.3s;
+        transition: transform $transition-duration, margin $transition-duration;
         margin-right: $spacer;
       }
     }
@@ -367,6 +371,7 @@ body.no-scroll {
       padding-bottom: 78px;
       padding-left: 0;
       padding-right: 0;
+      transition: background-color $transition-theme-duration $transition-timing-function;
     }
   }
 
