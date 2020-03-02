@@ -14,7 +14,7 @@ export class Theme {
   }
 
   getTheme () {
-    // if cookie is not set, get the theme of the device
+    // if cookie is not yet set, get the theme of the device, default light
     if (cookies.readCookie('theme') == null) {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         cookies.setCookie('theme', 'dark')
@@ -24,10 +24,19 @@ export class Theme {
     }
   }
 
+  doNotClose (e) {
+    e.stopPropagation();
+  }
+
   changeTheme (e) {
     e.preventDefault()
+    // read cookie --> currentTheme & themeToBe setten
+    let $themeToBe = 'dark'
 
-    let $themeToBe = e.target.dataset.themeToggler
+    if (cookies.readCookie('theme') === 'dark') {
+      $themeToBe = 'light'
+    }
+
     this.chooseTheme($themeToBe)
 
     // set cookie
@@ -36,32 +45,60 @@ export class Theme {
     } else {
       cookies.setCookie('theme', 'light')
     }
+
+    this.doNotClose(e);
+
+    /*$('[data-dropdown-user]').addClass('show')
+    $('[data-dropdown-user-toggle]').addClass('show')*/
+
+    /*$('[data-dropdown-user-toggle]').dropdown('show')*/
+
+    /*e.closest('.dropdown-menu').dropdown('show')*/
   }
 
   themeCookie () {
-    // read cookie
-    if (cookies.readCookie('theme') === 'dark') {
+    // read cookie and change theme with it
+    this.chooseTheme(cookies.readCookie('theme'))
+
+    /*if (cookies.readCookie('theme') === 'dark') {
       this.chooseTheme('dark')
     } else {
       this.chooseTheme('light')
-    }
+    }*/
   }
 
-  chooseTheme(theme) {
-    // remove classes that start with theme-
-    // todo
-    $('body').toggleClass('theme-light theme-dark')
-    $('body').addClass("theme-" + theme)
-    if (theme === 'dark') {
-      $('[data-theme-toggler]').removeClass('active')
-      $('[data-theme-toggler="dark"]').addClass('active')
-      // zorg dat het effectief dark is
+  chooseTheme(themeToBe) {
+    $('body').removeClass('theme-light theme-dark')
+    $('body').addClass("theme-" + themeToBe)
+
+    if (themeToBe === 'dark') {
+      // change toggler
+      $('[data-theme-toggler]').prop('checked', true)
+      // make it dark
       $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '/build/style-dark.css'));
     } else {
-      $('[data-theme-toggler]').removeClass('active')
-      $('[data-theme-toggler="light"]').addClass('active')
-      // verwijder dark theme
+      // change toggler
+      $('[data-theme-toggler]').prop('checked', false)
+      // remove darkness
       $('link[rel=stylesheet][href~="/build/style-dark.css"]').remove();
     }
   }
 }
+
+// VERSION WITH BOOTSTRAP 4 : https://codepen.io/seltix/pen/XRPrwM
+
+jQuery('.dropdown-toggle').on('click', function (e) {
+  $(this).next().toggle();
+});
+jQuery('.dropdown-menu.keep-open').on('click', function (e) {
+  e.stopPropagation();
+});
+
+if(1) {
+  $('body').attr('tabindex', '0');
+}
+else {
+  alertify.confirm().set({'reverseButtons': true});
+  alertify.prompt().set({'reverseButtons': true});
+}
+
