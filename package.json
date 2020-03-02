@@ -9,9 +9,9 @@
   "author": "Mathias Helin",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bootstrap": "^4.0.0",
-    "font-awesome": "^4.7.0",
     "moment": "^2.24.0",
     "popper.js": "^1.12.9",
     "requestanimationframe": "0.0.23",
