@@ -6,11 +6,13 @@ export class Theme {
     this.getTheme()
     this.themeCookie()
     this.initChangeTheme()
+    this.doNotHideDropdown()
   }
 
   initChangeTheme () {
     // on click, do changeTheme
     $(document).on('click', '[data-theme-toggler]', $.proxy(this.changeTheme, this))
+    $('[data-dropdown-user-wrapper]').on('hide.bs.dropdown', $.proxy(this.doNotHideDropdown, this))
   }
 
   getTheme () {
@@ -24,9 +26,6 @@ export class Theme {
     }
   }
 
-  doNotClose (e) {
-    e.stopPropagation();
-  }
 
   changeTheme (e) {
     e.preventDefault()
@@ -45,26 +44,11 @@ export class Theme {
     } else {
       cookies.setCookie('theme', 'light')
     }
-
-    this.doNotClose(e);
-
-    /*$('[data-dropdown-user]').addClass('show')
-    $('[data-dropdown-user-toggle]').addClass('show')*/
-
-    /*$('[data-dropdown-user-toggle]').dropdown('show')*/
-
-    /*e.closest('.dropdown-menu').dropdown('show')*/
   }
 
   themeCookie () {
     // read cookie and change theme with it
     this.chooseTheme(cookies.readCookie('theme'))
-
-    /*if (cookies.readCookie('theme') === 'dark') {
-      this.chooseTheme('dark')
-    } else {
-      this.chooseTheme('light')
-    }*/
   }
 
   chooseTheme(themeToBe) {
@@ -83,22 +67,10 @@ export class Theme {
       $('link[rel=stylesheet][href~="/build/style-dark.css"]').remove();
     }
   }
+
+  doNotHideDropdown(e) {
+    if ($(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
+      e.preventDefault()
+    }
+  }
 }
-
-// VERSION WITH BOOTSTRAP 4 : https://codepen.io/seltix/pen/XRPrwM
-
-jQuery('.dropdown-toggle').on('click', function (e) {
-  $(this).next().toggle();
-});
-jQuery('.dropdown-menu.keep-open').on('click', function (e) {
-  e.stopPropagation();
-});
-
-if(1) {
-  $('body').attr('tabindex', '0');
-}
-else {
-  alertify.confirm().set({'reverseButtons': true});
-  alertify.prompt().set({'reverseButtons': true});
-}
-
