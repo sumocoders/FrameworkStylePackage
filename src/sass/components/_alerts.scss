@@ -4,10 +4,6 @@
       color: theme-color-level($color, $alert-color-level);
     }
 
-    &.notification {
-      border-left: 4px solid theme-color-level($color, $alert-border-level);
-    }
-
     &:before {
       color: theme-color-level($color, $alert-border-level);
     }
@@ -40,25 +36,6 @@
   &.alert-info:before {
     content: '\f05a';
   }
-
-  &.notification {
-    background: $toast-background-color;
-    box-shadow: $toast-box-shadow;
-    color: $body-color;
-    max-width: 450px;
-    padding: 20px 60px;
-
-    &:before {
-      left: 1.5rem;
-    }
-  }
-}
-
-.notifications-wrapper {
-  position: fixed;
-  right: $grid-gutter-width;
-  top: $grid-gutter-width;
-  z-index: 1060;
 }
 
 .alert .error-list-item {

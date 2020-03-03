@@ -2,12 +2,14 @@ export class Flash {
   add (message, type, time) {
     let alertId = Date.now()
 
-    $('.notifications-wrapper').prepend(
-      `<div class="alert alert-${type} alert-dismissible notification fade show" role="status" data-alert-id="${alertId}">
-         ${message}
-         <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-        </button>
+    $('.toasts-wrapper').prepend(
+      `<div class="toast toast-${type} fade show" data-alert-id="${alertId}">
+          <div class="toast-body">
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            ${message}
+         </div>
     </div>`
     )
 

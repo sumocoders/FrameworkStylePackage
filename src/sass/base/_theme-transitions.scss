@@ -12,7 +12,8 @@ table.table,
 .popover,
 .alert,
 .list-group-item.active,
-.list-group-item-action {
+.list-group-item-action,
+.toast-header {
   transition: background-color $transition-theme-duration $transition-timing-function, color $transition-theme-duration $transition-timing-function, border-color $transition-theme-duration $transition-timing-function;
 }
 
@@ -24,7 +25,8 @@ table.table,
 .img-thumbnail,
 .table [class^="table-"] > th,
 .table [class^="table-"] > td,
-.main-header {
+.main-header,
+.toast {
   transition: background-color $transition-theme-duration $transition-timing-function, border-color $transition-theme-duration $transition-timing-function;
 }
 

@@ -185,17 +185,10 @@ $popover-bg:                        $gray-600 !default;
 
 // Toasts
 
-//$toast-color:                       null !default;
-$toast-background-color:  rgba($gray-800, 0.85) !default;
-//$toast-border-color:                rgba(0, 0, 0, .1) !default;
-//$toast-border-radius:               .25rem !default;
-//$toast-box-shadow:        0 0.25rem 0.75rem rgba($white, 0.1) !default;
-//
-//$toast-header-color:                $gray-600 !default;
-//$toast-header-background-color:     rgba($white, .85) !default;
-//$toast-header-border-color:         rgba(0, 0, 0, .05) !default;
+$toast-background-color:            rgba($gray-800, 0.85) !default;
 
-//// todo toasts!
+$toast-header-color:                $gray-100 !default;
+$toast-header-background-color:     rgba($black, .35) !default;
 
 // Modals
 
