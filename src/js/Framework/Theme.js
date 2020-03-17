@@ -1,4 +1,4 @@
-import {Cookies} from './Cookies'
+import { Cookies } from './Cookies'
 const cookies = new Cookies()
 
 export class Theme {
@@ -26,7 +26,6 @@ export class Theme {
     }
   }
 
-
   changeTheme (e) {
     e.preventDefault()
     // read cookie --> currentTheme & themeToBe setten
@@ -51,24 +50,24 @@ export class Theme {
     this.chooseTheme(cookies.readCookie('theme'))
   }
 
-  chooseTheme(themeToBe) {
+  chooseTheme (themeToBe) {
     $('body').removeClass('theme-light theme-dark')
-    $('body').addClass("theme-" + themeToBe)
+    $('body').addClass('theme-' + themeToBe)
 
     if (themeToBe === 'dark') {
       // change toggler
       $('[data-theme-toggler]').prop('checked', true)
       // make it dark
-      $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '/build/style-dark.css'));
+      $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '/build/style-dark.css'))
     } else {
       // change toggler
       $('[data-theme-toggler]').prop('checked', false)
       // remove darkness
-      $('link[rel=stylesheet][href~="/build/style-dark.css"]').remove();
+      $('link[rel=stylesheet][href~="/build/style-dark.css"]').remove()
     }
   }
 
-  doNotHideDropdown(e) {
+  doNotHideDropdown (e) {
     if ($(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
       e.preventDefault()
     }
