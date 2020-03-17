@@ -51,8 +51,7 @@ export class Theme {
   }
 
   chooseTheme (themeToBe) {
-    $('body').removeClass('theme-light theme-dark')
-    $('body').addClass('theme-' + themeToBe)
+    $('body').removeClass('theme-light theme-dark').addClass('theme-' + themeToBe)
 
     if (themeToBe === 'dark') {
       // change toggler
