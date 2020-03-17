@@ -3,19 +3,17 @@ const cookies = new Cookies()
 
 export class Theme {
   constructor () {
-    this.getTheme()
-    this.themeCookie()
+    this.setInitTheme()
     this.initEventListeners()
-    this.doNotHideDropdown()
   }
 
   initEventListeners () {
     // on click, do changeTheme
     $(document).on('click', '[data-theme-toggler]', $.proxy(this.changeTheme, this))
-    $('[data-dropdown-user-wrapper]').on('hide.bs.dropdown', $.proxy(this.doNotHideDropdown, this))
+    $('[data-dropdown-user-wrapper]').on('hide.bs.dropdown', $.proxy(this.handleDropdownHiding, this))
   }
 
-  getTheme () {
+  setInitTheme () {
     // if cookie is not yet set, get the theme of the device, default light
     if (cookies.readCookie('theme') == null) {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -24,18 +22,24 @@ export class Theme {
         cookies.setCookie('theme', 'light')
       }
     }
+
+    // read cookie and change theme with it
+    this.updateTheme(cookies.readCookie('theme'))
   }
 
   changeTheme (e) {
     e.preventDefault()
-    // read cookie --> currentTheme & themeToBe setten
+    // read cookie --> themeToBe setten
+
+    console.log('-- theme toggler checked: ' + $('[data-theme-toggler]').prop('checked'))
+
     let $themeToBe = 'dark'
 
     if (cookies.readCookie('theme') === 'dark') {
       $themeToBe = 'light'
     }
 
-    this.chooseTheme($themeToBe)
+    this.updateTheme($themeToBe)
 
     // set cookie
     if ($themeToBe === 'dark') {
@@ -45,12 +49,7 @@ export class Theme {
     }
   }
 
-  themeCookie () {
-    // read cookie and change theme with it
-    this.chooseTheme(cookies.readCookie('theme'))
-  }
-
-  chooseTheme (themeToBe) {
+  updateTheme (themeToBe) {
     $('body').removeClass('theme-light theme-dark').addClass('theme-' + themeToBe)
 
     if (themeToBe === 'dark') {
@@ -66,7 +65,7 @@ export class Theme {
     }
   }
 
-  doNotHideDropdown (e) {
+  handleDropdownHiding (e) {
     if ($(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
       e.preventDefault()
     }
