@@ -5,11 +5,11 @@ export class Theme {
   constructor () {
     this.getTheme()
     this.themeCookie()
-    this.initChangeTheme()
+    this.initEventListeners()
     this.doNotHideDropdown()
   }
 
-  initChangeTheme () {
+  initEventListeners () {
     // on click, do changeTheme
     $(document).on('click', '[data-theme-toggler]', $.proxy(this.changeTheme, this))
     $('[data-dropdown-user-wrapper]').on('hide.bs.dropdown', $.proxy(this.doNotHideDropdown, this))
