@@ -27,11 +27,8 @@ export class Theme {
     this.updateTheme(cookies.readCookie('theme'))
   }
 
-  changeTheme (e) {
-    e.preventDefault()
+  changeTheme () {
     // read cookie --> themeToBe setten
-
-    console.log('-- theme toggler checked: ' + $('[data-theme-toggler]').prop('checked'))
 
     let $themeToBe = 'dark'
 
