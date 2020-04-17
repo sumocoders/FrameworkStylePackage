@@ -18,14 +18,11 @@ export class Theme {
     if (cookies.readCookie('theme') == null) {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         cookies.setCookie('theme', 'dark')
+        // set switch toggle checked
+        $('[data-theme-toggler]').prop('checked', 'checked')
       } else {
         cookies.setCookie('theme', 'light')
       }
-    }
-
-    if (cookies.readCookie('theme') === 'dark') {
-      // set switch toggle checked
-      $('[data-theme-toggler]').prop('checked', 'checked')
     }
 
     // show the theme
