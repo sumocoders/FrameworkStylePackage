@@ -23,8 +23,10 @@ export class Theme {
       }
     }
 
-    // set switch toggle checked
-    $('[data-theme-toggler]').prop('checked', 'checked')
+    if (cookies.readCookie('theme') === 'dark') {
+      // set switch toggle checked
+      $('[data-theme-toggler]').prop('checked', 'checked')
+    }
 
     // show the theme
     this.showTheme(cookies.readCookie('theme'))
@@ -38,11 +40,7 @@ export class Theme {
     }
 
     // set cookie
-    if (themeToBe === 'dark') {
-      cookies.setCookie('theme', 'dark')
-    } else {
-      cookies.setCookie('theme', 'light')
-    }
+    cookies.setCookie('theme', themeToBe)
 
     // show the theme
     this.showTheme(themeToBe)
@@ -59,6 +57,7 @@ export class Theme {
   }
 
   handleDropdownHiding (e) {
+    // do not close dropdown when toggle is clicked
     if ($(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
       e.preventDefault()
     }
