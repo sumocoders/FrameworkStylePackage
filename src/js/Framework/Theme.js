@@ -55,7 +55,7 @@ export class Theme {
 
   handleDropdownHiding (e) {
     // do not close dropdown when toggle is clicked
-    if ($(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
+    if ($(e.clickEvent).length && $(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
       e.preventDefault()
     }
   }
