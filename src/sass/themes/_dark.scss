@@ -1,0 +1,250 @@
+// Colors
+
+$blue: #0450b3 !default;
+$pink: #b93170 !default;
+$red: #b92b0b !default;
+$orange: #b0580e !default;
+$yellow: #c69605 !default;
+$green: #047f12 !default;
+$cyan: #118899 !default;
+
+$primary: $blue !default;
+
+@import '../bootstrap-colors';
+
+$colors: () !default;
+$colors: map-merge(
+    (
+      "blue":       $blue,
+      "indigo":     $indigo,
+      "purple":     $purple,
+      "pink":       $pink,
+      "red":        $red,
+      "orange":     $orange,
+      "yellow":     $yellow,
+      "green":      $green,
+      "teal":       $teal,
+      "cyan":       $cyan,
+      "white":      $white,
+      "gray":       $gray-600,
+      "gray-dark":  $gray-800,
+    ),
+    $colors
+);
+
+$primary:             $cyan !default;
+$secondary:           $gray-600 !default;
+$success:             $green !default;
+$info:                $cyan !default;
+$warning:             $yellow !default;
+$danger:              $red !default;
+$light:               $gray-100 !default;
+$dark:                $black !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+      "primary":    $primary,
+      "secondary":  $secondary,
+      "success":    $success,
+      "info":       $info,
+      "warning":    $warning,
+      "danger":     $danger,
+      "light":      $light,
+      "dark":       $dark,
+      "white":      $white
+    ),
+    $theme-colors
+);
+
+$theme-color-interval:      8% !default;
+
+$yiq-contrasted-threshold:  150 !default;
+$yiq-contrasted-link-threshold:  100 !default;
+
+$yiq-text-dark:             $gray-900 !default;
+$yiq-text-light:            $white !default;
+
+// Body
+
+$body-bg:             $gray-900 !default;
+$body-color:          $white !default;
+
+// Links
+
+$link-color:          color-dark-text-yiq($primary) !default;
+$link-hover-color:    color-dark-text-hover-yiq($primary) !default;
+
+// Components
+$border-color:        $gray-800 !default;
+
+// Typography
+$text-muted:                    $gray-400 !default;
+$blockquote-small-color:        $gray-400 !default;
+$hr-border-color:               rgba($white, .1) !default;
+$mark-bg:                       #420b2a !default;
+
+// Tables
+
+$table-color:         $body-color !default;
+$table-accent-bg:     $gray-800 !default;
+$table-hover-color:   $table-color !default;
+$table-hover-bg:      $gray-700 !default;
+$table-head-bg:       $gray-800 !default;
+$table-head-color:    lighten($body-color, 5%) !default;
+$table-border-color:  $border-color !default;
+
+$table-bg-level:      6 !default;
+$table-border-level:  4 !default;
+
+// Buttons
+
+$btn-link-disabled-color:     $gray-500 !default;
+
+// Forms
+
+$input-bg:                              $gray-700 !default;
+$input-disabled-bg:                     $gray-900 !default;
+$input-disabled-color:                  $gray-400 !default;
+
+$input-color:                           $gray-100 !default;
+$input-border-color:                    $gray-600 !default;
+$input-focus-border-color:              $gray-300 !default;
+$input-placeholder-color:               $gray-500 !default;
+
+$input-group-addon-bg:                  $gray-800 !default;
+
+$custom-control-indicator-bg:           $input-bg !default;
+$custom-control-indicator-border-color: $gray-400 !default;
+
+$custom-control-label-disabled-color:           $gray-500 !default;
+
+$custom-select-disabled-bg:         $gray-900 !default;
+$custom-select-indicator-color:     $gray-400 !default;
+
+$custom-range-track-bg:             $gray-600 !default;
+
+$custom-range-thumb-bg:                      $primary !default;
+$custom-range-thumb-disabled-bg:             $gray-700 !default;
+
+$form-feedback-valid-color:         theme-color-level("success", -5) !default;
+$form-feedback-invalid-color:       theme-color-level("danger", -5) !default;
+
+// Navs
+
+$nav-link-disabled-color:           $gray-500 !default;
+
+$nav-tabs-border-color:             $border-color !default;
+
+$nav-tabs-link-hover-border-color:  $gray-600 $gray-600 $nav-tabs-border-color !default;
+$nav-tabs-link-active-color:        $gray-200 !default;
+$nav-tabs-link-active-bg:           $body-bg !default;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg !default;
+
+$nav-divider-color:                 $gray-200 !default;
+
+// Dropdowns
+
+$dropdown-bg:                       $gray-700 !default;
+$dropdown-divider-bg:               $gray-800 !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($white, .175) !default;
+$dropdown-link-color:               $white !default;
+$dropdown-link-hover-bg:            $gray-800 !default;
+$dropdown-link-active-bg:           $gray-900 !default;
+$dropdown-link-disabled-color:      $gray-500 !default;
+
+$dropdown-header-color:             $gray-300 !default;
+
+// Pagination
+
+$pagination-bg:                     $gray-800 !default;
+$pagination-border-color:           $pagination-bg !default;
+
+$pagination-hover-bg:               $gray-700 !default;
+
+$pagination-disabled-color:         $gray-600 !default;
+$pagination-disabled-bg:            $gray-900 !default;
+$pagination-disabled-border-color:  $gray-800 !default;
+
+// Jumbotron
+
+$jumbotron-bg:                      $gray-700 !default;
+
+// Cards
+
+$card-bg:                           $gray-800 !default;
+
+// Tooltips
+
+$tooltip-bg:                        $gray-600 !default;
+
+// Popovers
+
+$popover-bg:                        $gray-600 !default;
+
+// Toasts
+
+$toast-background-color:  rgba($gray-800, 0.85) !default;
+
+//// todo toasts!
+
+// Modals
+
+$modal-content-bg:    $body-bg !default;
+$modal-backdrop-bg:   $gray-300 !default;
+
+// Alerts
+
+$alert-bg-level:                    7 !default;
+$alert-border-level:                -2 !default;
+$alert-color-level:                 -10 !default;
+
+// Progress bars
+
+$progress-bg:                       $gray-700 !default;
+$progress-bar-color:                $body-color !default;
+
+// List group
+
+$list-group-bg:                     $gray-800 !default;
+$list-group-border-color:           $gray-700 !default;
+
+$list-group-hover-bg:               $gray-700 !default;
+
+$list-group-disabled-color:         $gray-500 !default;
+
+$list-group-action-color:           $gray-200 !default;
+$list-group-action-hover-color:     $gray-100 !default;
+
+$list-group-action-active-bg:       $gray-800 !default;
+
+// Image thumbnails
+
+$thumbnail-border-color:            $gray-600 !default;
+
+// Figures
+
+$figure-caption-color:              $gray-400 !default;
+
+// Breadcrumbs
+
+$breadcrumb-active-color:           $gray-300 !default;
+
+// Code
+
+$code-color:                        lighten($pink, 20%) !default;
+
+$kbd-color:                         $gray-100 !default;
+$kbd-bg:                            $gray-700 !default;
+
+$pre-color:                         $gray-200 !default;
+
+// CUSTOM VARIABLES
+
+// Colors
+$top-color:                 $gray-700 !default;
+$menu-bg:                   $gray-800 !default;
+$loading-indicator-color:   $gray-600 !default;
+
+// Back to top
+$back-to-top-bg:            $gray-700 !default;

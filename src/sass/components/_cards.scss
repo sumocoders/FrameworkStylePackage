@@ -27,7 +27,7 @@
   &.card-dashboard {
     cursor: pointer;
     position: relative;
-    transition: box-shadow 0.25s;
+    transition: box-shadow $transition-duration;
 
     &:hover {
       box-shadow: $box-shadow;
