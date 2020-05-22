@@ -1,6 +1,6 @@
 {
   "name": "frameworkstylepackage",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Layout for the default Sumocoders Framework",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,9 @@
   "author": "Mathias Helin",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bootstrap": "^4.0.0",
-    "font-awesome": "^4.7.0",
     "moment": "^2.24.0",
     "popper.js": "^1.12.9",
     "requestanimationframe": "0.0.23",
@@ -20,5 +20,9 @@
     "tempusdominus-bootstrap-4": "^5.1.2",
     "tempusdominus-core": "^5.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "standard": "^14.3.1",
+    "stylelint": "^13.2.0",
+    "stylelint-config-standard": "^20.0.0"
+  }
 }

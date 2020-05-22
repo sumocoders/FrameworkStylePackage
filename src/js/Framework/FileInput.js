@@ -1,9 +1,9 @@
 export class FileInput {
   constructor() {
-    this.events()
+    this.initEventListeners()
   }
 
-  events () {
+  initEventListeners () {
     $('.custom-file-input').on('change', $.proxy(this.getUploadedFile, this))
   }
 
