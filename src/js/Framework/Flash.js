@@ -6,13 +6,13 @@ export class Flash {
 
     let icon = 'check'
 
-    if (type == 'info') {
+    if (type === 'info') {
       icon = 'info-circle'
     }
-    if (type == 'warning') {
+    if (type === 'warning') {
       icon = 'exclamation'
     }
-    if (type == 'danger') {
+    if (type === 'danger') {
       icon = 'exclamation-triangle'
     }
 
