@@ -184,9 +184,10 @@ $popover-bg:                        $gray-600 !default;
 
 // Toasts
 
-$toast-background-color:  rgba($gray-800, 0.85) !default;
+$toast-background-color:            rgba($gray-800, 0.85) !default;
 
-//// todo toasts!
+$toast-header-color:                $gray-100 !default;
+$toast-header-background-color:     rgba($black, .35) !default;
 
 // Modals
 

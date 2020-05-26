@@ -2,7 +2,6 @@
 import 'bootstrap/dist/js/bootstrap'
 
 import { Ajax } from './Framework/Ajax'
-import { Alert } from 'frameworkstylepackage/src/js/Framework/Alert'
 import { Form } from './Framework/Form'
 import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
 import { Link } from './Framework/Link'
@@ -19,6 +18,7 @@ import { Sortable } from './Framework/Sortable'
 import { Table } from './Framework/Table'
 import { Tabs } from './Framework/Tabs'
 import { Tooltip } from './Framework/Tooltip'
+import { Toast } from './Framework/Toast'
 import FormCollection from './Framework/FormCollection'
 import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
@@ -42,7 +42,6 @@ export class Framework {
     this.table = new Table()
     this.tabs = new Tabs()
     this.goBack = new GoBack()
-    this.alert = new Alert()
     this.scrollEvent = new ScrollEvent()
     this.fileInput = new FileInput()
     $(window).on('load', () => {
@@ -53,6 +52,7 @@ export class Framework {
     Framework.initializeSortables()
     Framework.initializePopovers()
     Framework.initializeTooltips()
+    Framework.initializeToasts()
     Framework.initializeSelects()
     Framework.initializeCollections()
     Framework.initializeDateTimePickers()
@@ -80,6 +80,12 @@ export class Framework {
   static initializeTooltips () {
     $('[data-toggle="tooltip"]').each((index, element) => {
       element.tooltip = new Tooltip($(element))
+    })
+  }
+
+  static initializeToasts () {
+    $('.toast').each((index, element) => {
+      element.toast = new Toast($(element))
     })
   }
 
