@@ -1,5 +1,8 @@
 import { Cookies } from './Cookies'
+import { Data } from './Data'
+
 const cookies = new Cookies()
+const data = new Data()
 
 export class Theme {
   constructor () {
@@ -46,10 +49,10 @@ export class Theme {
   showTheme (themeToBe) {
     if (themeToBe === 'dark') {
       // make it dark
-      $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '/build/style-dark.css'))
+      $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', data.get('theme.paths.dark')))
     } else {
       // remove darkness
-      $('link[rel=stylesheet][href~="/build/style-dark.css"]').remove()
+      $('link[rel=stylesheet][href~="' + data.get('theme.paths.dark') + '"]').remove()
     }
   }
 
