@@ -1093,12 +1093,12 @@ $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
 // CUSTOM VARIABLES
 //
 // Sidebar
-$sidebar-width-open:    235px;
-$sidebar-width-closed:  85px;
+$sidebar-width-open:    235px !default;
+$sidebar-width-closed:  85px !default;
 
 // Topbar
-$topbar-height-sm:      58px;
-$topbar-height-md:      68px;
+$topbar-height-sm:      58px !default;
+$topbar-height-md:      68px !default;
 
 // Colors
 $top-color:               $white !default;
