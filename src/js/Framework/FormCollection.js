@@ -1,4 +1,4 @@
-import Sortable from 'sortablejs/Sortable';
+import Sortable from 'sortablejs'
 
 export default class FormCollection {
   constructor (element) {
