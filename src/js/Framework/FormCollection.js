@@ -17,7 +17,7 @@ export default class FormCollection {
 
   init () {
     if (this._element.find('[data-role="collection-item"]').length > 0) {
-      this._element.find('[data-role="collection-add-button"]').removeAttr('hidden');
+      this._element.find('[data-role="collection-add-button"]');
     }
 
     // set index if not defined
@@ -52,7 +52,7 @@ export default class FormCollection {
     this._element.find('[data-role="collection-item-container"]').append(newForm);
 
     // Show add button
-    this._element.find('[data-role="collection-add-button"]:last').removeAttr('hidden');
+    this._element.find('[data-role="collection-add-button"]:last');
 
     $(document).trigger('added.collection.item');
   }
@@ -66,11 +66,6 @@ export default class FormCollection {
       .closest('[data-role="collection-item"]')
       .fadeOut(600)
       .remove();
-
-    // Hide last add button if there aren't any collection items
-    if (this._element.find('[data-role="collection-item"]').length === 0) {
-      this._element.find('[data-role="collection-add-button"]:last').attr('hidden', true);
-    }
 
     $(document).trigger('removed.collection.item');
   }
