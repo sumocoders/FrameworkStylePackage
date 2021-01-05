@@ -9,20 +9,20 @@
   "author": "Mathias Helin",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "bootstrap": "^4.0.0",
-    "moment": "^2.24.0",
-    "popper.js": "^1.12.9",
+    "bootstrap": "^4.5.3",
+    "moment": "^2.29.1",
+    "popper.js": "^1.16.1",
     "requestanimationframe": "0.0.23",
-    "select2-theme-bootstrap4": "^0.2.0-beta.2",
-    "sortablejs": "^1.9.0",
-    "tempusdominus-bootstrap-4": "^5.1.2",
-    "tempusdominus-core": "^5.0.3"
+    "select2-theme-bootstrap4": "^0.2.0-beta.6",
+    "sortablejs": "^1.12.0",
+    "tempusdominus-bootstrap-4": "^5.39.0",
+    "tempusdominus-core": "^5.19.0"
   },
   "devDependencies": {
-    "standard": "^14.3.1",
-    "stylelint": "^13.2.0",
+    "standard": "^14.3.4",
+    "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"
   }
 }
