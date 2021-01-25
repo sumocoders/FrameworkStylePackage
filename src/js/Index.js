@@ -1,5 +1,7 @@
 // Bootstrap import
 import 'bootstrap/dist/js/bootstrap'
+import Vue from 'vue'
+import Toast from './Framework/Components/Toast'
 
 import { Ajax } from './Framework/Ajax'
 import { Form } from './Framework/Form'
@@ -121,3 +123,13 @@ export class Framework {
     });
   }
 }
+
+$(window).on('load', () => {
+  console.log('WINDOW LOAD')
+  if ($('#toast-wrapper').length) {
+    new Vue({
+      el: '#toast-wrapper',
+      components: {Toast}
+    })
+  }
+})
