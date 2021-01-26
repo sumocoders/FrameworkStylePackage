@@ -37,7 +37,7 @@ export class Ajax {
           }
         }
 
-        new Flash().add(textStatus, 'danger')
+        Flash.add(textStatus, 'danger')
       }
 
       return false
