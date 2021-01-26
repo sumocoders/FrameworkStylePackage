@@ -7,7 +7,7 @@
     data-animation="true"
     aria-atomic="true"
     :data-delay="delay"
-    data-autohide="false"
+    :data-autohide="autoHideState"
     :id="id">
     <div class="toast-body">
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -22,7 +22,7 @@
             type ? 'warning' : '','fas fa-exclamation',
           ]"
           class="mr-3 mt-1 toast-icon"></i>
-        {{message}}
+        <span v-html="message"></span>
       </div>
     </div>
   </div>
@@ -32,44 +32,54 @@
   export default {
     name: 'toast',
     props: {
-      type: String,
+      type: {
+        type: String,
+        default: 'success'
+      },
       delay: {
         type: Number,
         default: 10000
       },
       message: String,
       autoHide: {
-        type: Boolean,
-        default: false
+        type: String,
+        default: 'null'
       },
       id: {
         type: String,
         default: 'toast' + Date.now()
       }
     },
-    data() {
-      return {
-        role: 'status',
-        live: 'polite',
-      };
-    },
-    watch: {
-
-    },
     methods: {
       showToast() {
         $(this.$el).toast('show')
       },
-      setRoleAndLive () {
+    },
+    computed: {
+      role: function() {
         if (this.type === 'danger') {
-          this.role = 'alert'
-          this.live = 'assertive'
+          return 'alert';
         }
+        return 'status'
+      },
+      live: function() {
+        if (this.type === 'danger') {
+          return 'assertive';
+        }
+        return 'polite'
+      },
+      autoHideState: function() {
+        if (this.autoHide !== 'null') {
+          return this.autoHide
+        }
+        if (this.type === 'danger') {
+          return 'false'
+        }
+        return 'true'
       }
     },
     mounted () {
       this.showToast()
-      this.setRoleAndLive()
     }
   };
 </script>
