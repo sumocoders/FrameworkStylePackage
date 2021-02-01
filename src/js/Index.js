@@ -1,5 +1,7 @@
 // Bootstrap import
 import 'bootstrap/dist/js/bootstrap'
+import Vue from 'vue'
+import Toast from './Framework/Components/Toast'
 
 import { Ajax } from './Framework/Ajax'
 import { Form } from './Framework/Form'
@@ -18,7 +20,6 @@ import { Sortable } from './Framework/Sortable'
 import { Table } from './Framework/Table'
 import { Tabs } from './Framework/Tabs'
 import { Tooltip } from './Framework/Tooltip'
-import { Toast } from './Framework/Toast'
 import FormCollection from './Framework/FormCollection'
 import DatePicker from './Framework/DateTimePicker/DatePicker'
 import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
@@ -52,7 +53,6 @@ export class Framework {
     Framework.initializeSortables()
     Framework.initializePopovers()
     Framework.initializeTooltips()
-    Framework.initializeToasts()
     Framework.initializeSelects()
     Framework.initializeCollections()
     Framework.initializeDateTimePickers()
@@ -80,12 +80,6 @@ export class Framework {
   static initializeTooltips () {
     $('[data-toggle="tooltip"]').each((index, element) => {
       element.tooltip = new Tooltip($(element))
-    })
-  }
-
-  static initializeToasts () {
-    $('.toast').each((index, element) => {
-      element.toast = new Toast($(element))
     })
   }
 
@@ -121,3 +115,12 @@ export class Framework {
     });
   }
 }
+
+$(window).on('load', () => {
+  if ($('#toast-wrapper').length) {
+    new Vue({
+      el: '#toast-wrapper',
+      components: {Toast}
+    })
+  }
+})
