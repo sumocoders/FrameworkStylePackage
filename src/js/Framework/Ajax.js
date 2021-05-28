@@ -1,6 +1,4 @@
-import {Locale} from './Locale'
 import {Flash} from './Flash'
-const locale = new Locale()
 
 export class Ajax {
   constructor () {
@@ -25,7 +23,7 @@ export class Ajax {
       }
 
       if (ajaxOptions !== null) {
-        let textStatus = locale.err('GeneralError')
+        let textStatus = Translator.trans('GeneralError')
 
         if (XMLHttpRequest.responseText !== null) {
           let json = $.parseJSON(XMLHttpRequest.responseText)

@@ -1,7 +1,3 @@
-import {Locale} from './Locale'
-
-const locale = new Locale()
-
 export class Form {
   constructor () {
     this.initForm()
