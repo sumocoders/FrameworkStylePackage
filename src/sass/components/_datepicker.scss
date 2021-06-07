@@ -1,50 +1,49 @@
-.bootstrap-datetimepicker-widget {
-  width: auto;
-
-  .datepicker {
-
-    td {
-      border-radius: 0;
+.flatpickr-calendar {
+  .flatpickr-day {
+    &.selected:hover,
+    &.selected:focus,
+    &.selected {
+      background: $primary;
+      border-color: $primary;
     }
 
-    td.disabled {
-      color: $gray-100;
-      background: none;
-
-      &:hover {
-        color: $white;
-        background-color: rgba($gray-100, 0.8);
-      }
+    &:hover,
+    &:focus {
+      background: $primary;
+      border-color: $primary;
+      color: color-yiq($primary);
     }
+  }
+
+  .flatpickr-day.nextMonthDay.today:not(.selected),
+  .flatpickr-day.prevMonthDay.today:not(.selected),
+  .flatpickr-day.today:not(.selected) {
+    border-color: transparent transparent $primary #e9e9e9;
+  }
+
+  .flatpickr-day.today:not(.selected):hover,
+  .flatpickr-day.prevMonthDay.today:not(.selected):hover,
+  .flatpickr-day.nextMonthDay.today:not(.selected):hover {
+    border: 1px solid $primary;
+  }
+
+  .flatpickr-day.today:hover,
+  .flatpickr-day.today:focus {
+    background: $primary;
+  }
+
+  .flatpickr-months .flatpickr-prev-month:hover,
+  .flatpickr-months .flatpickr-next-month:hover {
+    color: $primary;
+  }
+
+  .flatpickr-months .flatpickr-prev-month:hover svg,
+  .flatpickr-months .flatpickr-next-month:hover svg {
+    fill: $primary;
   }
 }
 
-.date-separator {
-  line-height: $input-line-height;
-  margin: 0 -3px;
-}
-
-.ui-widget-header {
-  background: $gray-300;
-  border-color: $gray-300;
-}
-
-.ui-datepicker {
-  z-index: 9999 !important;
-
-  th {
-    color: $gray-300;
-  }
-}
-
-.ui-state-default,
-.ui-widget-content .ui-state-default {
-  background: $gray-100;
-  border: $gray-500;
-  color: $gray-500;
-}
-
-.ui-datepicker-today .ui-state-default {
-  background: theme-color('primary');
-  color: $white;
+.flatpickr-input[readonly="readonly"] {
+  background: $input-bg;
+  color: $input-color;
 }
