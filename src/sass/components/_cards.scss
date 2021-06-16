@@ -77,6 +77,16 @@
   background: $body-bg;
 }
 
+.card-collection-item {
+  margin-bottom: $spacer;
+
+  &.card-collection-item-drag {
+    padding-left: map_get($spacers, 4);
+    margin-left: map_get($spacers, 4);
+  }
+}
+
+
 @include media-breakpoint-up(md) {
   .card.card-dashboard {
     h2 {

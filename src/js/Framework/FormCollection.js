@@ -26,13 +26,15 @@ export default class FormCollection {
       this._element.data('index', this._element.find('[data-role="collection-item"]').length)
     }
 
-    Sortable.create(this._element.find('ul')[0], {
-      handler: '[data-role="collection-item-change-order"]',
-      animation: 150,
-      ghostClass: 'collection-item-selected',
-      chosenClass: 'collection-item-selected',
-      dragClass: 'collection-item-selected'
-    })
+    if (this._element.data('allow-drag-and-drop') === 1) {
+      Sortable.create(this._element.find('ul')[0], {
+        handler: '[data-role="collection-item-change-order"]',
+        animation: 150,
+        ghostClass: 'collection-item-selected',
+        chosenClass: 'collection-item-selected',
+        dragClass: 'collection-item-selected'
+      })
+    }
   }
 
   addItem (event) {
