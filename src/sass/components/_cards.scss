@@ -75,17 +75,22 @@
 
 .card-collection {
   background: $body-bg;
+  border: 1px dashed $gray-400;
+  padding-right: map_get($spacers, 4);
+
+  &.card-collection-drag {
+    padding-left: map_get($spacers, 4);
+
+    .card-collection-item {
+      padding-left: map_get($spacers, 4);
+    }
+  }
 }
 
 .card-collection-item {
   margin-bottom: $spacer;
-
-  &.card-collection-item-drag {
-    padding-left: map_get($spacers, 4);
-    margin-left: map_get($spacers, 4);
-  }
+  padding-right: map_get($spacers, 4)
 }
-
 
 @include media-breakpoint-up(md) {
   .card.card-dashboard {
