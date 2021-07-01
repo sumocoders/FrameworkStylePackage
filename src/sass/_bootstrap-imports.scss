@@ -1,44 +1,52 @@
 /*!
- * Bootstrap v4.0.0-beta (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap v5.0.2 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-//@import "~bootstrap/scss/functions";
-//@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
-@import "~bootstrap/scss/code";
-@import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/tables";
-@import "~bootstrap/scss/forms";
-@import "~bootstrap/scss/buttons";
-@import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/dropdown";
-@import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/card";
-@import "~bootstrap/scss/breadcrumb";
-@import "~bootstrap/scss/pagination";
-@import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
-@import "~bootstrap/scss/alert";
-@import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
-@import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
-@import "~bootstrap/scss/toasts";
-@import "~bootstrap/scss/modal";
-@import "~bootstrap/scss/tooltip";
-@import "~bootstrap/scss/popover";
-@import "~bootstrap/scss/carousel";
-@import "~bootstrap/scss/spinners";
-@import "~bootstrap/scss/utilities";
-@import "~bootstrap/scss/print";
+// scss-docs-start import-stack
+// Configuration
+//@import '~bootstap/scss/functions';
+//@import '~bootstap/scss/variables';
+@import '~bootstap/scss/mixins';
+@import '~bootstap/scss/utilities';
+
+// Layout & components
+@import '~bootstap/scss/root';
+@import '~bootstap/scss/reboot';
+@import '~bootstap/scss/type';
+@import '~bootstap/scss/images';
+@import '~bootstap/scss/containers';
+@import '~bootstap/scss/grid';
+@import '~bootstap/scss/tables';
+@import '~bootstap/scss/forms';
+@import '~bootstap/scss/buttons';
+@import '~bootstap/scss/transitions';
+@import '~bootstap/scss/dropdown';
+@import '~bootstap/scss/button-group';
+@import '~bootstap/scss/nav';
+@import '~bootstap/scss/navbar';
+@import '~bootstap/scss/card';
+@import '~bootstap/scss/accordion';
+@import '~bootstap/scss/breadcrumb';
+@import '~bootstap/scss/pagination';
+@import '~bootstap/scss/badge';
+@import '~bootstap/scss/alert';
+@import '~bootstap/scss/progress';
+@import '~bootstap/scss/list-group';
+@import '~bootstap/scss/close';
+@import '~bootstap/scss/toasts';
+@import '~bootstap/scss/modal';
+@import '~bootstap/scss/tooltip';
+@import '~bootstap/scss/popover';
+@import '~bootstap/scss/carousel';
+@import '~bootstap/scss/spinners';
+@import '~bootstap/scss/offcanvas';
+
+// Helpers
+@import '~bootstap/scss/helpers';
+
+// Utilities
+@import '~bootstap/scss/utilities/api';
+// scss-docs-end import-stack
