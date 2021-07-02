@@ -172,7 +172,8 @@ body.no-scroll {
           width: 15px;
         }
 
-        @include hover-focus {
+        &:hover,
+        &:focus {
           background-color: darken($menu-bg, 5%);
 
           &:before {
@@ -222,7 +223,8 @@ body.no-scroll {
             width: 15px;
           }
 
-          @include hover-focus {
+          &:hover,
+          &:focus {
             background-color: darken($menu-bg, 10%);
 
             &:before {
@@ -286,7 +288,8 @@ body.no-scroll {
           color: $text-muted;
           cursor: pointer;
 
-          @include hover-focus {
+          &:hover,
+&:focus {
             background-color: darken($top-color, 10%);
           }
         }
