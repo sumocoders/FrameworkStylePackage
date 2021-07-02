@@ -142,7 +142,7 @@
       .dropdown-menu {
         background-color: $user-dropdown-bg;
         margin-top: 10px;
-        transition: background-color $transition-theme-duration $transition-timing-function;
+        transition: background-color $transition-theme-duration $transition-theme-timing-function;
 
         &:before {
           border-color: transparent transparent $user-dropdown-bg transparent;
@@ -154,7 +154,7 @@
           position: absolute;
           top: -20px;
           transform: translateX(-50%);
-          transition: border-color $transition-theme-duration $transition-timing-function;
+          transition: border-color $transition-theme-duration $transition-theme-timing-function;
           width: 0;
         }
       }
@@ -163,7 +163,7 @@
     .btn-group {
       border-left: 1px $border-color solid;
       border-right: 0;
-      transition: border-color $transition-theme-duration $transition-timing-function;
+      transition: border-color $transition-theme-duration $transition-theme-timing-function;
 
       span {
         padding: 5px 0;

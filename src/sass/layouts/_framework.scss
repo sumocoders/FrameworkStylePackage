@@ -29,7 +29,7 @@
   border-bottom: 1px $border-color solid;
   overflow: hidden;
   padding: 20px 19px;
-  transition: border-color $transition-theme-duration $transition-timing-function;
+  transition: border-color $transition-theme-duration $transition-theme-timing-function;
 
   h2 {
     color: $gray-500;
