@@ -1440,5 +1440,24 @@ $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
 
+// CUSTOM VARIABLES
+//
+// Sidebar
+$sidebar-width-open:    235px !default;
+$sidebar-width-closed:  85px !default;
+
+// Topbar
+$topbar-height-sm:      58px !default;
+$topbar-height-md:      68px !default;
+
+// Colors
+$top-color:               $white !default;
+$logo-bg:                 $top-color !default;
+$user-bg:                 $top-color !default;
+$user-dropdown-bg:        $dropdown-bg !default;
+$navbar-toggler-color:    $body-color !default;
+$menu-bg:                 $primary !default;
+$loading-indicator-color: $primary !default;
+
 // Back to top
 $back-to-top-bg:          $white !default;
