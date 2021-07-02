@@ -355,7 +355,7 @@ $box-shadow-lg:               0 1rem 3rem rgba($black, 0.175) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, 0.075) !default;
 // scss-docs-end box-shadow-variables
 
-$component-active-color:      color-yiq($component-active-bg) !default;
+$component-active-color:      color-contrast($component-active-bg) !default;
 $component-active-bg:         $primary !default;
 
 // scss-docs-start caret-variables
