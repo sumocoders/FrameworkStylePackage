@@ -167,30 +167,3 @@ input[type="file"] {
 .label-optional {
   color: $text-muted;
 }
-
-.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
-  background-color: color-contrast($custom-control-indicator-checked-bg);
-}
-
-.custom-control.custom-switch {
-  padding-left: $custom-switch-width + $custom-control-gutter;
-}
-
-.dark-mode-switch.custom-switch {
-  padding-left: 0;
-  padding-right: $custom-switch-width + $custom-control-gutter;
-
-  .custom-control-label {
-    font-weight: $font-weight-base;
-    width: 100%;
-
-    &::before {
-      left: initial;
-      right: -$custom-switch-width - $custom-control-gutter;
-    }
-    &::after {
-      left: initial;
-      right: calc(-#{$custom-switch-width} + #{$custom-control-gutter} - #{$custom-control-indicator-border-width} * 2);
-    }
-  }
-}
