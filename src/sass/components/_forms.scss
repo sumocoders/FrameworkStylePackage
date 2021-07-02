@@ -169,7 +169,7 @@ input[type="file"] {
 }
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
-  background-color: color-yiq($custom-control-indicator-checked-bg);
+  background-color: color-contrast($custom-control-indicator-checked-bg);
 }
 
 .custom-control.custom-switch {

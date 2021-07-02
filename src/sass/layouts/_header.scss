@@ -57,7 +57,7 @@
 
     .btn-default {
       background: none;
-      color: color-yiq($user-bg);
+      color: color-contrast($user-bg);
       overflow: hidden;
 
       &:hover,

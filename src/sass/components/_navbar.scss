@@ -154,14 +154,14 @@ body.no-scroll {
       }
 
       .nav-link {
-        color: color-yiq($menu-bg);
+        color: color-contrast($menu-bg);
         flex-direction: row;
         font-weight: bold;
         padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
 
         &:before {
-          background-color: color-yiq($menu-bg);
+          background-color: color-contrast($menu-bg);
           border-radius: 50%;
           content: '';
           height: 15px;
@@ -206,13 +206,13 @@ body.no-scroll {
       li {
 
         a.dropdown-item {
-          color: color-yiq($menu-bg);
+          color: color-contrast($menu-bg);
           padding: 1.3rem 1rem 1.3rem 2.8rem;
           position: relative;
 
           &:before {
             border-radius: 50%;
-            background-color: color-yiq($menu-bg);
+            background-color: color-contrast($menu-bg);
             content: '';
             height: 15px;
             left: -16px;
@@ -266,7 +266,7 @@ body.no-scroll {
         .current .dropdown-item,
         li a:hover {
           background-color: darken($menu-bg, 10%);
-          color: color-yiq($menu-bg);
+          color: color-contrast($menu-bg);
         }
       }
     }
