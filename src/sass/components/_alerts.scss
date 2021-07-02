@@ -1,11 +1,11 @@
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
     a {
-      color: theme-color-level($color, $alert-color-level);
+      color: shift-color($value, $alert-color-scale);
     }
 
     &:before {
-      color: theme-color-level($color, $alert-border-level);
+      color: shift-color($value, $alert-color-scale);
     }
   }
 }

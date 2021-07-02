@@ -364,10 +364,11 @@ $caret-vertical-align:        $caret-width * 0.85 !default;
 $caret-spacing:               $caret-width * 0.85 !default;
 // scss-docs-end caret-variables
 
-$transition-base:             all 0.2s ease-in-out !default;
+$transition-base:             all 0.25s ease-in-out !default;
 $transition-fade:             opacity 0.15s linear !default;
 // CUSTOM SUMOCODERS
-$transition-theme-duration:   $transition-duration; // Equals or less than transition duration
+$transition-theme-duration:         0.25s; // Equals or less than transition duration
+$transition-theme-timing-function:  ease-in-out;
 // scss-docs-start collapse-transition
 $transition-collapse:         height 0.35s ease !default;
 // scss-docs-end collapse-transition
@@ -879,6 +880,7 @@ $form-validation-states: (
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
 $zindex-fixed:                      1030 !default;
+$zindex-backtotop:                  1035 !default; // custom sumocoders
 $zindex-modal-backdrop:             1040 !default;
 $zindex-offcanvas:                  1050 !default;
 $zindex-modal:                      1060 !default;
@@ -1437,3 +1439,6 @@ $kbd-color:                         $white !default;
 $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
+
+// Back to top
+$back-to-top-bg:          $white !default;

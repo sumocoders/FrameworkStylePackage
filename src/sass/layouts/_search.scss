@@ -7,7 +7,7 @@
 
     .form-control:focus {
       box-shadow: none;
-      transition: box-shadow $transition-duration;
+      transition: $transition-base;
     }
 
     .control-label {
@@ -78,7 +78,7 @@
       .search-form {
         float: left;
         overflow: hidden;
-        transition: width $transition-duration;
+        transition: $transition-base;
         width: 0;
       }
 
@@ -91,7 +91,7 @@
         .search-form {
           display: block;
           float: left;
-          transition: width $transition-duration;
+          transition: $transition-base;
           width: 145px;
         }
 
