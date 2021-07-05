@@ -62,7 +62,7 @@
 
       &:hover,
       &:focus {
-        background-color: darken($user-bg, 10%);
+        background-color: shade-color($user-bg, 10%);
       }
 
       &:after {

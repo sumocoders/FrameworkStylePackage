@@ -7,7 +7,7 @@
   $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
 
   @if ($yiq >= $yiq-contrasted-threshold) {
-    @return darken($color, 20%);
+    @return shade-color($color, 20%);
   } @else {
     @return $color;
   }
@@ -22,9 +22,9 @@
   $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
 
   @if ($yiq >= $yiq-contrasted-threshold) {
-    @return darken($color, 35%);
+    @return shade-color($color, 35%);
   } @else {
-    @return darken($color, 15%);
+    @return shade-color($color, 15%);
   }
 }
 

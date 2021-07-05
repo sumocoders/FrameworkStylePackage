@@ -137,7 +137,7 @@ body.no-scroll {
       position: relative;
 
       &.current {
-        background-color: darken($menu-bg, 10%);
+        background-color: shade-color($menu-bg, 10%);
       }
 
       &.current .nav-link,
@@ -174,7 +174,7 @@ body.no-scroll {
 
         &:hover,
         &:focus {
-          background-color: darken($menu-bg, 5%);
+          background-color: shade-color($menu-bg, 5%);
 
           &:before {
             animation: bounce 1s 1;
@@ -198,7 +198,7 @@ body.no-scroll {
     }
 
     .dropdown-menu:not(.dropdown-menu-user) {
-      background-color: darken($menu-bg, 8%);
+      background-color: shade-color($menu-bg, 8%);
       margin: 0;
       padding: 0;
       position: relative;
@@ -225,7 +225,7 @@ body.no-scroll {
 
           &:hover,
           &:focus {
-            background-color: darken($menu-bg, 10%);
+            background-color: shade-color($menu-bg, 10%);
 
             &:before {
               animation: bounce 1s 1;
@@ -235,7 +235,7 @@ body.no-scroll {
         }
 
         &.current a.dropdown-item {
-          background-color: darken($menu-bg, 10%);
+          background-color: shade-color($menu-bg, 10%);
 
           &:before {
             transform: translateX(7px);
@@ -267,7 +267,7 @@ body.no-scroll {
 
         .current .dropdown-item,
         li a:hover {
-          background-color: darken($menu-bg, 10%);
+          background-color: shade-color($menu-bg, 10%);
           color: color-contrast($menu-bg);
         }
       }
@@ -290,7 +290,7 @@ body.no-scroll {
 
           &:hover,
 &:focus {
-            background-color: darken($top-color, 10%);
+            background-color: shade-color($top-color, 10%);
           }
         }
       }
