@@ -119,8 +119,8 @@ $custom-range-track-bg:             $gray-600 !default;
 $custom-range-thumb-bg:                      $primary !default;
 $custom-range-thumb-disabled-bg:             $gray-700 !default;
 
-$form-feedback-valid-color:         theme-color-level("success", -5) !default;
-$form-feedback-invalid-color:       theme-color-level("danger", -5) !default;
+$form-feedback-valid-color:         $success !default;
+$form-feedback-invalid-color:       $danger !default;
 
 // Navs
 
@@ -219,7 +219,7 @@ $breadcrumb-active-color:           $gray-300 !default;
 
 // Code
 
-$code-color:                        lighten($pink, 20%) !default;
+$code-color:                        $pink !default;
 
 $kbd-color:                         $gray-100 !default;
 $kbd-bg:                            $gray-700 !default;
