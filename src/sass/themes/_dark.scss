@@ -59,12 +59,6 @@ $theme-colors: map-merge(
 
 $theme-color-interval:      8% !default;
 
-$yiq-contrasted-threshold:  150 !default;
-$yiq-contrasted-link-threshold:  100 !default;
-
-$yiq-text-dark:             $gray-900 !default;
-$yiq-text-light:            $white !default;
-
 // Body
 
 $body-bg:             $gray-900 !default;
@@ -72,8 +66,8 @@ $body-color:          $white !default;
 
 // Links
 
-$link-color:          color-dark-text-yiq($primary) !default;
-$link-hover-color:    color-dark-text-hover-yiq($primary) !default;
+$link-color:          color-contrast($primary) !default;
+$link-hover-color:    color-contrast($primary) !default;
 
 // Components
 $border-color:        $gray-800 !default;
@@ -90,7 +84,6 @@ $table-color:         $body-color !default;
 $table-accent-bg:     $gray-800 !default;
 $table-hover-color:   $table-color !default;
 $table-hover-bg:      $gray-700 !default;
-$table-head-color:    lighten($body-color, 5%) !default;
 $table-border-color:  $border-color !default;
 
 $table-bg-level:      6 !default;
@@ -192,12 +185,6 @@ $toast-header-background-color:     rgba($black, .35) !default;
 
 $modal-content-bg:    $body-bg !default;
 $modal-backdrop-bg:   $gray-300 !default;
-
-// Alerts
-
-$alert-bg-level:                    7 !default;
-$alert-border-level:                -2 !default;
-$alert-color-level:                 -10 !default;
 
 // Progress bars
 
