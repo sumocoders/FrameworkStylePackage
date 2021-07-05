@@ -53,9 +53,9 @@ $theme-colors: (
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio:   4.5 !default;
 
-// Customize the light and dark text colors for use in our color contrast function.
+/*// Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $black !default;
-$color-contrast-light:     $white !default;
+$color-contrast-light:     $white !default;*/
 
 // fusv-disable
 $blue-100: tint-color($blue, 80%) !default;
