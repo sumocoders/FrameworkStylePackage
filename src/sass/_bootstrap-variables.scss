@@ -256,7 +256,7 @@ $body-text-align:           null !default;
 //
 // Style anchor elements.
 
-$link-color:                              color-text-yiq($primary) !default;
+$link-color:                              color-contrast($primary) !default;
 $link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
