@@ -53,9 +53,9 @@ $theme-colors: (
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio:   4.5 !default;
 
-/*// Customize the light and dark text colors for use in our color contrast function.
+// Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $black !default;
-$color-contrast-light:     $white !default;*/
+$color-contrast-light:     $white !default;
 
 // fusv-disable
 $blue-100: tint-color($blue, 80%) !default;
@@ -981,7 +981,7 @@ $dropdown-divider-margin-y:         $spacer * 0.5 !default;
 $dropdown-box-shadow:               0 0.5rem 1rem rgba($black, 0.175) !default;
 
 $dropdown-link-color:               $gray-900 !default;
-$dropdown-link-hover-color:         shade-color($dropdown-link-color, 5%) !default;
+$dropdown-link-hover-color:         darken($dropdown-link-color, 5%) !default;
 $dropdown-link-hover-bg:            $gray-200 !default;
 
 $dropdown-link-active-color:        $component-active-color !default;
