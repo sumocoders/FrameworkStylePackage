@@ -1,8 +1,11 @@
-// Bootstrap import
-import 'bootstrap/dist/js/bootstrap'
+// external frameworks
+import * as bootstrap from 'bootstrap/dist/js/bootstrap'
 import Vue from 'vue'
+
+// Vue components
 import Toast from './Framework/Components/Toast'
 
+// Other components
 import { Ajax } from './Framework/Ajax'
 import { Form } from './Framework/Form'
 import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
@@ -45,6 +48,7 @@ export class Framework {
     this.goBack = new GoBack()
     this.scrollEvent = new ScrollEvent()
     this.fileInput = new FileInput()
+    this.tooltip = new Tooltip()
     $(window).on('load', () => {
       this.theme = new Theme()
     })
@@ -52,7 +56,6 @@ export class Framework {
     Framework.initializeSliders()
     Framework.initializeSortables()
     Framework.initializePopovers()
-    Framework.initializeTooltips()
     Framework.initializeSelects()
     Framework.initializeCollections()
     Framework.initializeDateTimePickers()
@@ -74,12 +77,6 @@ export class Framework {
   static initializePopovers () {
     $('[data-toggle="popover"]').each((index, element) => {
       element.popover = new Popover($(element))
-    })
-  }
-
-  static initializeTooltips () {
-    $('[data-toggle="tooltip"]').each((index, element) => {
-      element.tooltip = new Tooltip($(element))
     })
   }
 
