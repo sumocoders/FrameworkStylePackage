@@ -21,12 +21,7 @@ table.table {
     font-weight: $font-weight-bold;
 
     th {
-      border-bottom: none;
       border-top: none;
     }
   }
-}
-
-.table-striped.table-striped-bg-white tbody tr:nth-of-type(#{$table-striped-order}) {
-  background-color: $light;
 }
