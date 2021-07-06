@@ -137,13 +137,15 @@ body.no-scroll {
       position: relative;
 
       &.current {
-        background-color: shade-color($menu-bg, 10%);
+        background-color: shade-color($menu-bg, 50%);
       }
 
       &.current .nav-link,
       &.dropdown.show .nav-link {
+        color: color-contrast(shade-color($menu-bg, 50%));
 
         &:before {
+          background-color: color-contrast(shade-color($menu-bg, 50%));
           transform: translateX(7px);
         }
 
@@ -174,10 +176,12 @@ body.no-scroll {
 
         &:hover,
         &:focus {
-          background-color: shade-color($menu-bg, 5%);
+          background-color: shade-color($menu-bg, 50%);
+          color: color-contrast(shade-color($menu-bg, 50%));
 
           &:before {
             animation: bounce 1s 1;
+            background-color: color-contrast(shade-color($menu-bg, 50%));
             transform: translateX(7px);
           }
         }
