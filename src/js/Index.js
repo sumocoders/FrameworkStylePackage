@@ -1,5 +1,6 @@
 // external frameworks
-import * as bootstrap from 'bootstrap/dist/js/bootstrap'
+import * as bootstrap from 'bootstrap'
+window.bootstrap = bootstrap
 import Vue from 'vue'
 
 // Vue components

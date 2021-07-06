@@ -1,5 +1,7 @@
 export class Navbar {
   constructor () {
+    this.navCollapse = new window.bootstrap.Collapse(document.getElementById('navbar-collapse-1'))
+
     this.initNavbar()
   }
 
@@ -31,8 +33,9 @@ export class Navbar {
 
   closeNavbar (e) {
     const navWrapper = $('[data-role="navbar-wrapper"]')
-    if (!navWrapper.is(e.target) && navWrapper.has(e.target).length === 0) {
-      $('[data-role="navbar-collapse"]').collapse('hide')
+
+    if (!navWrapper.is(e.target) && navWrapper.has(e.target).length === 0 && $('[data-role="navbar-collapse"]').hasClass('show')) {
+      this.navCollapse.hide()
       $('body').removeClass('no-scroll')
     }
   }
