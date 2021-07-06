@@ -1,10 +1,14 @@
-import DatePicker from './DatePicker';
+import flatpickr from "flatpickr"
 
-export default class TimePicker extends DatePicker {
+export class TimePicker {
   constructor (element) {
-    super(element);
+    this._element = $(element)
+  }
 
-    this.options.format = 'LT';
-    delete this.options.date;
+  init () {
+    flatpickr(this._element, {
+      enableTime: true,
+      noCalendar: true,
+    })
   }
 }
