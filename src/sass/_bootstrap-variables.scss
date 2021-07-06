@@ -171,15 +171,6 @@ $escaped-characters: (
 // Set a specific jump point for requesting color jumps
 $theme-color-interval:      8% !default;
 
-// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
-$yiq-contrasted-threshold:  150 !default;
-$yiq-contrasted-link-threshold:  100 !default;
-
-// Customize the light and dark text colors for use in our YIQ color contrast function.
-$yiq-text-dark:             $gray-900 !default;
-$yiq-text-light:            $white !default;
-
-
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -256,7 +247,7 @@ $body-text-align:           null !default;
 //
 // Style anchor elements.
 
-$link-color:                              color-contrast($primary) !default;
+$link-color:                              $primary !default;
 $link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
