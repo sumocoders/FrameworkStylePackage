@@ -10,9 +10,6 @@
     :data-autohide="autoHideState"
     :id="id">
     <div class="toast-body">
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
       <div class="d-flex flex-row">
         <i
           :class="[
@@ -21,9 +18,10 @@
             type ? 'info' : '','fas fa-info-circle',
             type ? 'warning' : '','fas fa-exclamation',
           ]"
-          class="mr-3 mt-1 toast-icon"></i>
+          class="me-3 mt-1 toast-icon"></i>
         <span v-html="message"></span>
       </div>
+      <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
 </template>
@@ -52,7 +50,8 @@
     },
     methods: {
       showToast() {
-        $(this.$el).toast('show')
+        const toast = new window.bootstrap.Toast(this.$el)
+        toast.show()
       },
     },
     computed: {

@@ -22,6 +22,10 @@
   width: 100%;
 }
 
+.toast-body {
+  display: flex;
+}
+
 @include media-breakpoint-up(md) {
   .toasts-wrapper {
     right: $grid-gutter-width;
