@@ -27,12 +27,12 @@
       }
     }
 
-    &.first:before {
+    &.first::before {
       content: none;
     }
   }
 
-  > li + li:before {
+  > li + li::before {
     font-size: $font-size-sm;
     padding-right: 10px;
   }
@@ -53,7 +53,7 @@
 
 @include media-breakpoint-up(md) {
 
-  .breadcrumb .breadcrumb-item.first:before {
+  .breadcrumb .breadcrumb-item.first::before {
     content: '|';
   }
 }

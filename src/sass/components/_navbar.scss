@@ -63,8 +63,8 @@ body.no-scroll {
     transition: $transition-base;
     width: 20px;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background-color: $navbar-toggler-color;
       content: '';
       height: 3px;
@@ -75,11 +75,11 @@ body.no-scroll {
       width: 20px;
     }
 
-    &:before {
+    &::before {
       top: -6px;
     }
 
-    &:after {
+    &::after {
       bottom: -6px;
     }
   }
@@ -89,12 +89,12 @@ body.no-scroll {
     .navbar-toggler-icon {
       background-color: transparent;
 
-      &:before {
+      &::before {
         top: 0;
         transform: rotate(45deg);
       }
 
-      &:after {
+      &::after {
         bottom: 0;
         transform: rotate(-45deg);
       }
@@ -144,13 +144,13 @@ body.no-scroll {
       &.dropdown.show .nav-link {
         color: color-contrast(shade-color($menu-bg, 50%));
 
-        &:before {
+        &::before {
           background-color: color-contrast(shade-color($menu-bg, 50%));
           transform: translateX(7px);
         }
 
-        &:hover:before,
-        &:focus:before {
+        &:hover::before,
+        &:focus::before {
           animation: none;
         }
       }
@@ -162,7 +162,7 @@ body.no-scroll {
         padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
 
-        &:before {
+        &::before {
           background-color: color-contrast($menu-bg);
           border-radius: 50%;
           content: '';
@@ -179,14 +179,14 @@ body.no-scroll {
           background-color: shade-color($menu-bg, 50%);
           color: color-contrast(shade-color($menu-bg, 50%));
 
-          &:before {
+          &::before {
             animation: bounce 1s 1;
             background-color: color-contrast(shade-color($menu-bg, 50%));
             transform: translateX(7px);
           }
         }
 
-        &.dropdown-toggle:after {
+        &.dropdown-toggle::after {
           display: none;
         }
       }
@@ -215,7 +215,7 @@ body.no-scroll {
           padding: 1.3rem 1rem 1.3rem 2.8rem;
           position: relative;
 
-          &:before {
+          &::before {
             border-radius: 50%;
             background-color: color-contrast($menu-bg);
             content: '';
@@ -231,7 +231,7 @@ body.no-scroll {
           &:focus {
             background-color: shade-color($menu-bg, 10%);
 
-            &:before {
+            &::before {
               animation: bounce 1s 1;
               transform: translateX(7px);
             }
@@ -241,12 +241,12 @@ body.no-scroll {
         &.current a.dropdown-item {
           background-color: shade-color($menu-bg, 10%);
 
-          &:before {
+          &::before {
             transform: translateX(7px);
           }
 
-          &:hover:before,
-          &:focus:before {
+          &:hover::before,
+          &:focus::before {
             animation: none;
           }
         }
