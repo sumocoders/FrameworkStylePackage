@@ -1438,12 +1438,12 @@ $pre-color:                         null !default;
 // The colors are set as variables, that way we can easily update the variables when using other themes.
 
 // Sidebar
-$sidebar-width-open:    235px !default;
-$sidebar-width-closed:  85px !default;
+$sidebar-width-open:      $spacer * 14.6875 !default;
+$sidebar-width-closed:    $spacer * 5.3125 !default;
 
 // Topbar
-$topbar-height-sm:      58px !default;
-$topbar-height-md:      68px !default;
+$topbar-height-sm:        $spacer * 3.625 !default;
+$topbar-height-md:        $spacer * 4.25 !default;
 
 // Colors
 $top-color:               $white !default;
