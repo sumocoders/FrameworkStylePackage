@@ -1,0 +1,6 @@
+src/sass/_bootstrap-variables.scss
+src/sass/themes/_dark.scss
+src/sass/base/_iconfont-template.scss
+src/sass/base/_icons.scss
+src/sass/plugins/_bootstrap-tagsinput.scss
+src/sass/mail/_variables.scss
