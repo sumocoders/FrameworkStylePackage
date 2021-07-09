@@ -1,5 +1,6 @@
 .collection-item {
   position: relative;
+  margin-bottom: $font-size-base * 0.7;
 
   .collection-item-drag-and-drop {
     align-items: center;
@@ -30,4 +31,8 @@
     transform: translateY(-50%);
     width: 40px;
   }
+}
+
+.collection-items {
+  margin-bottom: 0;
 }

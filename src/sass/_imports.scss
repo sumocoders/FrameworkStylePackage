@@ -3,11 +3,11 @@
 @import '~select2/src/scss/core';
 @import '~select2-bootstrap-5-theme/src/include-all';
 @import 'plugins/bootstrap-tagsinput';
-@import 'plugins/collections';
 
 // Base
 @import 'base/theme-transitions';
 @import 'base/images';
+@import 'base/type';
 
 // Components
 @import 'components/alerts';
@@ -15,33 +15,23 @@
 @import 'components/back-to-top';
 @import 'components/breadcrumb';
 @import 'components/cards';
-@import 'components/close';
 @import 'components/datagrids';
 @import 'components/datepicker';
 @import 'components/dropdowns';
 @import 'components/empty-state';
 @import 'components/forms';
 @import 'components/form-collection';
-@import 'components/helper-classes';
 @import 'components/loading';
-@import 'components/logo';
 @import 'components/modal';
 @import 'components/navbar';
 @import 'components/navs';
 @import 'components/page-header';
 @import 'components/pagination';
-@import 'components/panels';
-@import 'components/slider';
-@import 'components/sortable';
 @import 'components/tables';
-@import 'components/tagbox';
 @import 'components/toasts';
-@import 'components/type';
-@import 'components/wells';
 
 // Layouts
 @import 'layouts/framework';
-@import 'layouts/user';
 @import 'layouts/search';
 @import 'layouts/header';
 @import 'layouts/actions';

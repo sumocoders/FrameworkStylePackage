@@ -1,16 +1,3 @@
-.table {
-  .success,
-  .info,
-  .warning,
-  .danger {
-    color: $white;
-  }
-
-  .active {
-    background-color: $dropdown-bg;
-  }
-}
-
 table.table {
   border-bottom: $table-border-width solid $table-border-color;
 
