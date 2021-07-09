@@ -53,7 +53,7 @@
     a {
       color: $body-color;
 
-      &:::after {
+      &::after {
         bottom: 0;
         content: '';
         left: 0;
@@ -89,7 +89,7 @@
 
 .card-collection-item {
   margin-bottom: $spacer;
-  padding-right: map_get($spacers, 4)
+  padding-right: map_get($spacers, 4);
 }
 
 @include media-breakpoint-up(md) {
