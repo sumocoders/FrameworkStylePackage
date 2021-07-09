@@ -46,7 +46,7 @@
   padding: 14px 15px 10px 20px;
 
   .btn-info {
-    background-color: theme-color('info');
+    background-color: $info;
     border-color: transparent;
     -webkit-font-smoothing: antialiased;
     font-style: normal;
