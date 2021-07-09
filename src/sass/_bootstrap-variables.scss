@@ -1439,8 +1439,9 @@ $pre-color:                         null !default;
 
 // Sidebar
 
-$sidebar-width-open:      $spacer * 14.6875 !default;
-$sidebar-width-closed:    $spacer * 5.3125 !default;
+$sidebar-width-sizer:     5.5rem;
+$sidebar-width-closed:    $sidebar-width-sizer !default;
+$sidebar-width-open:      $sidebar-width-sizer * 2.75 !default;
 
 // Topbar
 
