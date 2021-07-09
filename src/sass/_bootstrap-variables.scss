@@ -1431,8 +1431,12 @@ $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
 
-// CUSTOM VARIABLES
+
+// Custom variables
 //
+// Variables to create consistency in sizes and colors in our custom application layout.
+// The colors are set as variables, that way we can easily update the variables when using other themes.
+
 // Sidebar
 $sidebar-width-open:    235px !default;
 $sidebar-width-closed:  85px !default;
