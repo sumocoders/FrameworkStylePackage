@@ -41,11 +41,8 @@
     transition-duration: 0.4s;
   }
 
-  .show {
-
-    .fa-chevron-down {
-      transform: rotate(180deg);
-    }
+  .show .fa-chevron-down {
+    transform: rotate(180deg);
   }
 
   .btn-group {
@@ -57,15 +54,15 @@
 
     .btn-default {
       background: none;
-      color: color-yiq($user-bg);
+      color: color-contrast($user-bg);
       overflow: hidden;
 
       &:hover,
       &:focus {
-        background-color: darken($user-bg, 10%);
+        background-color: shade-color($user-bg, 10%);
       }
 
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -101,7 +98,6 @@
 }
 
 @include media-breakpoint-up(md) {
-
   .main-wrapper {
     padding-left: $sidebar-width-open;
     width: 100%;
@@ -130,7 +126,7 @@
   }
 
   .user-nav {
-    min-height: $topbar-height-sm;
+    min-height: $topbar-height-md;
 
     .user {
       border-bottom: none;
@@ -142,9 +138,9 @@
       .dropdown-menu {
         background-color: $user-dropdown-bg;
         margin-top: 10px;
-        transition: background-color $transition-theme-duration $transition-timing-function;
+        transition: background-color $transition-theme-duration $transition-theme-timing-function;
 
-        &:before {
+        &::before {
           border-color: transparent transparent $user-dropdown-bg transparent;
           border-style: solid;
           border-width: 10px;
@@ -154,7 +150,7 @@
           position: absolute;
           top: -20px;
           transform: translateX(-50%);
-          transition: border-color $transition-theme-duration $transition-timing-function;
+          transition: border-color $transition-theme-duration $transition-theme-timing-function;
           width: 0;
         }
       }
@@ -163,40 +159,27 @@
     .btn-group {
       border-left: 1px $border-color solid;
       border-right: 0;
-      transition: border-color $transition-theme-duration $transition-timing-function;
+      transition: border-color $transition-theme-duration $transition-theme-timing-function;
 
       span {
         padding: 5px 0;
       }
-    }
-
-    .fa-user-circle-o {
-      padding:14px 0 11px;
-
-      &:before {
-        padding: 5px 15px 0;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-up(md) {
-
-  .user-nav {
-    min-height: $topbar-height-md;
-
-    .btn-group {
 
       .fa-chevron-down {
         margin: 5px 0;
         padding: 0 0 0 10px;
       }
 
-      &.show {
+      &.show .fa-chevron-down {
+        padding: 0 10px 0 0;
+      }
+    }
 
-        .fa-chevron-down {
-          padding: 0 10px 0 0;
-        }
+    .fa-user-circle-o {
+      padding: 14px 0 11px;
+
+      &::before {
+        padding: 5px 15px 0;
       }
     }
   }

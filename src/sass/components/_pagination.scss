@@ -1,14 +1,13 @@
 .pagination {
-
   .page-item {
-
     .page-link {
       border-bottom: 2px solid transparent;
       border-top: 0;
       min-height: 34px;
       margin: 2px;
 
-      @include hover-focus {
+      &:hover,
+      &:focus {
         border-bottom: 2px solid $primary;
       }
     }

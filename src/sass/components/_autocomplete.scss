@@ -11,8 +11,8 @@
   }
 
   .ui-state-focus {
-    background: theme-color('primary');
-    border-color: theme-color('primary');
+    background: $primary;
+    border-color: $primary;
     color: $white;
   }
 }
@@ -23,7 +23,7 @@
 }
 
 .ui-state-focus {
-  background: theme-color('primary');
+  background: $primary;
   border: 0;
   color: $white;
   margin: 0;
