@@ -2,6 +2,7 @@
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: 50px 50px;
   }
@@ -30,7 +31,6 @@
 }
 
 @include media-breakpoint-up(sm) {
-
   .loading-indicator {
     width: 400px;
   }

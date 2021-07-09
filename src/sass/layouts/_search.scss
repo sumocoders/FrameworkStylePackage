@@ -1,5 +1,4 @@
 .user-nav {
-
   .search-box {
     margin-left: 50px;
     overflow: hidden;
@@ -57,7 +56,6 @@
 }
 
 @include media-breakpoint-up(md) {
-
   .sub-nav .user-nav {
     border-bottom: 0;
     border-top: 0;
@@ -87,7 +85,6 @@
       }
 
       &.open {
-
         .search-form {
           display: block;
           float: left;

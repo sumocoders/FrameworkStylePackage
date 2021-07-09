@@ -2,6 +2,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -81,7 +82,6 @@
 }
 
 @include media-breakpoint-up(md) {
-
   .header-title {
     padding: $spacer;
   }
@@ -109,7 +109,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-
   .main-content {
     padding-left: $spacer;
     padding-right: $spacer;

@@ -2,15 +2,19 @@
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(15px);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   75% {
     transform: translateX(10px);
   }
+
   100% {
     transform: translateX(7px);
   }
@@ -85,7 +89,6 @@ body.no-scroll {
   }
 
   &:not(.collapsed) {
-
     .navbar-toggler-icon {
       background-color: transparent;
 
@@ -119,7 +122,6 @@ body.no-scroll {
   }
 
   .navbar-collapse {
-
     &.show {
       max-height: calc(100vh - 60px);
       overflow-y: scroll;
@@ -209,7 +211,6 @@ body.no-scroll {
       top: auto;
 
       li {
-
         a.dropdown-item {
           color: color-contrast($menu-bg);
           padding: 1.3rem 1rem 1.3rem 2.8rem;
@@ -261,19 +262,16 @@ body.no-scroll {
       transition: $transition-base;
     }
 
-    .open {
+    .open .dropdown-menu {
+      padding-bottom: 0;
+      padding-top: 0;
+      position: relative;
+      display: block;
 
-      .dropdown-menu {
-        padding-bottom: 0;
-        padding-top: 0;
-        position: relative;
-        display: block;
-
-        .current .dropdown-item,
-        li a:hover {
-          background-color: shade-color($menu-bg, 10%);
-          color: color-contrast($menu-bg);
-        }
+      .current .dropdown-item,
+      li a:hover {
+        background-color: shade-color($menu-bg, 10%);
+        color: color-contrast($menu-bg);
       }
     }
 
@@ -293,7 +291,7 @@ body.no-scroll {
           cursor: pointer;
 
           &:hover,
-&:focus {
+          &:focus {
             background-color: shade-color($top-color, 10%);
           }
         }
@@ -312,8 +310,7 @@ body.no-scroll {
   }
 }
 
-@include media-breakpoint-up(md){
-
+@include media-breakpoint-up(md) {
   .navbar-brand {
     height: $topbar-height-md;
     margin-left: 0;
@@ -383,7 +380,6 @@ body.no-scroll {
   }
 
   .sidebar-collapsed {
-
     &.main-wrapper,
     .main-header {
       padding-left: $sidebar-width-closed;
@@ -393,8 +389,7 @@ body.no-scroll {
       width: $sidebar-width-closed;
 
       .navbar-collapse {
-
-        .toggle-menu-visibility  {
+        .toggle-menu-visibility {
           width: $sidebar-width-closed;
 
           i {

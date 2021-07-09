@@ -52,7 +52,6 @@
 }
 
 @include media-breakpoint-up(md) {
-
   .breadcrumb .breadcrumb-item.first::before {
     content: '|';
   }
