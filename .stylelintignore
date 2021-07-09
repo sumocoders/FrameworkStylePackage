@@ -1,4 +1,5 @@
 src/sass/_bootstrap-variables.scss
+src/sass/_bootstrap-colors.scss
 src/sass/themes/_dark.scss
 src/sass/base/_iconfont-template.scss
 src/sass/base/_icons.scss
