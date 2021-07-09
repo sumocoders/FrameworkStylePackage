@@ -42,9 +42,9 @@ export class Navbar {
 
   removeScrollFromBody (e) {
     if ($(e.currentTarget).hasClass('collapsed')) {
-      $('body').addClass('no-scroll')
-    } else {
       $('body').removeClass('no-scroll')
+    } else {
+      $('body').addClass('no-scroll')
     }
   }
 }
