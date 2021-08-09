@@ -2,7 +2,7 @@
   margin-bottom: 30px;
 
   .card-header {
-    color: color-yiq($primary);
+    color: color-contrast($primary);
     background-color: $primary;
     padding: $card-spacer-x;
 
@@ -27,7 +27,7 @@
   &.card-dashboard {
     cursor: pointer;
     position: relative;
-    transition: box-shadow $transition-duration, background-color $transition-duration;
+    transition: $transition-base;
 
     &:hover {
       box-shadow: $box-shadow;
@@ -89,7 +89,7 @@
 
 .card-collection-item {
   margin-bottom: $spacer;
-  padding-right: map_get($spacers, 4)
+  padding-right: map_get($spacers, 4);
 }
 
 @include media-breakpoint-up(md) {

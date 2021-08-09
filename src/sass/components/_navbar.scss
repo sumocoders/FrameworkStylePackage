@@ -2,15 +2,19 @@
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(15px);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   75% {
     transform: translateX(10px);
   }
+
   100% {
     transform: translateX(7px);
   }
@@ -60,11 +64,11 @@ body.no-scroll {
     height: 3px;
     margin: 10px 0;
     position: relative;
-    transition: background-color $transition-duration;
+    transition: $transition-base;
     width: 20px;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background-color: $navbar-toggler-color;
       content: '';
       height: 3px;
@@ -75,26 +79,25 @@ body.no-scroll {
       width: 20px;
     }
 
-    &:before {
+    &::before {
       top: -6px;
     }
 
-    &:after {
+    &::after {
       bottom: -6px;
     }
   }
 
   &:not(.collapsed) {
-
     .navbar-toggler-icon {
       background-color: transparent;
 
-      &:before {
+      &::before {
         top: 0;
         transform: rotate(45deg);
       }
 
-      &:after {
+      &::after {
         bottom: 0;
         transform: rotate(-45deg);
       }
@@ -119,7 +122,6 @@ body.no-scroll {
   }
 
   .navbar-collapse {
-
     &.show {
       max-height: calc(100vh - 60px);
       overflow-y: scroll;
@@ -137,51 +139,56 @@ body.no-scroll {
       position: relative;
 
       &.current {
-        background-color: darken($menu-bg, 10%);
+        background-color: shade-color($menu-bg, 50%);
       }
 
       &.current .nav-link,
       &.dropdown.show .nav-link {
+        color: color-contrast(shade-color($menu-bg, 50%));
 
-        &:before {
+        &::before {
+          background-color: color-contrast(shade-color($menu-bg, 50%));
           transform: translateX(7px);
         }
 
-        &:hover:before,
-        &:focus:before {
+        &:hover::before,
+        &:focus::before {
           animation: none;
         }
       }
 
       .nav-link {
-        color: color-yiq($menu-bg);
+        color: color-contrast($menu-bg);
         flex-direction: row;
         font-weight: bold;
         padding: 1.7rem 1rem 1.7rem 1.6rem;
         position: relative;
 
-        &:before {
-          background-color: color-yiq($menu-bg);
+        &::before {
+          background-color: color-contrast($menu-bg);
           border-radius: 50%;
           content: '';
           height: 15px;
           left: -16px;
           position: absolute;
           top: calc(50% - 7px);
-          transition: transform $transition-duration;
+          transition: $transition-base;
           width: 15px;
         }
 
-        @include hover-focus {
-          background-color: darken($menu-bg, 5%);
+        &:hover,
+        &:focus {
+          background-color: shade-color($menu-bg, 50%);
+          color: color-contrast(shade-color($menu-bg, 50%));
 
-          &:before {
+          &::before {
             animation: bounce 1s 1;
+            background-color: color-contrast(shade-color($menu-bg, 50%));
             transform: translateX(7px);
           }
         }
 
-        &.dropdown-toggle:after {
+        &.dropdown-toggle::after {
           display: none;
         }
       }
@@ -197,35 +204,35 @@ body.no-scroll {
     }
 
     .dropdown-menu:not(.dropdown-menu-user) {
-      background-color: darken($menu-bg, 8%);
+      background-color: shade-color($menu-bg, 8%);
       margin: 0;
       padding: 0;
       position: relative;
       top: auto;
 
       li {
-
         a.dropdown-item {
-          color: color-yiq($menu-bg);
+          color: color-contrast($menu-bg);
           padding: 1.3rem 1rem 1.3rem 2.8rem;
           position: relative;
 
-          &:before {
+          &::before {
             border-radius: 50%;
-            background-color: color-yiq($menu-bg);
+            background-color: color-contrast($menu-bg);
             content: '';
             height: 15px;
             left: -16px;
             position: absolute;
             top: calc(50% - 7px);
-            transition: transform $transition-duration;
+            transition: $transition-base;
             width: 15px;
           }
 
-          @include hover-focus {
-            background-color: darken($menu-bg, 10%);
+          &:hover,
+          &:focus {
+            background-color: shade-color($menu-bg, 10%);
 
-            &:before {
+            &::before {
               animation: bounce 1s 1;
               transform: translateX(7px);
             }
@@ -233,14 +240,14 @@ body.no-scroll {
         }
 
         &.current a.dropdown-item {
-          background-color: darken($menu-bg, 10%);
+          background-color: shade-color($menu-bg, 10%);
 
-          &:before {
+          &::before {
             transform: translateX(7px);
           }
 
-          &:hover:before,
-          &:focus:before {
+          &:hover::before,
+          &:focus::before {
             animation: none;
           }
         }
@@ -252,22 +259,19 @@ body.no-scroll {
       position: absolute;
       right: 25px;
       top: 50%;
-      transition: transform $transition-duration;
+      transition: $transition-base;
     }
 
-    .open {
+    .open .dropdown-menu {
+      padding-bottom: 0;
+      padding-top: 0;
+      position: relative;
+      display: block;
 
-      .dropdown-menu {
-        padding-bottom: 0;
-        padding-top: 0;
-        position: relative;
-        display: block;
-
-        .current .dropdown-item,
-        li a:hover {
-          background-color: darken($menu-bg, 10%);
-          color: color-yiq($menu-bg);
-        }
+      .current .dropdown-item,
+      li a:hover {
+        background-color: shade-color($menu-bg, 10%);
+        color: color-contrast($menu-bg);
       }
     }
 
@@ -286,14 +290,15 @@ body.no-scroll {
           color: $text-muted;
           cursor: pointer;
 
-          @include hover-focus {
-            background-color: darken($top-color, 10%);
+          &:hover,
+          &:focus {
+            background-color: shade-color($top-color, 10%);
           }
         }
       }
 
       i {
-        transition: transform $transition-duration, margin $transition-duration;
+        transition: $transition-base;
         margin-right: $spacer;
       }
     }
@@ -305,8 +310,7 @@ body.no-scroll {
   }
 }
 
-@include media-breakpoint-up(md){
-
+@include media-breakpoint-up(md) {
   .navbar-brand {
     height: $topbar-height-md;
     margin-left: 0;
@@ -371,12 +375,11 @@ body.no-scroll {
       padding-bottom: 78px;
       padding-left: 0;
       padding-right: 0;
-      transition: background-color $transition-theme-duration $transition-timing-function;
+      transition: background-color $transition-theme-duration $transition-theme-timing-function;
     }
   }
 
   .sidebar-collapsed {
-
     &.main-wrapper,
     .main-header {
       padding-left: $sidebar-width-closed;
@@ -386,8 +389,7 @@ body.no-scroll {
       width: $sidebar-width-closed;
 
       .navbar-collapse {
-
-        .toggle-menu-visibility  {
+        .toggle-menu-visibility {
           width: $sidebar-width-closed;
 
           i {

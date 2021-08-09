@@ -1,13 +1,12 @@
 @each $color, $value in $theme-colors {
   .toast-#{$color} {
-    border-left: 4px solid theme-color-level($color, $alert-border-level);
+    border-left: 4px solid shift-color($value, $alert-color-scale);
 
     .toast-icon {
-      color: theme-color-level($color, $alert-border-level);
+      color: shift-color($value, $alert-color-scale);
     }
   }
 }
-
 
 .toasts-wrapper {
   position: fixed;
@@ -20,6 +19,10 @@
 .toast {
   max-width: 100%;
   width: 100%;
+}
+
+.toast-body {
+  display: flex;
 }
 
 @include media-breakpoint-up(md) {

@@ -1,11 +1,11 @@
 @each $color, $value in $theme-colors {
   .alert-#{$color} {
     a {
-      color: theme-color-level($color, $alert-color-level);
+      color: shift-color($value, $alert-color-scale);
     }
 
-    &:before {
-      color: theme-color-level($color, $alert-border-level);
+    &::before {
+      color: shift-color($value, $alert-color-scale);
     }
   }
 }
@@ -14,10 +14,10 @@
   position: relative;
   padding-left: $spacer * 2.5;
 
-  &:before {
+  &::before {
     content: '\f071';
     display: inline-block;
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Free', sans-serif;
     font-weight: 900;
     height: 100%;
     left: 0.7rem;
@@ -25,15 +25,15 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  &.alert-success:before {
+  &.alert-success::before {
     content: '\f00c';
   }
 
-  &.alert-primary:before,
-  &.alert-secondary:before,
-  &.alert-light:before,
-  &.alert-dark:before,
-  &.alert-info:before {
+  &.alert-primary::before,
+  &.alert-secondary::before,
+  &.alert-light::before,
+  &.alert-dark::before,
+  &.alert-info::before {
     content: '\f05a';
   }
 }
