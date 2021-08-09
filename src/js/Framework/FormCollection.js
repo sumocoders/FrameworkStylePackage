@@ -1,6 +1,6 @@
 import Sortable from 'sortablejs'
 
-export default class FormCollection {
+export class FormCollection {
   constructor (element) {
     this._element = $(element);
 

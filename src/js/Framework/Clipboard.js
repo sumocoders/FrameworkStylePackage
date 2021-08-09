@@ -1,4 +1,4 @@
-export default class Clipboard {
+export class Clipboard {
   constructor(element)
   {
     element.addEventListener('click', (event) => {
