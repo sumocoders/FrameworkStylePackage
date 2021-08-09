@@ -47,12 +47,19 @@ export class Theme {
   }
 
   showTheme (themeToBe) {
+    const $logo = $('[data-navbar-logo]')
+    const $logoDark = $('[data-navbar-logo-dark]')
+
     if (themeToBe === 'dark') {
       // make it dark
       $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', data.get('theme.paths.dark')))
+      $logoDark.removeClass('d-none')
+      $logo.addClass('d-none')
     } else {
       // remove darkness
       $('link[rel=stylesheet][href~="' + data.get('theme.paths.dark') + '"]').remove()
+      $logoDark.addClass('d-none')
+      $logo.removeClass('d-none')
     }
   }
 

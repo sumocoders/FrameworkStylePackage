@@ -11,7 +11,7 @@
     &:focus {
       background: $primary;
       border-color: $primary;
-      color: color-yiq($primary);
+      color: color-contrast($primary);
     }
   }
 

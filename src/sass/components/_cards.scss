@@ -2,7 +2,7 @@
   margin-bottom: 30px;
 
   .card-header {
-    color: color-yiq($primary);
+    color: color-contrast($primary);
     background-color: $primary;
     padding: $card-spacer-x;
 
@@ -27,7 +27,7 @@
   &.card-dashboard {
     cursor: pointer;
     position: relative;
-    transition: box-shadow $transition-duration, background-color $transition-duration;
+    transition: $transition-base;
 
     &:hover {
       box-shadow: $box-shadow;
@@ -53,9 +53,9 @@
     a {
       color: $body-color;
 
-      &:after {
+      &::after {
         bottom: 0;
-        content:  '';
+        content: '';
         left: 0;
         position: absolute;
         right: 0;
@@ -73,10 +73,27 @@
   }
 }
 
+.card-collection {
+  background: $body-bg;
+  border: 1px dashed $gray-400;
+  padding-right: map_get($spacers, 4);
+
+  &.card-collection-drag {
+    padding-left: map_get($spacers, 4);
+
+    .card-collection-item {
+      padding-left: map_get($spacers, 4);
+    }
+  }
+}
+
+.card-collection-item {
+  margin-bottom: $spacer;
+  padding-right: map_get($spacers, 4);
+}
+
 @include media-breakpoint-up(md) {
-
   .card.card-dashboard {
-
     h2 {
       font-size: $font-size-base * 1.2;
     }
@@ -88,7 +105,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-
   .card.card-dashboard .card-body {
     padding-bottom: 2rem;
     padding-top: 2rem;

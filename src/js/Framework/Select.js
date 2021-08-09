@@ -11,6 +11,8 @@ export class Select {
   }
 
   initSelect () {
-    this.element.select2()
+    this.element.select2({
+      theme: 'bootstrap-5'
+    })
   }
 }

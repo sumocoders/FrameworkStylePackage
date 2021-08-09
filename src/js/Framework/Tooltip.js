@@ -1,10 +1,12 @@
 export class Tooltip {
-  constructor (element) {
-    this.element = element
+  constructor () {
     this.initTooltip()
   }
 
   initTooltip () {
-    this.element.tooltip()
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new window.bootstrap.Tooltip(tooltipTriggerEl)
+    })
   }
 }
