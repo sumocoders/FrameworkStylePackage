@@ -1,61 +1,46 @@
-import 'moment/locale/nl-be';
-import 'moment/locale/fr';
-import 'tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4';
-import 'tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.css';
+import flatpickr from "flatpickr"
 
-export default class DatePicker {
+export class DatePicker {
   constructor (element) {
-    this._element = $(element);
+    this._element = $(element)
 
-    this.options = {
-      format: 'L',
-      icons: {
-        time: 'fas fa-clock',
-        date: 'fas fa-calendar',
-        up: 'fas fa-arrow-up',
-        down: 'fas fa-arrow-down',
-        previous: 'fas fa-chevron-left',
-        next: 'fas fa-chevron-right',
-        today: 'fas fa-calendar-check',
-        clear: 'fas fa-delete',
-        close: 'fas fa-times'
-      }
-    };
-
-    this.input = this._element.find('input');
+    this.dayNames = [
+      Translator.trans('datepicker.full.days.sunday'), Translator.trans('datepicker.full.days.monday'), Translator.trans('datepicker.full.days.tuesday'),
+      Translator.trans('datepicker.full.days.wednesday'), Translator.trans('datepicker.full.days.thursday'), Translator.trans('datepicker.full.days.friday'),
+      Translator.trans('datepicker.full.days.saturday')
+    ]
+    this.dayNamesShort = [
+      Translator.trans('datepicker.short.days.sunday'), Translator.trans('datepicker.short.days.monday'), Translator.trans('datepicker.short.days.tuesday'),
+      Translator.trans('datepicker.short.days.wednesday'), Translator.trans('datepicker.short.days.thursday'), Translator.trans('datepicker.short.days.friday'),
+      Translator.trans('datepicker.short.days.saturday')
+    ]
+    this.monthNames = [
+      Translator.trans('datepicker.full.months.january'), Translator.trans('datepicker.full.months.february'), Translator.trans('datepicker.full.months.march'),
+      Translator.trans('datepicker.full.months.april'), Translator.trans('datepicker.full.months.may'), Translator.trans('datepicker.full.months.june'),
+      Translator.trans('datepicker.full.months.july'), Translator.trans('datepicker.full.months.august'), Translator.trans('datepicker.full.months.september'),
+      Translator.trans('datepicker.full.months.october'), Translator.trans('datepicker.full.months.november'), Translator.trans('datepicker.full.months.december')
+    ]
+    this.monthNamesShort = [
+      Translator.trans('datepicker.short.months.january'), Translator.trans('datepicker.short.months.february'), Translator.trans('datepicker.short.months.march'),
+      Translator.trans('datepicker.short.months.april'), Translator.trans('datepicker.short.months.may'), Translator.trans('datepicker.short.months.june'),
+      Translator.trans('datepicker.short.months.july'), Translator.trans('datepicker.short.months.august'), Translator.trans('datepicker.short.months.september'),
+      Translator.trans('datepicker.short.months.october'), Translator.trans('datepicker.short.months.november'), Translator.trans('datepicker.short.months.december')
+    ]
   }
 
   init () {
-    try {
-      let locale = 'nl-be';
-      if (window.jsData !== undefined &&
-        window.jsData.request !== undefined &&
-        window.jsData.request.locale !== undefined &&
-        window.jsData.request.locale !== 'nl' &&
-        window.jsData.request.locale !== null) {
-        locale = jsData.request.locale;
+    flatpickr(this._element, {
+      locale: {
+        firstDayOfWeek: 1,
+        weekdays: {
+          shorthand: this.dayNamesShort,
+          longhand: this.dayNames
+        },
+        months: {
+          shorthand: this.monthNamesShort,
+          longhand: this.monthNames
+        }
       }
-      this.options.locale = locale;
-
-      if (this.input.attr('data-format')) {
-        this.options.format = this.input.attr('data-format')
-      }
-
-      if (this.input.attr('data-max-date')) {
-        this.options.maxDate = moment(this.input.attr('data-max-date'), this.options.format);
-      }
-
-      if (this.input.attr('data-min-date')) {
-        this.options.minDate = moment(this.input.attr('data-min-date'), this.options.format);
-      }
-
-      this.options.date = moment(this.input.attr('value'), this.options.format, this.options.locale);
-
-      this._element.datetimepicker(
-        this.options
-      );
-    } catch (error) {
-      console.error('Error while initializing a datepicker (' + this._element + ')')
-    }
+    })
   }
 }

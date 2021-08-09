@@ -94,16 +94,16 @@ export class Framework {
   }
 
   static initializeDateTimePickers () {
-    $('[data-role="date-time-picker"]').each((index, element) => {
-      new DateTimePicker(element).init()
-    });
-
     $('[data-role="date-picker"]').each((index, element) => {
       new DatePicker(element).init()
     });
 
     $('[data-role="time-picker"]').each((index, element) => {
       new TimePicker(element).init()
+    });
+
+    $('[data-role="date-time-picker"]').each((index, element) => {
+      new DateTimePicker(element).init()
     });
   }
 
