@@ -50,7 +50,7 @@
     },
     methods: {
       showToast() {
-        const toast = new window.bootstrap.Toast(this.$el)
+        const toast = new bootstrap.Toast(this.$el)
         toast.show()
       },
     },
