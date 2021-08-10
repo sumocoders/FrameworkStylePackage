@@ -3,6 +3,7 @@ import * as bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import Vue from 'vue'
 
 // Vue components
+window.bootstrap = bootstrap
 import Toast from './Framework/Components/Toast'
 
 // Other components
