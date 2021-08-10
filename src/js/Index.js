@@ -1,6 +1,5 @@
 // external frameworks
-import * as bootstrap from 'bootstrap'
-window.bootstrap = bootstrap
+import * as bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import Vue from 'vue'
 
 // Vue components
@@ -24,11 +23,11 @@ import { Sortable } from './Framework/Sortable'
 import { Table } from './Framework/Table'
 import { Tabs } from './Framework/Tabs'
 import { Tooltip } from './Framework/Tooltip'
-import FormCollection from './Framework/FormCollection'
-import DatePicker from './Framework/DateTimePicker/DatePicker'
-import DateTimePicker from './Framework/DateTimePicker/DateTimePicker'
-import TimePicker from './Framework/DateTimePicker/TimePicker'
-import Clipboard from './Framework/Clipboard'
+import { FormCollection } from './Framework/FormCollection'
+import { DatePicker } from './Framework/DateTimePicker/DatePicker'
+import { DateTimePicker } from './Framework/DateTimePicker/DateTimePicker'
+import { TimePicker } from './Framework/DateTimePicker/TimePicker'
+import { Clipboard } from './Framework/Clipboard'
 import { ScrollEvent } from 'frameworkstylepackage/src/js/Framework/ScrollEvent'
 import { Theme } from 'frameworkstylepackage/src/js/Framework/Theme'
 import { FileInput } from 'frameworkstylepackage/src/js/Framework/FileInput'
