@@ -1,6 +1,9 @@
 export class Navbar {
   constructor () {
-    this.navCollapse = new bootstrap.Collapse(document.getElementById('navbar-collapse-1'))
+    const navbarCollapse = document.getElementById('navbar-collapse-1')
+    if (typeof (navbarCollapse) != undefined && navbarCollapse != null) {
+      this.navCollapse = new bootstrap.Collapse(navbarCollapse)
+    }
 
     this.initNavbar()
   }
