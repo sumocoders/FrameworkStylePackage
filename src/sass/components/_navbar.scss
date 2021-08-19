@@ -124,7 +124,7 @@ body.no-scroll {
   .navbar-collapse {
     &.show {
       max-height: calc(100vh - 60px);
-      overflow-y: scroll;
+      overflow-y: auto;
     }
 
     .nav {
@@ -338,11 +338,9 @@ body.no-scroll {
     background-color: $menu-bg;
     height: 100%;
     left: 0;
-    overflow-x: auto;
     position: fixed;
     width: $sidebar-width-open;
     z-index: 950;
-    -ms-overflow-style: none;
 
     .nav-link {
       height: 79px;
@@ -372,10 +370,16 @@ body.no-scroll {
 
     .navbar-collapse {
       background-color: $menu-bg;
+      max-height: calc(100vh - 60px);
+      overflow-y: auto;
       padding-bottom: 78px;
       padding-left: 0;
       padding-right: 0;
       transition: background-color $transition-theme-duration $transition-theme-timing-function;
+
+      &.collapsing {
+        height: auto !important;
+      }
     }
   }
 
