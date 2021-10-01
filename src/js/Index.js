@@ -1,22 +1,21 @@
-// external frameworks
+// External frameworks
 import * as bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import Vue from 'vue'
 
 // Vue components
-window.bootstrap = bootstrap
 import Toast from './Framework/Components/Toast'
 
 // Other components
 import { Ajax } from './Framework/Ajax'
 import { Form } from './Framework/Form'
-import { GoBack } from 'frameworkstylepackage/src/js/Framework/GoBack'
+import { GoBack } from './Framework/GoBack'
 import { Link } from './Framework/Link'
 import { LoadingBar } from './Framework/LoadingBar'
 import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
 import { SetHeight } from './Framework/SetHeight'
-import { Sidebar } from 'frameworkstylepackage/src/js/Framework/Sidebar'
+import { Sidebar } from './Framework/Sidebar'
 import { Searchbar } from './Framework/Searchbar'
 import { Select } from './Framework/Select'
 import { Slider } from './Framework/Slider'
@@ -29,9 +28,11 @@ import { DatePicker } from './Framework/DateTimePicker/DatePicker'
 import { DateTimePicker } from './Framework/DateTimePicker/DateTimePicker'
 import { TimePicker } from './Framework/DateTimePicker/TimePicker'
 import { Clipboard } from './Framework/Clipboard'
-import { ScrollEvent } from 'frameworkstylepackage/src/js/Framework/ScrollEvent'
-import { Theme } from 'frameworkstylepackage/src/js/Framework/Theme'
-import { FileInput } from 'frameworkstylepackage/src/js/Framework/FileInput'
+import { ScrollEvent } from './Framework/ScrollEvent'
+import { Theme } from './Framework/Theme'
+import { FileInput } from './Framework/FileInput'
+
+window.bootstrap = bootstrap
 
 export class Framework {
   constructor () {
@@ -50,9 +51,6 @@ export class Framework {
     this.scrollEvent = new ScrollEvent()
     this.fileInput = new FileInput()
     this.tooltip = new Tooltip()
-    $(window).on('load', () => {
-      this.theme = new Theme()
-    })
 
     Framework.initializeSliders()
     Framework.initializeSortables()
@@ -64,61 +62,71 @@ export class Framework {
   }
 
   static initializeSliders () {
-    $('.slider').each((index, element) => {
-      element.slider = new Slider($(element))
+    document.querySelectorAll('.slider').forEach((element) => {
+      element.slider = new Slider(element)
     })
   }
 
   static initializeSortables () {
-    $('.sortable').each((index, element) => {
-      element.sortable = new Sortable($(element))
+    document.querySelectorAll('.sortable').forEach((element) => {
+      element.sortable = new Sortable(element)
     })
   }
 
   static initializePopovers () {
-    $('[data-toggle="popover"]').each((index, element) => {
-      element.popover = new Popover($(element))
+    document.querySelectorAll('[data-toggle="popover"]').forEach((element) => {
+      element.popover = new Popover(element)
     })
   }
 
   static initializeSelects () {
-    $('.select2').each((index, element) => {
-      element.select2 = new Select($(element))
+    document.querySelectorAll('.select2').forEach((element) => {
+      element.select2 = new Select(element)
     })
   }
 
   static initializeCollections () {
-    $('[data-role="collection"]').each((index, element) => {
-      new FormCollection(element)
+    document.querySelectorAll('[data-role="collection"]').forEach((element) => {
+      element.collection = new FormCollection(element)
     })
   }
 
   static initializeDateTimePickers () {
-    $('[data-role="date-picker"]').each((index, element) => {
-      new DatePicker(element).init()
-    });
+    document.querySelectorAll('[data-role="date-picker"]').forEach((element) => {
+      element.datepicker = new DatePicker(element)
+      element.datepicker.init()
+    })
 
-    $('[data-role="time-picker"]').each((index, element) => {
-      new TimePicker(element).init()
-    });
+    document.querySelectorAll('[data-role="time-picker"]').forEach((element) => {
+      element.timepicker = new TimePicker(element)
+      element.timepicker.init()
+    })
 
-    $('[data-role="date-time-picker"]').each((index, element) => {
-      new DateTimePicker(element).init()
-    });
+    document.querySelectorAll('[data-role="date-time-picker"]').forEach((element) => {
+      element.datetimepicker = new DateTimePicker(element)
+      element.datetimepicker.init()
+    })
   }
 
   static initializeClipboard () {
-    $('[data-role="clipboard"]').each((index, element) => {
-      new Clipboard(element)
-    });
+    document.querySelectorAll('[data-role="clipboard"]').forEach((element) => {
+      element.clipboard = new Clipboard(element)
+    })
+  }
+
+  static initializeTheme () {
+    this.theme = new Theme()
   }
 }
 
-$(window).on('load', () => {
-  if ($('#toast-wrapper').length) {
-    new Vue({
+document.addEventListener('DOMContentLoaded', function () {
+  const toastWrapper = document.querySelector('#toast-wrapper')
+  if (toastWrapper !== null) {
+    document.toastComponent = new Vue({
       el: '#toast-wrapper',
-      components: {Toast}
+      components: { Toast }
     })
   }
+
+  Framework.initializeTheme()
 })
