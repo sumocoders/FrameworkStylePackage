@@ -94,17 +94,14 @@ export class Framework {
   static initializeDateTimePickers () {
     document.querySelectorAll('[data-role="date-picker"]').forEach((element) => {
       element.datepicker = new DatePicker(element)
-      element.datepicker.init()
     })
 
     document.querySelectorAll('[data-role="time-picker"]').forEach((element) => {
       element.timepicker = new TimePicker(element)
-      element.timepicker.init()
     })
 
     document.querySelectorAll('[data-role="date-time-picker"]').forEach((element) => {
       element.datetimepicker = new DateTimePicker(element)
-      element.datetimepicker.init()
     })
   }
 
