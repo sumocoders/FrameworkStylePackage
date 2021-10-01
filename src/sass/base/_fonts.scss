@@ -1,0 +1,23 @@
+@mixin font-import($font-name, $font-file, $style: normal, $weight: 400) {
+
+  @font-face {
+    font-family: "#{$font-name}";
+    src: url("../Fonts/#{$font-file}.eot"); /* IE9 Compat Modes */
+    src: url("../Fonts/#{$font-file}.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+    url("../Fonts/#{$font-file}.woff") format('woff'), /* Modern Browsers */
+    url("../Fonts/#{$font-file}.ttf")  format('truetype'), /* Safari, Android, iOS */
+    url("../Fonts/#{$font-file}.svg") format('svg'); /* Legacy iOS */
+
+    font-style:   $style;
+    font-weight:  $weight;
+  }
+}
+
+@include font-import(Lato, lato-light-webfont, normal, 300);
+@include font-import(Lato, lato-lightitalic-webfont, italic, 300);
+@include font-import(Lato, lato-regular-webfont, normal, 400);
+@include font-import(Lato, lato-regularitalic-webfont, italic, 400);
+@include font-import(Lato, lato-bold-webfont, normal, 700);
+@include font-import(Lato, lato-bolditalic-webfont, italic, 700);
+@include font-import(Lato, lato-black-webfont, normal, 900);
+@include font-import(Lato, lato-blackitalic-webfont, italic, 900);
