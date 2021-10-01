@@ -7,7 +7,7 @@ export class Theme {
     this.toggler = document.querySelector('[data-theme-toggler]')
     this.logo = document.querySelector('[data-navbar-logo]')
     this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
-    this.darkThemePath = document.querySelector('body').dataset.theme.dark
+    this.darkThemePath = document.querySelector('body').dataset.themePath
     this.setThemeCookie()
     this.initEventListeners()
   }
