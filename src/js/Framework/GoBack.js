@@ -4,11 +4,9 @@ export class GoBack {
   }
 
   initEventListeners () {
-    $('[data-button-previous="back"]').on('click', this.goBack)
-  }
-
-  goBack (e) {
-    e.preventDefault()
-    window.history.back()
+    document.querySelector('[data-button-previous="back"]').addEventListener('click', (event) => {
+      event.preventDefault()
+      window.history.back()
+    })
   }
 }

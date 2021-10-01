@@ -1,19 +1,20 @@
 export class SetHeight {
   constructor () {
+    this.content = document.querySelector('#content')
     this.setContentHeight()
   }
 
   setContentHeight () {
-    $('#content').css('minHeight', $(window).height())
+    this.content.css('minHeight', window.innerHeight)
     let timeout = null
 
-    $(window).on(
+    window.addEventListener(
       'resize',
-      function (e) {
+      function (event) {
         clearTimeout(timeout)
         timeout = setTimeout(
           function () {
-            $('#content').css('minHeight', $(window).height())
+            this.content.css('minHeight', window.innerHeight)
           },
           200
         )

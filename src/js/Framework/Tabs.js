@@ -5,31 +5,32 @@ export class Tabs {
   }
 
   initEventListeners () {
-    $('.nav-tabs a').on('click', $.proxy(this.changeTab, this))
+    document.querySelectorAll('.nav-tabs a').forEach((link) => {
+      link.addEventListener('click', this.changeTab)
+    })
   }
 
   changeTab (event) {
-    let $current = $(event.currentTarget)
     /* if the browser supports history.pushState(), use it to update the URL
      with the fragment identifier, without triggering a scroll/jump */
     if (window.history && window.history.pushState) {
       /* an empty state object for now — either we implement a proper
        popstate handler ourselves, or wait for jQuery UI upstream */
-      window.history.pushState({}, document.title, $current.attr('href'))
+      window.history.pushState({}, document.title, event.currentTarget.getAttribute('href'))
     } else {
-      let scrolled = $(window).scrollTop()
-      window.location.hash = '#' + $current.attr('href').split('#')[1]
-      $(window).scrollTop(scrolled)
+      const scrolled = document.body.scrollTop
+      window.location.hash = '#' + event.currentTarget.getAttribute('href').split('#')[1]
+      document.body.scrollTop = scrolled
     }
-    $current.tab('show')
+    event.currentTarget.tab('show')
   }
 
   loadTab () {
-    let anchor = document.location.hash
+    const anchor = document.location.hash
     if (anchor !== '') {
-      let $tab = $('.nav-tabs a[href="' + anchor + '"]')
-      if ($tab.length > 0) {
-        $tab.tab('show')
+      const tab = document.querySelector('.nav-tabs a[href="' + anchor + '"]')
+      if (tab.length > 0) {
+        tab.tab('show')
       }
     }
   }

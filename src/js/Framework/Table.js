@@ -1,18 +1,20 @@
 export class Table {
   constructor () {
-    this.initEventListeners
+    this.initEventListeners()
   }
 
   initEventListeners () {
-    $('.table tr').on('click', $.proxy(this.clickableTablerow, this))
+    document.querySelectorAll('.table tr').forEach((row) => {
+      row.addEventListener('click', this.clickableTableRow)
+    })
   }
 
-  clickableTablerow (event) {
+  clickableTableRow (event) {
     if (event.target.nodeName !== 'TD') {
       return
     }
 
-    let actionUrl = $(this).closest('tr').find('.action a').attr('href')
+    const actionUrl = event.target.parentNode.querySelector('.action a').href
     if (actionUrl) {
       window.document.location = actionUrl
     }

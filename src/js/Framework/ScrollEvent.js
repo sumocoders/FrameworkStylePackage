@@ -1,5 +1,4 @@
-import requestAnimationFrame from 'requestanimationframe'
-import {Scrolling} from './Scrolling'
+import { Scrolling } from './Scrolling'
 
 export class ScrollEvent {
   constructor () {
@@ -17,14 +16,14 @@ export class ScrollEvent {
   }
 
   scroll () {
-    $(window).on('scroll load', () => {
+    window.addEventListener('scroll load', () => {
       this.tick()
     })
   }
 
   tick () {
     if (!this.ticking) {
-      requestAnimationFrame(this.calculate)
+      window.requestAnimationFrame(this.calculate)
       this.ticking = true
     }
   }

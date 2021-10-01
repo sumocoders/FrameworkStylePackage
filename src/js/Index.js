@@ -6,11 +6,9 @@ import Vue from 'vue'
 import Toast from './Framework/Components/Toast'
 
 // Other components
-import { Ajax } from './Framework/Ajax'
 import { Form } from './Framework/Form'
 import { GoBack } from './Framework/GoBack'
 import { Link } from './Framework/Link'
-import { LoadingBar } from './Framework/LoadingBar'
 import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
@@ -19,7 +17,7 @@ import { Sidebar } from './Framework/Sidebar'
 import { Searchbar } from './Framework/Searchbar'
 import { Select } from './Framework/Select'
 import { Slider } from './Framework/Slider'
-import { Sortable } from './Framework/Sortable'
+import { DragAndDrop } from './Framework/DragAndDrop'
 import { Table } from './Framework/Table'
 import { Tabs } from './Framework/Tabs'
 import { Tooltip } from './Framework/Tooltip'
@@ -30,16 +28,13 @@ import { TimePicker } from './Framework/DateTimePicker/TimePicker'
 import { Clipboard } from './Framework/Clipboard'
 import { ScrollEvent } from './Framework/ScrollEvent'
 import { Theme } from './Framework/Theme'
-import { FileInput } from './Framework/FileInput'
 
 window.bootstrap = bootstrap
 
 export class Framework {
   constructor () {
-    this.ajax = new Ajax()
     this.form = new Form()
     this.link = new Link()
-    this.loadingBar = new LoadingBar()
     this.navbar = new Navbar()
     this.scrolling = new Scrolling()
     this.setHeight = new SetHeight()
@@ -49,11 +44,10 @@ export class Framework {
     this.tabs = new Tabs()
     this.goBack = new GoBack()
     this.scrollEvent = new ScrollEvent()
-    this.fileInput = new FileInput()
     this.tooltip = new Tooltip()
 
     Framework.initializeSliders()
-    Framework.initializeSortables()
+    Framework.initializeDragAndDrop()
     Framework.initializePopovers()
     Framework.initializeSelects()
     Framework.initializeCollections()
@@ -67,9 +61,9 @@ export class Framework {
     })
   }
 
-  static initializeSortables () {
+  static initializeDragAndDrop () {
     document.querySelectorAll('.sortable').forEach((element) => {
-      element.sortable = new Sortable(element)
+      element.sortable = new DragAndDrop(element)
     })
   }
 
