@@ -6,3 +6,11 @@
 // Foundation mail variables
 @import 'mail/variables';
 @import '~foundation-emails/scss/foundation-emails';
+
+.dark-gray {
+  color: $medium-gray;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
