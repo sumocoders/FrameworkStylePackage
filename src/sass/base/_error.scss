@@ -35,11 +35,8 @@
     min-height: 300px;
   }
 
-  #content a {
-    color: $primary;
-    &:hover, &:active, &:focus {
-      color: darken($primary, 10%);
-    }
+  #content p {
+    margin: 2rem 0;
   }
 
   #content #illustration {
