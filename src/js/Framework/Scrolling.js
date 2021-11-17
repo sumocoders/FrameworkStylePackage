@@ -8,6 +8,17 @@ export class Scrolling {
     document.querySelectorAll('a[href*=\\#]').forEach((link) => {
       link.addEventListener('click', this.scrollTo)
     })
+
+    // On long pages, show the Back to top link
+    window.addEventListener('scroll load', () => {
+      if (document.body.scrollTop > 1000) {
+        this.scrollToTop.classList.remove('d-none')
+        this.scrollToTop.classList.add('show')
+      } else {
+        this.scrollToTop.classList.add('d-none')
+        this.scrollToTop.classList.remove('show')
+      }
+    })
   }
 
   scrollTo (event) {
@@ -34,14 +45,6 @@ export class Scrolling {
         left: 0,
         behavior: 'smooth'
       })
-    }
-  }
-
-  scrollToTop () {
-    if (document.body.scrollTop > 1000) {
-      this.scrollToTop.removeClass('d-none').addClass('show')
-    } else {
-      this.scrollToTop.addClass('d-none').removeClass('show')
     }
   }
 }

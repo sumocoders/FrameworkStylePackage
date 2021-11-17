@@ -8,16 +8,12 @@ import Toast from './Framework/Components/Toast'
 // Other components
 import { Form } from './Framework/Form'
 import { GoBack } from './Framework/GoBack'
-import { Link } from './Framework/Link'
 import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
-import { SetHeight } from './Framework/SetHeight'
 import { Sidebar } from './Framework/Sidebar'
-import { Searchbar } from './Framework/Searchbar'
 import { Select } from './Framework/Select'
 import { Slider } from './Framework/Slider'
-import { DragAndDrop } from './Framework/DragAndDrop'
 import { Table } from './Framework/Table'
 import { Tabs } from './Framework/Tabs'
 import { Tooltip } from './Framework/Tooltip'
@@ -34,21 +30,16 @@ window.bootstrap = bootstrap
 export class Framework {
   constructor () {
     this.form = new Form()
-    this.link = new Link()
-    this.navbar = new Navbar()
     this.scrolling = new Scrolling()
-    this.setHeight = new SetHeight()
     this.sidebar = new Sidebar()
-    this.searchBar = new Searchbar()
     this.table = new Table()
     this.tabs = new Tabs()
     this.goBack = new GoBack()
     this.scrollEvent = new ScrollEvent()
     this.tooltip = new Tooltip()
+    this.popover = new Popover()
 
     Framework.initializeSliders()
-    Framework.initializeDragAndDrop()
-    Framework.initializePopovers()
     Framework.initializeSelects()
     Framework.initializeCollections()
     Framework.initializeDateTimePickers()
@@ -58,18 +49,6 @@ export class Framework {
   static initializeSliders () {
     document.querySelectorAll('.slider').forEach((element) => {
       element.slider = new Slider(element)
-    })
-  }
-
-  static initializeDragAndDrop () {
-    document.querySelectorAll('.sortable').forEach((element) => {
-      element.sortable = new DragAndDrop(element)
-    })
-  }
-
-  static initializePopovers () {
-    document.querySelectorAll('[data-toggle="popover"]').forEach((element) => {
-      element.popover = new Popover(element)
     })
   }
 
