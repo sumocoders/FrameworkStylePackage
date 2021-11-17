@@ -51,14 +51,14 @@ export class Theme {
   showTheme (themeToBe) {
     if (themeToBe === 'dark') {
       this.addDarkStyleLinkToHead()
-      this.darkLogo.removeClass('d-none')
-      this.logo.addClass('d-none')
+      this.darkLogo.classList.remove('d-none')
+      this.logo.classList.add('d-none')
     } else {
       if (this.darkLinkTag !== null) {
         this.darkLinkTag.remove()
       }
-      this.darkLogo.addClass('d-none')
-      this.logo.removeClass('d-none')
+      this.darkLogo.classList.add('d-none')
+      this.logo.classList.remove('d-none')
     }
   }
 
