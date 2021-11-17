@@ -10,8 +10,8 @@ export class Scrolling {
     })
 
     // On long pages, show the Back to top link
-    window.addEventListener('scroll load', () => {
-      if (document.body.scrollTop > 1000) {
+    window.addEventListener('scroll', () => {
+      if (document.body.scrollY > 1000) {
         this.scrollToTop.classList.remove('d-none')
         this.scrollToTop.classList.add('show')
       } else {

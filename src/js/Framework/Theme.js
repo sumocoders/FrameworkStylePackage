@@ -14,8 +14,8 @@ export class Theme {
   }
 
   initEventListeners () {
-    this.toggler.addEventListener('click', this.handleToggleTheme)
-    this.toggler.addEventListener('hide.bs.dropdown', this.handleDropdownHiding)
+    this.toggler.addEventListener('click', (event) => { this.handleToggleTheme(event) })
+    this.toggler.addEventListener('hide.bs.dropdown', (event) => { this.handleDropdownHiding(event) })
   }
 
   setThemeCookie () {

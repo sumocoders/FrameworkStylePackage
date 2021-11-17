@@ -12,8 +12,6 @@ import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
 import { Sidebar } from './Framework/Sidebar'
 import { Select } from './Framework/Select'
-import { Slider } from './Framework/Slider'
-import { Table } from './Framework/Table'
 import { Tabs } from './Framework/Tabs'
 import { Tooltip } from './Framework/Tooltip'
 import { FormCollection } from './Framework/FormCollection'
@@ -30,23 +28,15 @@ export class Framework {
     this.form = new Form()
     this.scrolling = new Scrolling()
     this.sidebar = new Sidebar()
-    this.table = new Table()
     this.tabs = new Tabs()
     this.goBack = new GoBack()
     this.tooltip = new Tooltip()
     this.popover = new Popover()
 
-    Framework.initializeSliders()
     Framework.initializeSelects()
     Framework.initializeCollections()
     Framework.initializeDateTimePickers()
     Framework.initializeClipboard()
-  }
-
-  static initializeSliders () {
-    document.querySelectorAll('.slider').forEach((element) => {
-      element.slider = new Slider(element)
-    })
   }
 
   static initializeSelects () {
