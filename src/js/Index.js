@@ -8,7 +8,6 @@ import Toast from './Framework/Components/Toast'
 // Other components
 import { Form } from './Framework/Form'
 import { GoBack } from './Framework/GoBack'
-import { Navbar } from './Framework/Navbar'
 import { Popover } from './Framework/Popover'
 import { Scrolling } from './Framework/Scrolling'
 import { Sidebar } from './Framework/Sidebar'
@@ -22,7 +21,6 @@ import { DatePicker } from './Framework/DateTimePicker/DatePicker'
 import { DateTimePicker } from './Framework/DateTimePicker/DateTimePicker'
 import { TimePicker } from './Framework/DateTimePicker/TimePicker'
 import { Clipboard } from './Framework/Clipboard'
-import { ScrollEvent } from './Framework/ScrollEvent'
 import { Theme } from './Framework/Theme'
 
 window.bootstrap = bootstrap
@@ -35,7 +33,6 @@ export class Framework {
     this.table = new Table()
     this.tabs = new Tabs()
     this.goBack = new GoBack()
-    this.scrollEvent = new ScrollEvent()
     this.tooltip = new Tooltip()
     this.popover = new Popover()
 

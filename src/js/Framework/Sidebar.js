@@ -9,7 +9,9 @@ export class Sidebar {
   }
 
   initSidebarCollapse () {
-    document.querySelector('[data-sidebar-toggler]').addEventListener('click', this.sidebarCollapse)
+    document.querySelector('[data-sidebar-toggler]').addEventListener('click', () => {
+      this.sidebarCollapse()
+    })
   }
 
   sidebarCollapse () {
