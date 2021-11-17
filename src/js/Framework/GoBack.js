@@ -1,14 +1,15 @@
 export class GoBack {
   constructor () {
+    this.backButton = document.querySelector('[data-button-previous="back"]')
     this.initEventListeners()
   }
 
   initEventListeners () {
-    $('[data-button-previous="back"]').on('click', this.goBack)
-  }
-
-  goBack (e) {
-    e.preventDefault()
-    window.history.back()
+    if (this.backButton !== null) {
+      this.backButton.addEventListener('click', (event) => {
+        event.preventDefault()
+        window.history.back()
+      })
+    }
   }
 }

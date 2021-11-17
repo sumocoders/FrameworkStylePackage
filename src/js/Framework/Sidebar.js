@@ -1,20 +1,23 @@
-import {Cookies} from './Cookies'
+import { Cookies } from './Cookies'
 const cookies = new Cookies()
 
 export class Sidebar {
   constructor () {
+    this.sidebar = document.querySelector('[data-sidebar-wrapper]')
     this.sidebarCookie()
     this.initSidebarCollapse()
   }
 
   initSidebarCollapse () {
-    $(document).on('click', '[data-sidebar-toggler]', $.proxy(this.sidebarCollapse, this))
+    document.querySelector('[data-sidebar-toggler]').addEventListener('click', () => {
+      this.sidebarCollapse()
+    })
   }
 
   sidebarCollapse () {
-    $('[data-sidebar-wrapper]').toggleClass('sidebar-collapsed')
+    this.sidebar.classList.toggle('sidebar-collapsed')
     // set cookie
-    if ($('[data-sidebar-wrapper]').hasClass('sidebar-collapsed')) {
+    if (this.sidebar.classList.contains('sidebar-collapsed')) {
       cookies.setCookie('sidebar_is_open', 'false')
     } else {
       cookies.setCookie('sidebar_is_open', 'true')
@@ -22,12 +25,12 @@ export class Sidebar {
   }
 
   sidebarCookie () {
-    if ($(window).width() > 576) {
+    if (window.innerWidth > 576) {
       // read cookie
       if (cookies.readCookie('sidebar_is_open') === 'false') {
-        $('[data-sidebar-wrapper]').addClass("sidebar-collapsed")
+        this.sidebar.classList.add('sidebar-collapsed')
       } else {
-        $('[data-sidebar-wrapper]').removeClass("sidebar-collapsed")
+        this.sidebar.classList.remove('sidebar-collapsed')
       }
     }
   }

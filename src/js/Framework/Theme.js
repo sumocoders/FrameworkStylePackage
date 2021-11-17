@@ -1,19 +1,21 @@
 import { Cookies } from './Cookies'
-import { Data } from './Data'
 
 const cookies = new Cookies()
-const data = new Data()
 
 export class Theme {
   constructor () {
+    this.toggler = document.querySelector('[data-theme-toggler]')
+    this.logo = document.querySelector('[data-navbar-logo]')
+    this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
+    this.darkLinkTag = document.querySelector('[data-role="dark-style-link"]')
+    this.darkThemePath = document.querySelector('body').dataset.themePath
     this.setThemeCookie()
     this.initEventListeners()
   }
 
   initEventListeners () {
-    // on click, do changeTheme
-    $(document).on('click', '[data-theme-toggler]', $.proxy(this.handleToggleTheme, this))
-    $('[data-dropdown-user-wrapper]').on('hide.bs.dropdown', $.proxy(this.handleDropdownHiding, this))
+    this.toggler.addEventListener('click', (event) => { this.handleToggleTheme(event) })
+    this.toggler.addEventListener('hide.bs.dropdown', (event) => { this.handleDropdownHiding(event) })
   }
 
   setThemeCookie () {
@@ -22,7 +24,7 @@ export class Theme {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         cookies.setCookie('theme', 'dark')
         // set switch toggle checked
-        $('[data-theme-toggler]').prop('checked', 'checked')
+        this.toggler.checked = true
       } else {
         cookies.setCookie('theme', 'light')
       }
@@ -35,7 +37,7 @@ export class Theme {
   handleToggleTheme (event) {
     // set new theme
     let themeToBe = 'light'
-    if ($(event.currentTarget).prop('checked')) {
+    if (this.toggler.checked) {
       themeToBe = 'dark'
     }
 
@@ -47,23 +49,29 @@ export class Theme {
   }
 
   showTheme (themeToBe) {
-    const $logo = $('[data-navbar-logo]')
-    const $logoDark = $('[data-navbar-logo-dark]')
-
     if (themeToBe === 'dark') {
-      // make it dark
-      $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', data.get('theme.paths.dark')))
-      $logoDark.removeClass('d-none')
-      $logo.addClass('d-none')
+      this.addDarkStyleLinkToHead()
+      this.darkLogo.classList.remove('d-none')
+      this.logo.classList.add('d-none')
     } else {
-      // remove darkness
-      $('link[rel=stylesheet][href~="' + data.get('theme.paths.dark') + '"]').remove()
-      $logoDark.addClass('d-none')
-      $logo.removeClass('d-none')
+      if (this.darkLinkTag !== null) {
+        this.darkLinkTag.remove()
+      }
+      this.darkLogo.classList.add('d-none')
+      this.logo.classList.remove('d-none')
     }
   }
 
-  handleDropdownHiding (e) {
+  addDarkStyleLinkToHead () {
+    const link = document.createElement('link')
+    link.type = 'text/css'
+    link.rel = 'stylesheet'
+    link.href = this.darkThemePath
+    link.dataset.role = 'dark-style-link'
+    document.querySelector('head').appendChild(link)
+  }
+
+  handleDropdownHiding (event) {
     // do not close dropdown when toggle is clicked
     if ($(e.clickEvent).length && $(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
       e.preventDefault()

@@ -1,4 +1,4 @@
-import {PluginNotFound} from '../Exception/PluginNotFound'
+import { PluginNotFound } from '../Exception/PluginNotFound'
 
 export class Select {
   constructor (element) {

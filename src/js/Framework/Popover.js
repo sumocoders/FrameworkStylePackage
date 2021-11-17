@@ -1,14 +1,12 @@
 export class Popover {
-  constructor (element) {
-    this.element = element
+  constructor () {
     this.initPopover()
   }
 
   initPopover () {
-    this.element.popover(
-      {
-        html: true
-      }
-    )
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new window.bootstrap.Popover(tooltipTriggerEl)
+    })
   }
 }

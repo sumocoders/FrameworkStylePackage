@@ -1,9 +1,7 @@
-import flatpickr from "flatpickr"
+import flatpickr from 'flatpickr'
 
 export class DatePicker {
   constructor (element) {
-    this._element = $(element)
-
     this.dayNames = [
       Translator.trans('datepicker.full.days.sunday'), Translator.trans('datepicker.full.days.monday'), Translator.trans('datepicker.full.days.tuesday'),
       Translator.trans('datepicker.full.days.wednesday'), Translator.trans('datepicker.full.days.thursday'), Translator.trans('datepicker.full.days.friday'),
@@ -26,10 +24,8 @@ export class DatePicker {
       Translator.trans('datepicker.short.months.july'), Translator.trans('datepicker.short.months.august'), Translator.trans('datepicker.short.months.september'),
       Translator.trans('datepicker.short.months.october'), Translator.trans('datepicker.short.months.november'), Translator.trans('datepicker.short.months.december')
     ]
-  }
 
-  init () {
-    flatpickr(this._element, {
+    this.element = flatpickr(element, {
       locale: {
         firstDayOfWeek: 1,
         weekdays: {
