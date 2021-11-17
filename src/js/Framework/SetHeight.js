@@ -5,7 +5,7 @@ export class SetHeight {
   }
 
   setContentHeight () {
-    this.content.css('minHeight', window.innerHeight)
+    this.content.style.minHeight = window.innerHeight
     let timeout = null
 
     window.addEventListener(
@@ -14,7 +14,7 @@ export class SetHeight {
         clearTimeout(timeout)
         timeout = setTimeout(
           function () {
-            this.content.css('minHeight', window.innerHeight)
+            this.content.style.minHeight = window.innerHeight
           },
           200
         )

@@ -7,6 +7,7 @@ export class Theme {
     this.toggler = document.querySelector('[data-theme-toggler]')
     this.logo = document.querySelector('[data-navbar-logo]')
     this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
+    this.darkLinkTag = document.querySelector('[data-role="dark-style-link"]')
     this.darkThemePath = document.querySelector('body').dataset.themePath
     this.setThemeCookie()
     this.initEventListeners()
@@ -53,7 +54,9 @@ export class Theme {
       this.darkLogo.removeClass('d-none')
       this.logo.addClass('d-none')
     } else {
-      document.querySelector('[data-role="dark-style-link"]').remove()
+      if (this.darkLinkTag !== null) {
+        this.darkLinkTag.remove()
+      }
       this.darkLogo.addClass('d-none')
       this.logo.removeClass('d-none')
     }
