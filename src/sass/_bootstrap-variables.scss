@@ -368,9 +368,9 @@ $transition-collapse:         height 0.35s ease !default;
 // scss-docs-start aspect-ratios
 $aspect-ratios: (
   "1x1": 100%,
-  "4x3": calc(3 / 4 * 100%),
-  "16x9": calc(9 / 16 * 100%),
-  "21x9": calc(9 / 21 * 100%)
+  "4x3": calc(math.div(3,4) * 100%),
+  "16x9": calc(math.div(9,16) * 100%),
+  "21x9": calc(math.div(9,21) * 100%)
 ) !default;
 // scss-docs-end aspect-ratios
 // stylelint-enable function-disallowed-list
@@ -426,7 +426,7 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer / 2 !default;
+$headings-margin-bottom:      math.div($spacer,2) !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        $font-weight-bold !default;
