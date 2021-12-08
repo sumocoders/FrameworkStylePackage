@@ -7,7 +7,6 @@ export class Theme {
     this.togglers = document.querySelectorAll('[data-theme-toggler]')
     this.logo = document.querySelector('[data-navbar-logo]')
     this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
-    this.darkLinkTag = document.querySelector('[data-role="dark-style-link"]')
     this.darkThemePath = document.querySelector('body').dataset.themePath
     this.setThemeCookie()
     this.initEventListeners()
@@ -53,13 +52,17 @@ export class Theme {
   }
 
   showTheme (themeToBe) {
+    const darkStyleLinkTag = this.getDarkStyleLinkTag();
+
     if (themeToBe === 'dark') {
-      this.addDarkStyleLinkToHead()
+      if (darkStyleLinkTag === null) {
+        this.addDarkStyleLinkToHead()
+      }
       this.darkLogo.classList.remove('d-none')
       this.logo.classList.add('d-none')
     } else {
-      if (this.darkLinkTag !== null) {
-        this.darkLinkTag.remove()
+      if (darkStyleLinkTag !== null) {
+        darkStyleLinkTag.remove()
       }
       this.darkLogo.classList.add('d-none')
       this.logo.classList.remove('d-none')
@@ -71,8 +74,11 @@ export class Theme {
     link.type = 'text/css'
     link.rel = 'stylesheet'
     link.href = this.darkThemePath
-    link.dataset.role = 'dark-style-link'
     document.querySelector('head').appendChild(link)
+  }
+
+  getDarkStyleLinkTag () {
+    return document.querySelector('link[rel=stylesheet][href="'+ this.darkThemePath +'"]')
   }
 
   handleDropdownHiding (event) {
