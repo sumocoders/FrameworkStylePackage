@@ -4,7 +4,7 @@ const cookies = new Cookies()
 
 export class Theme {
   constructor () {
-    this.toggler = document.querySelector('[data-theme-toggler]')
+    this.togglers = document.querySelectorAll('[data-theme-toggler]')
     this.logo = document.querySelector('[data-navbar-logo]')
     this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
     this.darkLinkTag = document.querySelector('[data-role="dark-style-link"]')
@@ -14,8 +14,10 @@ export class Theme {
   }
 
   initEventListeners () {
-    this.toggler.addEventListener('click', (event) => { this.handleToggleTheme(event) })
-    this.toggler.addEventListener('hide.bs.dropdown', (event) => { this.handleDropdownHiding(event) })
+    this.togglers.forEach(toggler => {
+      toggler.addEventListener('change', (event) => { this.handleToggleTheme(event) })
+      toggler.addEventListener('hide.bs.dropdown', (event) => { this.handleDropdownHiding(event) })
+    })
   }
 
   setThemeCookie () {
@@ -24,7 +26,9 @@ export class Theme {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         cookies.setCookie('theme', 'dark')
         // set switch toggle checked
-        this.toggler.checked = true
+        this.togglers.forEach(toggler => {
+          toggler.checked = true
+        })
       } else {
         cookies.setCookie('theme', 'light')
       }
@@ -37,7 +41,7 @@ export class Theme {
   handleToggleTheme (event) {
     // set new theme
     let themeToBe = 'light'
-    if (this.toggler.checked) {
+    if (event.target.checked) {
       themeToBe = 'dark'
     }
 
