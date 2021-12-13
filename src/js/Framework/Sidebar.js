@@ -4,8 +4,11 @@ const cookies = new Cookies()
 export class Sidebar {
   constructor () {
     this.sidebar = document.querySelector('[data-sidebar-wrapper]')
-    this.sidebarCookie()
-    this.initSidebarCollapse()
+
+    if (this.sidebar !== null) {
+      this.sidebarCookie()
+      this.initSidebarCollapse()
+    }
   }
 
   initSidebarCollapse () {
