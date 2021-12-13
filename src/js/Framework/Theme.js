@@ -7,7 +7,6 @@ export class Theme {
     this.toggler = document.querySelector('[data-theme-toggler]')
     this.logo = document.querySelector('[data-navbar-logo]')
     this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
-    this.darkLinkTag = document.querySelector('[data-role="dark-style-link"]')
     this.darkThemePath = document.querySelector('body').dataset.themePath
     this.setThemeCookie()
     this.initEventListeners()
@@ -54,9 +53,7 @@ export class Theme {
       this.darkLogo.classList.remove('d-none')
       this.logo.classList.add('d-none')
     } else {
-      if (this.darkLinkTag !== null) {
-        this.darkLinkTag.remove()
-      }
+      this.removeDarkStyleLinkFromHead()
       this.darkLogo.classList.add('d-none')
       this.logo.classList.remove('d-none')
     }
@@ -69,6 +66,13 @@ export class Theme {
     link.href = this.darkThemePath
     link.dataset.role = 'dark-style-link'
     document.querySelector('head').appendChild(link)
+  }
+
+  removeDarkStyleLinkFromHead () {
+    const link = document.querySelector('[data-role="dark-style-link"]')
+    if (link !== null) {
+      link.remove()
+    }
   }
 
   handleDropdownHiding (event) {
