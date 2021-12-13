@@ -4,7 +4,7 @@ const cookies = new Cookies()
 
 export class Theme {
   constructor () {
-    this.toggler = document.querySelector('[data-theme-toggler]')
+    this.togglers = document.querySelectorAll('[data-theme-toggler]')
     this.logo = document.querySelector('[data-navbar-logo]')
     this.darkLogo = document.querySelector('[data-navbar-logo-dark]')
     this.darkThemePath = document.querySelector('body').dataset.themePath
@@ -13,8 +13,10 @@ export class Theme {
   }
 
   initEventListeners () {
-    this.toggler.addEventListener('click', (event) => { this.handleToggleTheme(event) })
-    this.toggler.addEventListener('hide.bs.dropdown', (event) => { this.handleDropdownHiding(event) })
+    this.togglers.forEach(toggler => {
+      toggler.addEventListener('change', (event) => { this.handleToggleTheme(event) })
+      toggler.addEventListener('hide.bs.dropdown', (event) => { this.handleDropdownHiding(event) })
+    })
   }
 
   setThemeCookie () {
@@ -23,7 +25,9 @@ export class Theme {
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         cookies.setCookie('theme', 'dark')
         // set switch toggle checked
-        this.toggler.checked = true
+        this.togglers.forEach(toggler => {
+          toggler.checked = true
+        })
       } else {
         cookies.setCookie('theme', 'light')
       }
@@ -36,7 +40,7 @@ export class Theme {
   handleToggleTheme (event) {
     // set new theme
     let themeToBe = 'light'
-    if (this.toggler.checked) {
+    if (event.target.checked) {
       themeToBe = 'dark'
     }
 
@@ -48,12 +52,18 @@ export class Theme {
   }
 
   showTheme (themeToBe) {
+    const darkStyleLinkTag = this.getDarkStyleLinkTag();
+
     if (themeToBe === 'dark') {
-      this.addDarkStyleLinkToHead()
+      if (darkStyleLinkTag === null) {
+        this.addDarkStyleLinkToHead()
+      }
       this.darkLogo.classList.remove('d-none')
       this.logo.classList.add('d-none')
     } else {
-      this.removeDarkStyleLinkFromHead()
+      if (darkStyleLinkTag !== null) {
+        darkStyleLinkTag.remove()
+      }
       this.darkLogo.classList.add('d-none')
       this.logo.classList.remove('d-none')
     }
@@ -64,15 +74,11 @@ export class Theme {
     link.type = 'text/css'
     link.rel = 'stylesheet'
     link.href = this.darkThemePath
-    link.dataset.role = 'dark-style-link'
     document.querySelector('head').appendChild(link)
   }
 
-  removeDarkStyleLinkFromHead () {
-    const link = document.querySelector('[data-role="dark-style-link"]')
-    if (link !== null) {
-      link.remove()
-    }
+  getDarkStyleLinkTag () {
+    return document.querySelector('link[rel=stylesheet][href="'+ this.darkThemePath +'"]')
   }
 
   handleDropdownHiding (event) {

@@ -21,12 +21,12 @@ export class Cookies {
     const cookies = document.cookie.split(';')
     name = name + '='
 
-    cookies.forEach((cookie) => {
-      cookie.trim()
+    for(let cookie of cookies) {
+      cookie = cookie.trim()
       if (cookie.indexOf(name) === 0) {
         return cookie.substring(name.length, cookie.length)
       }
-    })
+    }
 
     return null
   }
