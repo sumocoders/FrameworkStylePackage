@@ -4,6 +4,7 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
+@use 'sass:math';
 @import 'bootstrap-colors';
 
 // scss-docs-start colors-map
