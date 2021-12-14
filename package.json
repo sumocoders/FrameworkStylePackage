@@ -1,7 +1,7 @@
 {
   "name": "frameworkstylepackage",
-  "version": "2.0.7",
-  "description": "Layout for the default Sumocoders Framework",
+  "version": "2.0.8",
+  "description": "Layout for the SumoCoders Framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
