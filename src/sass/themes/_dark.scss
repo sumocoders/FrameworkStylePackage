@@ -1,52 +1,52 @@
 // Colors
 
-$blue: #0450b3 !default;
-$pink: #b93170 !default;
-$red: #b92b0b !default;
-$orange: #b0580e !default;
-$yellow: #c69605 !default;
-$green: #047f12 !default;
-$cyan: #189 !default;
-
-$primary: $blue !default;
+$white: #e1e1e1 !default;
+$gray-850:   #242424 !default;
+$blue: #5C8CCC !default;
+$pink: #C6578A !default;
+$red: #9E3820 !default;
+$orange: #B76826 !default;
+$yellow: #D7B550 !default;
+$green: #4FA559 !default;
+$cyan: #6da7af !default;
 
 @import '../bootstrap-colors';
 
 $colors: (
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "white":      $white,
-  "gray":       $gray-600,
-  "gray-dark":  $gray-800,
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800,
 ) !default;
 
-$primary:             $cyan !default;
-$secondary:           $gray-600 !default;
+$primary:             $blue !default;
+$secondary:           $gray-400 !default;
 $success:             $green !default;
 $info:                $cyan !default;
 $warning:             $yellow !default;
 $danger:              $red !default;
-$light:               $gray-100 !default;
+$light:               $white !default;
 $dark:                $black !default;
 
 $theme-colors:(
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
-  "white":      $white
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "white":      $white
 ) !default;
 
 $theme-color-interval:      8% !default;
@@ -81,11 +81,11 @@ $mark-bg:                       #420b2a !default;
 
 // scss-docs-start table-variables
 $table-color:         $body-color !default;
-$table-accent-bg:     $gray-800 !default;
+$table-accent-bg:     $gray-850 !default;
 $table-striped-bg:    $gray-900 !default;
 $table-hover-color:   $table-color !default;
 $table-hover-bg:      $gray-700 !default;
-$table-border-color:  $border-color !default;
+$table-border-color:  $gray-850 !default;
 // scss-docs-end table-variables
 
 // Buttons
@@ -97,14 +97,15 @@ $btn-link-disabled-color:     $gray-500 !default;
 // Forms
 
 // scss-docs-start form-input-variables
-$input-bg:                              $gray-700 !default;
+$component-active-bg:                   $primary !default;
+$input-bg:                              $gray-800 !default;
 $input-disabled-bg:                     $gray-900 !default;
 $input-disabled-color:                  $gray-400 !default;
 
-$input-color:                           $gray-100 !default;
+$input-color:                           $white !default;
 $input-border-color:                    $gray-600 !default;
 $input-focus-border-color:              $gray-300 !default;
-$input-placeholder-color:               $gray-500 !default;
+$input-placeholder-color:               $gray-400 !default;
 // scss-docs-end form-input-variables
 
 // scss-docs-start form-check-variables
@@ -168,7 +169,8 @@ $pagination-disabled-border-color:  $gray-800 !default;
 // Cards
 
 // scss-docs-start card-variables
-$card-bg:                           $gray-800 !default;
+$card-bg:                           $gray-850 !default;
+$card-border-color:                 $gray-800 !default;
 // scss-docs-end card-variables
 
 
@@ -200,7 +202,7 @@ $toast-header-background-color:     rgba($black, 0.35) !default;
 
 // scss-docs-start modal-variables
 $modal-content-bg:    $body-bg !default;
-$modal-backdrop-bg:   $gray-300 !default;
+$modal-backdrop-bg:   $gray-500 !default;
 // scss-docs-end modal-variables
 
 
@@ -215,6 +217,7 @@ $progress-bar-color:                $body-color !default;
 // List group
 
 // scss-docs-start list-group-variables
+
 $list-group-bg:                     $gray-800 !default;
 $list-group-border-color:           $gray-700 !default;
 
@@ -279,3 +282,10 @@ $loading-indicator-color:   $gray-600 !default;
 // Back to top
 
 $back-to-top-bg:            $gray-700 !default;
+
+// accordion
+$accordion-border-color:                  $gray-700 !default;
+$accordion-button-active-color:           $body-color !default;
+
+//alerts
+$alert-color-scale:             60% !default;
