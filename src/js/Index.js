@@ -87,3 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   Framework.initializeTheme()
 })
+
+document.addEventListener('added.collection.item', function () {
+  Framework.initializeDateTimePickers()
+})
