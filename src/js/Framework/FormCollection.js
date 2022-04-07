@@ -2,32 +2,33 @@ import Sortable from 'sortablejs'
 
 export class FormCollection {
   constructor (element) {
-    this._element = $(element);
+    this.element = element
 
-    this.addButton = this._element.find('[data-role="collection-add-button"]');
+    this.addButton = this.element.querySelector('[data-role="collection-add-button"]')
+    this.items = this.element.querySelectorAll('[data-role="collection-item"]')
+    this.numberOfItems = this.items.length
 
-    this.bindEvents();
-    this.init();
+    this.bindEvents()
+    this.init()
   }
 
   bindEvents () {
-    this.addButton.on('click', $.proxy(this.addItem, this));
-    $(document).on('click', '[data-role="collection-remove-button"]', $.proxy(this.removeItem, this));
+    this.addButton.addEventListener('click', event => { this.addItem(event) })
+    this.element.querySelectorAll('[data-role="collection-remove-button"]').forEach(button => {
+      button.addEventListener('click', event => { this.removeItem(event) })
+    })
   }
 
   init () {
-    if (this._element.find('[data-role="collection-item"]').length > 0) {
-      this._element.find('[data-role="collection-add-button"]');
-    }
-
     // set index if not defined
-    let index = this._element.data('index');
+    const index = this.element.dataset.index
+
     if (index === undefined || index === null) {
-      this._element.data('index', this._element.find('[data-role="collection-item"]').length)
+      this.element.dataset.index = this.numberOfItems
     }
 
-    if (this._element.data('allow-drag-and-drop') === 1) {
-      Sortable.create(this._element.find('ul')[0], {
+    if (this.element.dataset.allowDragAndDrop === 1) {
+      Sortable.create(this.element.querySelector('ul'), {
         handler: '[data-role="collection-item-change-order"]',
         animation: 150,
         ghostClass: 'collection-item-selected',
@@ -38,37 +39,40 @@ export class FormCollection {
   }
 
   addItem (event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    $(document).trigger('add.collection.item');
+    document.dispatchEvent(new Event('add.collection.item'))
 
-    const prototype = this._element.data('prototype');
+    let prototype = this.element.dataset.prototype
     // get the new index
-    let index = this._element.data('index');
+    const index = this.element.dataset.index
     // Replace '__name__' in the prototype's HTML to
     // instead be a number based on how many items we have
-    const newForm = prototype.replace(/__name__/g, index);
+    prototype = prototype.replace(/__name__/g, index)
     // increase the index with one for the next item
-    this._element.data('index', index + 1);
+    this.element.dataset.index = index + 1
     // Display the form in the page before the "new" link
-    this._element.find('[data-role="collection-item-container"]').append(newForm);
 
-    // Show add button
-    this._element.find('[data-role="collection-add-button"]:last');
+    const container = this.element.querySelector('[data-role="collection-item-container"]')
 
-    $(document).trigger('added.collection.item');
+    container.insertAdjacentHTML('beforeend', prototype)
+
+    container.lastElementChild.querySelector('[data-role="collection-remove-button"]').addEventListener('click', event => {
+      this.removeItem(event)
+    })
+
+    document.dispatchEvent(new Event('added.collection.item'))
   }
 
   removeItem (event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    $(document).trigger('remove.collection.item');
+    document.dispatchEvent(new Event('remove.collection.item'))
 
-    $(event.currentTarget)
-      .closest('[data-role="collection-item"]')
-      .fadeOut(600)
-      .remove();
+    const itemToRemove = event.target.closest('[data-role="collection-item"]')
+    console.log(itemToRemove)
+    itemToRemove.parentNode.removeChild(itemToRemove)
 
-    $(document).trigger('removed.collection.item');
+    document.dispatchEvent(new Event('removed.collection.item'))
   }
 }
