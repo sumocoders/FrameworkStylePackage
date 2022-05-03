@@ -4,10 +4,10 @@
     :class="'toast-' + type"
     :role="role"
     :aria-live="live"
-    data-animation="true"
+    data-bs-animation="true"
     aria-atomic="true"
-    :data-delay="delay"
-    :data-autohide="autoHideState"
+    :data-bs-delay="delay"
+    :data-bs-autohide="autoHideState"
     :id="id">
     <div class="toast-body">
       <div class="d-flex flex-row">
