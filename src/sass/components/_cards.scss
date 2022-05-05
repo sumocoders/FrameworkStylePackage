@@ -87,6 +87,14 @@
   }
 }
 
+.collection-item-delete {
+  background-color: $white;
+
+  &:hover, &:focus, &:active {
+    background-color: $danger;
+  }
+}
+
 .card-collection-item {
   margin-bottom: $spacer;
   padding-right: map_get($spacers, 4);
