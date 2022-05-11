@@ -6,9 +6,10 @@ export class Tabs {
   loadTab () {
     const anchor = document.location.hash
     if (anchor !== '') {
-      const tab = document.querySelector('.nav-tabs a[href="' + anchor + '"]')
-      if (tab.length > 0) {
-        tab.tab('show')
+      const tab = document.querySelector('.nav-tabs button[data-bs-target="' + anchor + '"]')
+      if (tab !== null) {
+        const tabTrigger = new bootstrap.Tab(tab)
+        tabTrigger.show()
       }
     }
   }
