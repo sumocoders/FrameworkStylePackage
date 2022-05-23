@@ -1,18 +1,14 @@
-import { PluginNotFound } from '../Exception/PluginNotFound'
+import TomSelect from 'tom-select'
 
 export class Select {
-  constructor (element) {
-    if (!$.isFunction($.fn.select2)) {
-      throw new PluginNotFound('Select2')
-    }
-
+  constructor (element, options = {}) {
     this.element = element
+    this.options = options
+
     this.initSelect()
   }
 
   initSelect () {
-    this.element.select2({
-      theme: 'bootstrap-5'
-    })
+    this.select = new TomSelect(this.element, this.options)
   }
 }

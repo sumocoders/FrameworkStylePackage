@@ -52,7 +52,7 @@ export class Theme {
   }
 
   showTheme (themeToBe) {
-    const darkStyleLinkTag = this.getDarkStyleLinkTag();
+    const darkStyleLinkTag = this.getDarkStyleLinkTag()
 
     if (themeToBe === 'dark') {
       if (darkStyleLinkTag === null) {
@@ -78,13 +78,13 @@ export class Theme {
   }
 
   getDarkStyleLinkTag () {
-    return document.querySelector('link[rel=stylesheet][href="'+ this.darkThemePath +'"]')
+    return document.querySelector('link[rel=stylesheet][href="' + this.darkThemePath + '"]')
   }
 
   handleDropdownHiding (event) {
     // do not close dropdown when toggle is clicked
-    if ($(e.clickEvent).length && $(e.clickEvent.target).parents('[data-theme-toggler-wrapper]').length) {
-      e.preventDefault()
+    if (event.clickEvent.length && event.clickEvent.target.closest('[data-theme-toggler-wrapper]').length) {
+      event.preventDefault()
     }
   }
 }

@@ -40,8 +40,12 @@ export class Framework {
   }
 
   static initializeSelects () {
-    document.querySelectorAll('.select2').forEach((element) => {
-      element.select2 = new Select(element)
+    document.querySelectorAll('[data-role="select"]').forEach((element) => {
+      if (element.dataset.options !== null) {
+        element.select = new Select(element, element.dataset.options)
+      } else {
+        element.select = new Select(element)
+      }
     })
   }
 
