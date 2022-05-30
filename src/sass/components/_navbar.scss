@@ -418,12 +418,12 @@ body.no-scroll {
 
         .menu-item-icon {
           margin-right: 0;
-          margin-bottom: $spacer / 2;
+          margin-bottom: calc(#{$spacer} / 2);
         }
 
         .nav-item .nav-link,
         .dropdown-menu li a.dropdown-item {
-          padding: $spacer ($spacer / 2);
+          padding: $spacer calc(#{$spacer} / 2);
           flex-direction: column;
           justify-content: center;
 
