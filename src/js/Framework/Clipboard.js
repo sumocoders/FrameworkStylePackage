@@ -1,3 +1,5 @@
+import { Flash } from './Flash'
+
 export class Clipboard {
   constructor (element) {
     element.addEventListener('click', (event) => {
@@ -21,6 +23,12 @@ export class Clipboard {
 
       const text = textSource.select()
       document.execCommand('copy')
+
+      const successMessage = event.currentTarget.getAttribute('data-success-message')
+
+      if (successMessage !== null) {
+        Flash.add(successMessage, 'success')
+      }
     })
   }
 }
