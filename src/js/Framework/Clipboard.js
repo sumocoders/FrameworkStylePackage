@@ -21,7 +21,7 @@ export class Clipboard {
         return
       }
 
-      const text = textSource.select()
+      const text = textSource.value || textSource.innerText || textSource.textSource
       const successMessage = event.currentTarget.getAttribute('data-success-message')
 
       if (!navigator.clipboard) {
