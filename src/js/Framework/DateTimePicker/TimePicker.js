@@ -6,5 +6,7 @@ export class TimePicker {
       enableTime: true,
       noCalendar: true
     })
+
+    element.parentNode.querySelector('[data-flatpicker-clear]').addEventListener('click', event => element._flatpickr.clear())
   }
 }
