@@ -1,4 +1,5 @@
 import flatpickr from 'flatpickr'
+import Translator from 'bazinga-translator'
 
 export class DatePicker {
   constructor (element) {
