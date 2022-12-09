@@ -372,7 +372,8 @@ body.no-scroll {
       background-color: $menu-bg;
       max-height: calc(100vh - 60px);
       overflow-y: auto;
-      padding-bottom: 78px;
+      padding-bottom: 84px;
+      align-items: flex-start;
       padding-left: 0;
       padding-right: 0;
       transition: background-color $transition-theme-duration $transition-theme-timing-function;
