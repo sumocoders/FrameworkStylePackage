@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/plugin-transform-regenerator": "^7.18.6",
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.2.1",
     "@popperjs/core": "^2.11.6",
     "bazinga-translator": "^5.0.0",
     "bootstrap": "^5.2.2",
