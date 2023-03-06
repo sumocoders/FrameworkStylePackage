@@ -1,6 +1,7 @@
 // External frameworks
 import * as bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import Vue from 'vue'
+import Translator from 'bazinga-translator'
 
 // Vue components
 import Toast from './Framework/Components/Toast'
@@ -21,6 +22,18 @@ import { TimePicker } from './Framework/DateTimePicker/TimePicker'
 import { Clipboard } from './Framework/Clipboard'
 import { Theme } from './Framework/Theme'
 
+/*
+ * Hack to provide the global Translator object that
+ * is required by the Bazinga JS translations, while
+ * keeping the dependency managed by Webpack.
+ *
+ * As long as there is a global Translator object in this file:
+ * https://github.com/willdurand/BazingaJsTranslationBundle/blob/master/Resources/views/config.js.twig#L4
+ * This fix is still needed.
+ *
+ * See https://github.com/willdurand/BazingaJsTranslationBundle/issues/252
+ */
+global.Translator = Translator
 window.bootstrap = bootstrap
 
 export class Framework {
