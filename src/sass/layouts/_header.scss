@@ -47,6 +47,7 @@
 
   .btn-group {
     z-index: 700;
+    border-radius: 0;
 
     &.open .dropdown-toggle {
       box-shadow: none;
