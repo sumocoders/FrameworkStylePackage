@@ -13,3 +13,7 @@
 .time-widget select[size] {
   height: 34px;
 }
+
+[data-role="clipboard"]:hover {
+  cursor: copy;
+}
