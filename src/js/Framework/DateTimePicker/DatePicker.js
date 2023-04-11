@@ -1,10 +1,17 @@
 import flatpickr from 'flatpickr'
-import { Dutch } from 'flatpickr/dist/l10n/nl.js'
 
 export class DatePicker {
   constructor (element) {
-    this.element = flatpickr(element, {
-      locale: Dutch
-    })
+    const locale = document.documentElement.lang
+
+    try {
+      const i18n = require('flatpickr/dist/l10n/' + locale + '.js').default
+
+      this.element = flatpickr(element, {
+        locale: i18n
+      })
+    } catch (ex) {
+      console.log('No translation found for ' + locale)
+    }
   }
 }
