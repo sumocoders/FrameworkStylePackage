@@ -1,11 +1,11 @@
-import flatpickr from 'flatpickr'
+import { DatePicker } from './DatePicker'
 
-export class TimePicker {
+export class TimePicker extends DatePicker {
   constructor (element) {
-    this.element = flatpickr(element, {
-      enableTime: true,
-      noCalendar: true
-    })
+    super(element)
+
+    this.element._flatpickr.config.enableTime = true
+    this.element._flatpickr.config.noCalendar = true
 
     element.parentNode.querySelector('[data-flatpicker-clear]').addEventListener('click', event => element._flatpickr.clear())
   }
