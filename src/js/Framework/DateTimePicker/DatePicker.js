@@ -5,7 +5,7 @@ export class DatePicker {
     const locale = document.documentElement.lang
 
     try {
-      const i18n = require('flatpickr/dist/l10n/' + locale + '.js').default
+      const i18n = require('flatpickr/dist/l10n/' + locale + '.js').default[locale]
 
       this.element = flatpickr(element, {
         locale: i18n
