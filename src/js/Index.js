@@ -20,6 +20,7 @@ import { DateTimePicker } from './Framework/DateTimePicker/DateTimePicker'
 import { TimePicker } from './Framework/DateTimePicker/TimePicker'
 import { Clipboard } from './Framework/Clipboard'
 import { Theme } from './Framework/Theme'
+import { SelectSearch } from './Framework/SelectSearch'
 
 window.bootstrap = bootstrap
 
@@ -46,6 +47,10 @@ export class Framework {
       } else {
         element.select = new Select(element)
       }
+    })
+
+    document.querySelectorAll('[data-role="select-search"]').forEach((element) => {
+      element.select = new SelectSearch(element)
     })
   }
 
