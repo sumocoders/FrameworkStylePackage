@@ -2,7 +2,10 @@ import flatpickr from 'flatpickr'
 
 export class DatePicker {
   constructor (element) {
-    const locale = document.documentElement.lang
+    let locale = document.documentElement.lang
+    if (locale === 'en') {
+      locale = 'default'
+    }
 
     try {
       const i18n = require('flatpickr/dist/l10n/' + locale + '.js').default[locale]
