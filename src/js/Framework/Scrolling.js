@@ -10,15 +10,17 @@ export class Scrolling {
     })
 
     // On long pages, show the Back to top link
-    window.addEventListener('scroll', () => {
-      if (document.body.scrollY > 1000) {
-        this.scrollToTop.classList.remove('d-none')
-        this.scrollToTop.classList.add('show')
-      } else {
-        this.scrollToTop.classList.add('d-none')
-        this.scrollToTop.classList.remove('show')
-      }
-    })
+    if (this.scrollToTop) {
+      window.addEventListener('scroll', () => {
+        if (document.body.scrollY > 1000) {
+          this.scrollToTop.classList.remove('d-none')
+          this.scrollToTop.classList.add('show')
+        } else {
+          this.scrollToTop.classList.add('d-none')
+          this.scrollToTop.classList.remove('show')
+        }
+      })
+    }
   }
 
   scrollTo (event) {
