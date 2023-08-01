@@ -53,6 +53,7 @@ export class Theme {
 
   showTheme (themeToBe) {
     const darkStyleLinkTag = this.getDarkStyleLinkTag()
+    const body = document.querySelector('body')
 
     if (themeToBe === 'dark') {
       if (darkStyleLinkTag === null) {
@@ -60,12 +61,14 @@ export class Theme {
       }
       this.darkLogo.classList.remove('d-none')
       this.logo.classList.add('d-none')
+      body.setAttribute('data-bs-theme', 'dark')
     } else {
       if (darkStyleLinkTag !== null) {
         darkStyleLinkTag.remove()
       }
       this.darkLogo.classList.add('d-none')
       this.logo.classList.remove('d-none')
+      body.setAttribute('data-bs-theme', 'light')
     }
   }
 

@@ -13,7 +13,7 @@
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@popperjs/core": "^2.11.6",
     "bazinga-translator": "^5.0.0",
-    "bootstrap": "5.2.3",
+    "bootstrap": "5.3.1",
     "file-loader": "^6.2.0",
     "flatpickr": "^4.6.13",
     "foundation-emails": "^2.4.0",
