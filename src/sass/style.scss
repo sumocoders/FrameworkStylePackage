@@ -2,7 +2,12 @@
 @import '~bootstrap/scss/functions';
 @import 'bootstrap-variables';
 @import '~bootstrap/scss/variables';
+@import "~bootstrap/scss/variables-dark";
 @import 'bootstrap-imports';
 
 // Imports
 @import 'imports';
+
+.page-link.disabled {
+  border: none;
+}
