@@ -27,7 +27,7 @@ export class FormCollection {
       this.element.dataset.index = this.numberOfItems
     }
 
-    if (this.element.dataset.allowDragAndDrop === 1) {
+    if (this.element.dataset.allowDragAndDrop === '1') {
       Sortable.create(this.element.querySelector('ul'), {
         handler: '[data-role="collection-item-change-order"]',
         animation: 150,
