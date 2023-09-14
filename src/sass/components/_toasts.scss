@@ -1,9 +1,17 @@
 @each $color, $value in $theme-colors {
   .toast-#{$color} {
-    border-left: 4px solid shift-color($value, $alert-color-scale);
+    border-left: 6px solid shift-color($value, $alert-color-scale);
+
+    .toast-icon-wrapper {
+      background-color: shift-color($value, $alert-color-scale);
+    }
 
     .toast-icon {
-      color: shift-color($value, $alert-color-scale);
+      color: $white !important;
+    }
+
+    .toast-progress--inner {
+      background-color: shift-color($value, $alert-color-scale);
     }
   }
 }
@@ -19,10 +27,35 @@
 .toast {
   max-width: 100%;
   width: 100%;
+  font-size: $font-size-base * 1.125;
 }
 
 .toast-body {
   display: flex;
+}
+
+.toast-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.toast-progress {
+  height: 5px;
+  background-color: $gray-300;
+  width: 100%;
+
+  &--inner {
+    width: 0;
+    background-color: $gray-600;
+    animation-name: progress;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    height: 5px;
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -34,5 +67,15 @@
 
   .toast {
     width: $toast-max-width;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
   }
 }
