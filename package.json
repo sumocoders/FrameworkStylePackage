@@ -32,5 +32,8 @@
     "standard": "^14.3.4",
     "stylelint": "^15.6.0",
     "stylelint-config-standard": "^20.0.0"
+  },
+  "volta": {
+    "node": "18.18.2"
   }
 }
