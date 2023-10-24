@@ -24,7 +24,7 @@
     "sortablejs": "^1.15.0",
     "tom-select": "^2.2.2",
     "vue": "^2.7.13",
-    "vue-loader": "^17.2.2",
+    "vue-loader": "^15.10.0",
     "vue-template-compiler": "^2.7.13",
     "webpack-shell-plugin-alt": "^1.4.0"
   },
