@@ -1,44 +1,42 @@
-import { Flash } from './Flash'
+import { addFlash } from './Flash'
 
-export class Clipboard {
-  constructor (element) {
-    element.addEventListener('click', (event) => {
-      const elementId = event.currentTarget.getAttribute('data-clipboard-target')
+const Clipboard = function (element) {
+  element.addEventListener('click', (event) => {
+    const elementId = event.currentTarget.getAttribute('data-clipboard-target')
 
-      if (elementId === null) {
-        console.error(
-          'data-clipboard-target attribute was not provided. This is the element we will be copying from.'
-        )
+    if (elementId === null) {
+      console.error(
+        'data-clipboard-target attribute was not provided. This is the element we will be copying from.'
+      )
+      return
+    }
 
-        return
+    const textSource = document.querySelector(elementId)
+
+    if (textSource === null) {
+      console.error('Source element was not found "' + elementId + '".')
+      return
+    }
+
+    const text = textSource.value || textSource.innerText || textSource.textSource
+    const successMessage = event.currentTarget.getAttribute('data-success-message')
+
+    if (!navigator.clipboard) {
+      document.execCommand('copy')
+
+      if (successMessage !== null) {
+        addFlash(successMessage, 'success')
       }
-
-      const textSource = document.querySelector(elementId)
-
-      if (textSource === null) {
-        console.error('Source element was not found "' + elementId + '".')
-
-        return
-      }
-
-      const text = textSource.value || textSource.innerText || textSource.textSource
-      const successMessage = event.currentTarget.getAttribute('data-success-message')
-
-      if (!navigator.clipboard) {
-        document.execCommand('copy')
-
-        if (successMessage !== null) {
-          Flash.add(successMessage, 'success')
-        }
-      } else {
-        navigator.clipboard.writeText(text).then(
-          function () {
-            if (successMessage !== null) {
-              Flash.add(successMessage, 'success')
-            }
+    } else {
+      navigator.clipboard.writeText(text).then(
+        function () {
+          if (successMessage !== null) {
+            addFlash(successMessage, 'success')
           }
-        )
-      }
-    })
-  }
+        }
+      )
+    }
+  })
 }
+
+export default Clipboard
