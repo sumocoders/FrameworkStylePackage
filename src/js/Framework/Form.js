@@ -1,12 +1,9 @@
-export class Form {
-  constructor () {
-    this.forms = document.querySelectorAll('form')
-    this.forms.forEach((form) => {
-      form.addEventListener('submit', () => { this.hijackSubmit() })
-    })
-  }
+export default function Form (forms) {
+  forms.forEach((form) => {
+    form.addEventListener('submit', () => { hijackSubmit() })
+  })
 
-  hijackSubmit () {
+  const hijackSubmit = () => {
     const event = new Event('form_submitting')
     document.dispatchEvent(event)
   }

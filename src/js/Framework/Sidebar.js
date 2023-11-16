@@ -1,40 +1,33 @@
-import { Cookies } from './Cookies'
-const cookies = new Cookies()
+import { readCookie, setCookie } from './Cookies'
 
-export class Sidebar {
-  constructor () {
-    this.sidebar = document.querySelector('[data-sidebar-wrapper]')
-
-    if (this.sidebar !== null) {
-      this.sidebarCookie()
-      this.initSidebarCollapse()
-    }
-  }
-
-  initSidebarCollapse () {
+const Sidebar = function (sidebar) {
+  if (sidebar !== null) {
+    sidebarCookie(sidebar)
     document.querySelector('[data-sidebar-toggler]').addEventListener('click', () => {
-      this.sidebarCollapse()
+      sidebarCollapse(sidebar)
     })
   }
+}
 
-  sidebarCollapse () {
-    this.sidebar.classList.toggle('sidebar-collapsed')
-    // set cookie
-    if (this.sidebar.classList.contains('sidebar-collapsed')) {
-      cookies.setCookie('sidebar_is_open', 'false')
+const sidebarCookie = (sidebar) => {
+  if (window.innerWidth > 576) {
+    // read cookie
+    if (readCookie('sidebar_is_open') === 'false') {
+      sidebar.classList.add('sidebar-collapsed')
     } else {
-      cookies.setCookie('sidebar_is_open', 'true')
-    }
-  }
-
-  sidebarCookie () {
-    if (window.innerWidth > 576) {
-      // read cookie
-      if (cookies.readCookie('sidebar_is_open') === 'false') {
-        this.sidebar.classList.add('sidebar-collapsed')
-      } else {
-        this.sidebar.classList.remove('sidebar-collapsed')
-      }
+      sidebar.classList.remove('sidebar-collapsed')
     }
   }
 }
+
+const sidebarCollapse = (sidebar) => {
+  sidebar.classList.toggle('sidebar-collapsed')
+  // set cookie
+  if (sidebar.classList.contains('sidebar-collapsed')) {
+    setCookie('sidebar_is_open', 'false')
+  } else {
+    setCookie('sidebar_is_open', 'true')
+  }
+}
+
+export default Sidebar
