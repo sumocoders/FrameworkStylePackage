@@ -1,20 +1,16 @@
 import Toast from './Components/Toast'
-import Vue from 'vue'
+import { createApp } from 'vue'
 
 export function addFlash (message, type, delay = 10000) {
   const toastId = 'toast' + Date.now()
 
-  const component = new Vue({
-    ...Toast,
-    propsData: {
-      type: type,
-      message: message,
-      delay: delay,
-      id: toastId
-    }
-  }).$mount()
+  const app = createApp(Toast, {
+    type: type,
+    message: message,
+    delay: delay,
+    id: toastId
+  })
+  app.mount('#toast-wrapper')
 
-  const toastWrapper = document.querySelector('#toast-wrapper')
-  toastWrapper.insertBefore(component.$el, toastWrapper.firstChild)
   return toastId
 }

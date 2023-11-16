@@ -1,14 +1,15 @@
 <template>
   <div
-    class="toast"
-    :class="'toast-' + type"
+    :class="['toast', `toast-${type}`]"
     :role="role"
     :aria-live="live"
     data-bs-animation="true"
     aria-atomic="true"
     :data-bs-delay="delay"
     :data-bs-autohide="autoHideState"
-    :id="id">
+    :id="id"
+    ref="toast-el"
+  >
     <div class="toast-body">
       <div class="d-flex flex-row align-items-center">
         <div class="toast-icon-wrapper me-3">
@@ -55,7 +56,7 @@ export default {
   },
   methods: {
     showToast () {
-      const toast = new window.bootstrap.Toast(this.$el)
+      const toast = new window.bootstrap.Toast(this.$refs['toast-el'])
       toast.show()
     },
   },

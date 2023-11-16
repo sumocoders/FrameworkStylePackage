@@ -1,6 +1,6 @@
 // External frameworks
 import * as bootstrap from 'bootstrap/dist/js/bootstrap.js'
-import Vue from 'vue'
+import { createApp } from 'vue'
 
 // Vue components
 import Toast from './Framework/Components/Toast'
@@ -71,10 +71,9 @@ export function Framework () {
 document.addEventListener('DOMContentLoaded', function () {
   const toastWrapper = document.querySelector('#toast-wrapper')
   if (toastWrapper !== null) {
-    document.toastComponent = new Vue({
-      el: '#toast-wrapper',
-      components: { Toast }
-    })
+    const app = createApp()
+    app.component('Toast', Toast)
+    app.mount('#toast-wrapper')
   }
 
   // initialize theme
