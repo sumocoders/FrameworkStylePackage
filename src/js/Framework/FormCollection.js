@@ -31,7 +31,7 @@ const FormCollection = function (element) {
   }
 
   // Add minimum items
-  if (this.numberOfItems < this.minimumItems) {
+  while (this.numberOfItems < this.minimumItems) {
     addItem(new Event('click'), element)
   }
 }
