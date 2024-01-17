@@ -38,6 +38,12 @@ const FormCollection = function (element) {
 
 const addItem = function (event, element) {
   event.preventDefault()
+  // Check if the button should have been disabled
+  if (this.maximumItems && this.numberOfItems >= this.maximumItems) {
+    this.addButton.setAttribute('disabled', 'disabled')
+
+    return
+  }
 
   document.dispatchEvent(new Event('add.collection.item'))
 
