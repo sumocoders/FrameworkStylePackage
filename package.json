@@ -1,8 +1,8 @@
 {
   "name": "frameworkstylepackage",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Layout for the SumoCoders Framework",
-  "main": "index.js",
+  "main": "/src/js/Index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,5 +35,6 @@
   },
   "volta": {
     "node": "18.18.2"
-  }
+  },
+  "type": "module"
 }
