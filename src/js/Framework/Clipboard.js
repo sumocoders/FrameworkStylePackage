@@ -1,4 +1,4 @@
-import { addFlash } from './Flash'
+import { addFlash } from './Flash.js'
 
 const Clipboard = function (element) {
   element.addEventListener('click', (event) => {

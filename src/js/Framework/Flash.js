@@ -1,4 +1,4 @@
-import Toast from './Components/Toast'
+import Toast from './Components/Toast.vue'
 import { createApp } from 'vue'
 
 export function addFlash (message, type, delay = 10000) {

@@ -1,4 +1,4 @@
-import { setCookie, readCookie } from './Cookies'
+import { setCookie, readCookie } from './Cookies.js'
 
 const Theme = function () {
   const togglers = document.querySelectorAll('[data-theme-toggler]')
