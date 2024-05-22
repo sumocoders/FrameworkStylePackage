@@ -1,4 +1,4 @@
-import { DatePicker } from './DatePicker'
+import { DatePicker } from './DatePicker.js'
 
 export class TimePicker extends DatePicker {
   constructor (element) {

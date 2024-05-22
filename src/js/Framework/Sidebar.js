@@ -1,4 +1,4 @@
-import { readCookie, setCookie } from './Cookies'
+import { readCookie, setCookie } from './Cookies.js'
 
 const Sidebar = function (sidebar) {
   if (sidebar !== null) {
