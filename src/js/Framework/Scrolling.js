@@ -33,7 +33,7 @@ const scrollTo = (event) => {
   /* check if we have an url, and if it is on the current page and the element exists disabled for nav-tabs */
   if (
     (url === '' || url.indexOf(document.location.pathname) >= 0) &&
-    !anchor.is('[data-no-scroll]') &&
+    !anchor.hasAttribute('data-no-scroll') &&
     targetElement != null
   ) {
     window.scroll({
