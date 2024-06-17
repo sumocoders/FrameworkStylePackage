@@ -1,6 +1,6 @@
 {
   "name": "frameworkstylepackage",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Layout for the SumoCoders Framework",
   "main": "/src/js/Index.js",
   "scripts": {
