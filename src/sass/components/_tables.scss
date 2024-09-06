@@ -10,5 +10,9 @@ table.table {
     th {
       border-top: none;
     }
+
+    td, th {
+      box-shadow: none;
+    }
   }
 }
