@@ -28,7 +28,7 @@ export default function PasswordStrengthChecker () {
 
     // Remove all strength classes
     meterSections.forEach((section) => {
-      section.classList.remove(classes.values())
+      section.classList.remove('weak', 'medium', 'strong', 'very-strong')
     })
 
     // Add the appropriate strength class based on the strength value
