@@ -24,26 +24,16 @@ export default function passwordStrengthChecker () {
   }
 
   function updateMeter (strength) {
+    const classes = ['weak', 'medium', 'strong', 'very-strong']
+
     // Remove all strength classes
     meterSections.forEach((section) => {
-      section.classList.remove('weak', 'medium', 'strong', 'very-strong')
+      section.classList.remove(classes.values())
     })
 
     // Add the appropriate strength class based on the strength value
-    if (strength === 0) {
-      meterSections[0].classList.add('weak')
-    } else if (strength === 1) {
-      meterSections[0].classList.add('medium')
-      meterSections[1].classList.add('medium')
-    } else if (strength === 2) {
-      meterSections[0].classList.add('strong')
-      meterSections[1].classList.add('strong')
-      meterSections[2].classList.add('strong')
-    } else if (strength === 3) {
-      meterSections[0].classList.add('very-strong')
-      meterSections[1].classList.add('very-strong')
-      meterSections[2].classList.add('very-strong')
-      meterSections[3].classList.add('very-strong')
+    for (let i = 0; i < strength; i++) {
+      meterSections[i].classList.add(classes[strength])
     }
   }
 }
