@@ -21,7 +21,7 @@ import { TimePicker } from './Framework/DateTimePicker/TimePicker'
 import Clipboard from './Framework/Clipboard'
 import Theme from './Framework/Theme'
 import SelectSearch from './Framework/SelectSearch'
-import passwordStrengthChecker from './Framework/PasswordStrengthChecker.js'
+import PasswordStrengthChecker from './Framework/PasswordStrengthChecker.js'
 
 window.bootstrap = bootstrap
 
@@ -67,7 +67,7 @@ export function Framework () {
   Tabs()
   Tooltip()
   Popover()
-  passwordStrengthChecker()
+  PasswordStrengthChecker()
 }
 
 document.addEventListener('DOMContentLoaded', function () {

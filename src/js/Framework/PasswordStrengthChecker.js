@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { debounce } from 'lodash'
 
-export default function passwordStrengthChecker () {
+export default function PasswordStrengthChecker () {
   const passwordInput = document.querySelectorAll('[data-role="check-password"] input[type="password"]')[0]
   const meterSections = document.querySelectorAll('.meter-section')
 
