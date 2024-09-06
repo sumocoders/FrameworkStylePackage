@@ -29,6 +29,8 @@
     "webpack-shell-plugin-alt": "^1.4.0"
   },
   "devDependencies": {
+    "axios": "^1.7.7",
+    "lodash": "^4.17.21",
     "standard": "^14.3.4",
     "stylelint": "^15.6.0",
     "stylelint-config-standard": "^20.0.0"

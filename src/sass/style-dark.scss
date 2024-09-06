@@ -68,3 +68,28 @@
     background-color: $danger;
   }
 }
+
+// password strength meter
+.meter-section {
+  background-color: $gray-600;
+}
+
+.weak {
+  background-color: $danger;
+  opacity: 1;
+}
+
+.medium {
+  background-color: $warning;
+  opacity: 1;
+}
+
+.strong {
+  background-color: $success;
+  opacity: 1;
+}
+
+.very-strong {
+  background-color: $green-700;
+  opacity: 1;
+}
