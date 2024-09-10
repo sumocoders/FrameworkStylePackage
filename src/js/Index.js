@@ -3,7 +3,7 @@ import * as bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import { createApp } from 'vue'
 
 // Vue components
-import Toast from './Framework/Components/Toast'
+import App from 'frameworkstylepackage/src/js/Framework/Components/App'
 
 // Other components
 import Form from './Framework/Form'
@@ -73,8 +73,7 @@ export function Framework () {
 document.addEventListener('DOMContentLoaded', function () {
   const toastWrapper = document.querySelector('#toast-wrapper')
   if (toastWrapper !== null) {
-    const app = createApp()
-    app.component('Toast', Toast)
+    const app = createApp(App, { ...toastWrapper.dataset })
     app.mount('#toast-wrapper')
   }
 
