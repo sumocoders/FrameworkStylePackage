@@ -12,11 +12,13 @@
     "@babel/plugin-transform-regenerator": "^7.18.6",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@popperjs/core": "^2.11.6",
+    "axios": "^1.7.7",
     "bootstrap": "5.3.1",
     "file-loader": "^6.2.0",
     "flatpickr": "^4.6.13",
     "foundation-emails": "^2.4.0",
     "intl-messageformat": "^10.2.1",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "requestanimationframe": "0.0.23",
     "sass": "^1.55.0",
@@ -29,8 +31,6 @@
     "webpack-shell-plugin-alt": "^1.4.0"
   },
   "devDependencies": {
-    "axios": "^1.7.7",
-    "lodash": "^4.17.21",
     "standard": "^14.3.4",
     "stylelint": "^15.6.0",
     "stylelint-config-standard": "^20.0.0"
