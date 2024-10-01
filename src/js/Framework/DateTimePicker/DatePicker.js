@@ -22,13 +22,15 @@ import { Slovenian } from 'flatpickr/dist/l10n/sl.js'
 
 export class DatePicker {
   constructor (element) {
+    this.element = element
+
     let locale = document.documentElement.lang
     if (locale === 'en') {
       locale = 'default'
     }
 
     try {
-      this.element = flatpickr(element, {
+      this.element._flatpickr = flatpickr(this.element, {
         locale: locale
       })
     } catch (ex) {
