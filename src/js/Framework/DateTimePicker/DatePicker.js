@@ -21,7 +21,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es.js'
 import { Slovenian } from 'flatpickr/dist/l10n/sl.js'
 
 export class DatePicker {
-  constructor (element) {
+  constructor (element, enableTime = false, noCalendar = false) {
     this.element = element
 
     let locale = document.documentElement.lang
@@ -31,7 +31,9 @@ export class DatePicker {
 
     try {
       this.element._flatpickr = flatpickr(this.element, {
-        locale: locale
+        locale: locale,
+        enableTime: enableTime,
+        noCalendar: noCalendar
       })
     } catch (ex) {
       console.log('No translation found for ' + locale)
