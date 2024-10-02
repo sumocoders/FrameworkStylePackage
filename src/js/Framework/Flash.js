@@ -10,7 +10,7 @@ export function addFlash (message, type, delay = 10000) {
     delay: delay,
     id: toastId
   })
-  app.mount('#toast-wrapper')
+  app.mount('#toast-wrapper-js')
 
   return toastId
 }
